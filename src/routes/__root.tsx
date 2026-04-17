@@ -29,19 +29,37 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Cirurgia de Vesícula em Brasília | Dr. Eron Queiroz — Clínica Lívere" },
+      {
+        name: "description",
+        content:
+          "Dr. Eron Queiroz, cirurgião do aparelho digestivo em Brasília/DF, CRM-DF 26024. Avaliação individualizada para cirurgia de vesícula biliar (colecistectomia) por videolaparoscopia na Clínica Lívere, Asa Sul.",
+      },
+      { name: "author", content: "Dr. Eron Queiroz" },
+      { name: "robots", content: "index, follow" },
+      {
+        property: "og:title",
+        content: "Cirurgia de Vesícula em Brasília | Dr. Eron Queiroz — Clínica Lívere",
+      },
+      {
+        property: "og:description",
+        content:
+          "Cirurgião do aparelho digestivo em Brasília/DF. Avaliação criteriosa para cirurgia de vesícula biliar por videolaparoscopia.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap",
       },
     ],
   }),
@@ -52,7 +70,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
