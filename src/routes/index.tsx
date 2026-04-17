@@ -146,7 +146,7 @@ function Index() {
                 fetchPriority="high"
               />
               <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
-                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
+                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim
               </h1>
               <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
                 Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
@@ -194,6 +194,9 @@ function Index() {
               <h2 className="mt-3 text-2xl font-extrabold text-primary sm:text-[1.75rem]">
                 Informação essencial sobre cirurgia de vesícula
               </h2>
+              <p className="mt-5 text-base leading-relaxed text-foreground/85 sm:text-[1.0625rem]">
+                Antes de qualquer decisão cirúrgica, é importante entender o que está acontecendo. Os pontos abaixo resumem o que você precisa saber.
+              </p>
               <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
                 {[
                   "A colelitíase (pedra na vesícula) afeta entre 10 e 20% da população adulta, com prevalência maior em mulheres; no Brasil, estudos apontam prevalência geral próxima de 9% na população assistida no SUS.",
