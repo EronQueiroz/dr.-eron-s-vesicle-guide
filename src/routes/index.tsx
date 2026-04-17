@@ -196,7 +196,7 @@ function Index() {
               <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
                 {[
                   "A colelitíase (pedra na vesícula) afeta entre 10 e 20% da população adulta, com prevalência maior em mulheres; no Brasil, estudos apontam prevalência geral próxima de 9% na população assistida no SUS.",
-                  "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende da presença de sintomas, tamanho e número de cálculos, idade e condição clínica do paciente.",
+                  "A indicação cirúrgica depende da avaliação individual de cada caso — sintomas, características das pedras, idade, condição clínica e preferência informada do paciente são considerados antes de qualquer decisão.",
                   "A colecistectomia videolaparoscópica é o padrão-ouro mundial para tratamento cirúrgico de patologias benignas da vesícula biliar desde os anos 1990.",
                   "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos em casos eletivos não complicados, com alta hospitalar em geral em até 24 horas.",
                   "Pacientes idosos podem e frequentemente devem ser operados, estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
