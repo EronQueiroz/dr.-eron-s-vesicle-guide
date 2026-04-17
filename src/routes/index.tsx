@@ -614,23 +614,19 @@ function Index() {
             <ol className="mt-6 space-y-3 text-[13px] leading-[1.7] text-foreground/75">
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">1.</span>
-                <span>Loozen CS, van Ramshorst B, van Santvoort HC, Boerma D. Early Cholecystectomy for Acute Cholecystitis in the Elderly Population: A Systematic Review and Meta-Analysis. Digestive Surgery. 2017;34(5):371-379.</span>
+                <span>Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis. Journal of Hepato-Biliary-Pancreatic Sciences. 2018;25(1):73-86.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">2.</span>
-                <span>Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis: safe steps in laparoscopic cholecystectomy for acute cholecystitis. Journal of Hepato-Biliary-Pancreatic Sciences. 2018;25(1):73-86.</span>
+                <span>Loozen CS, van Ramshorst B, van Santvoort HC, Boerma D. Early Cholecystectomy for Acute Cholecystitis in the Elderly Population: A Systematic Review and Meta-Analysis. Digestive Surgery. 2017;34(5):371-379.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">3.</span>
-                <span>Columbus AB, et al. Operative vs Nonoperative Treatment of Acute Cholecystitis in Older Adults With Multimorbidity. JAMA Surgery. 2025.</span>
+                <span>Society of American Gastrointestinal and Endoscopic Surgeons (SAGES). Guidelines for the Clinical Application of Laparoscopic Biliary Tract Surgery. Disponível em sages.org/publications/guidelines.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">4.</span>
-                <span>Perfil epidemiológico da colelitíase no Brasil — dados do Sistema de Informações Hospitalares do SUS (SIH/DATASUS).</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">5.</span>
-                <span>Revista do Colégio Brasileiro de Cirurgiões — Colecistectomia videolaparoscópica: técnicas e indicações. Literatura nacional de cirurgia do aparelho digestivo.</span>
+                <span>Dados epidemiológicos nacionais: Sistema de Informações Hospitalares do SUS (SIH/DATASUS) e literatura brasileira em cirurgia do aparelho digestivo.</span>
               </li>
             </ol>
           </div>
