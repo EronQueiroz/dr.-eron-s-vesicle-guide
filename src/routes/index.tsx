@@ -300,7 +300,7 @@ function Index() {
               </article>
             </div>
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
-              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser feita por um cirurgião do aparelho digestivo que conheça o seu caso em profundidade. As diretrizes do Colégio Brasileiro de Cirurgia Digestiva (CBCD) e da Sociedade Brasileira de Cirurgia reforçam essa abordagem individualizada.
+              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, presença e frequência de sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser conduzida por um cirurgião do aparelho digestivo que analise o seu caso em profundidade. As principais diretrizes clínicas internacionais para manejo de doenças biliares, como as Tokyo Guidelines 2018, reforçam a importância da abordagem individualizada.
             </p>
           </div>
         </section>
