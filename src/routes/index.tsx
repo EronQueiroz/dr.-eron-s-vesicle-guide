@@ -1,26 +1,600 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  AlertTriangle,
+  Clock,
+  Star,
+  ShieldCheck,
+  ClipboardList,
+  Users,
+  MapPin,
+  Mail,
+  Phone,
+} from "lucide-react";
+import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
+import { ReadingProgress } from "@/components/ReadingProgress";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { FaqAccordion } from "@/components/FaqAccordion";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      {
+        property: "og:image",
+        content:
+          "https://id-preview--92e657ba-f4c0-4499-8e0a-b2a7a588562a.lovable.app/og-image.jpg",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const WHATSAPP_URL =
+  "https://wa.me/556135466409?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20cirurgia%20de%20ves%C3%ADcula%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o";
+
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20L%C3%ADvere%20SGAS%20614%20Ed.%20Vitrium%20Sala%2031%20Asa%20Sul%20Bras%C3%ADlia";
+
+const faqItems = [
+  {
+    q: "Toda pedra na vesícula precisa de cirurgia?",
+    a: "Não. Pedras assintomáticas descobertas por acaso podem ser monitoradas clinicamente em muitos casos. A indicação cirúrgica depende da presença de sintomas (cólica biliar, dispepsia pós-prandial), tamanho e número de cálculos, idade do paciente e presença de fatores de risco para complicações. Pacientes com sintomas recorrentes ou com pedras grandes geralmente se beneficiam da cirurgia eletiva.",
+  },
+  {
+    q: "A cirurgia por vídeo é segura para idosos?",
+    a: "Sim, desde que haja avaliação pré-operatória adequada. A colecistectomia videolaparoscópica é geralmente preferível à cirurgia aberta mesmo em idosos, por causar menos trauma cirúrgico e permitir recuperação mais rápida. Estudos mostram que a cirurgia eletiva em idosos com risco controlado apresenta taxas de complicação substancialmente menores do que cirurgias de urgência.",
+  },
+  {
+    q: "Quanto tempo dura a internação para colecistectomia?",
+    a: "A internação dura em média 12 a 24 horas. A maioria dos pacientes recebe alta no mesmo dia da cirurgia ou na manhã seguinte, dependendo da evolução clínica imediata, resposta anestésica e aceitação da dieta.",
+  },
+  {
+    q: "Quando posso voltar ao trabalho depois da cirurgia de vesícula?",
+    a: "Para trabalhos de escritório ou atividades sedentárias, o retorno ocorre entre 5 e 10 dias após a cirurgia. Para atividades físicas ou trabalhos que exijam esforço, o prazo é de 3 a 4 semanas. O retorno é sempre avaliado individualmente na consulta de retorno.",
+  },
+  {
+    q: "Vou sentir muita dor depois da cirurgia?",
+    a: "Desconforto moderado nas primeiras 24 a 48 horas é esperado e controlado com analgesia oral. A maioria dos pacientes descreve o pós-operatório como mais tranquilo do que imaginava. Dor intensa, persistente ou de características atípicas deve ser comunicada imediatamente ao cirurgião.",
+  },
+  {
+    q: "Posso fazer a avaliação sem me comprometer a operar?",
+    a: "Sim. A consulta de avaliação serve exatamente para entender seu caso com profundidade e discutir opções — inclusive a possibilidade de acompanhamento clínico em vez de cirurgia imediata, quando apropriado. Não há nenhum compromisso cirúrgico numa primeira consulta.",
+  },
+  {
+    q: "Em qual hospital a cirurgia é realizada em Brasília?",
+    a: "O Dr. Eron Queiroz realiza procedimentos em hospitais credenciados em Brasília/DF com estrutura cirúrgica de alto padrão. A definição do hospital ocorre durante a consulta, considerando perfil do paciente, complexidade do caso e preferências individuais.",
+  },
+  {
+    q: "Qual a diferença de fazer particular em relação ao convênio?",
+    a: "No atendimento particular, o paciente tem consulta com tempo dedicado (geralmente 40 a 60 minutos), planejamento cirúrgico personalizado, contato direto com o cirurgião em todas as etapas do processo e acompanhamento pós-operatório incluído. A escolha do hospital, da equipe anestésica e do instrumental cirúrgico é feita com critério individual.",
+  },
+  {
+    q: "Posso comer normalmente depois de retirar a vesícula?",
+    a: "Na maioria dos casos, sim, após um período inicial de adaptação. Nas primeiras semanas, recomenda-se dieta com moderação de gorduras. A grande maioria dos pacientes volta a se alimentar normalmente após 1 a 2 meses, sem restrições significativas.",
+  },
+  {
+    q: "O que acontece se eu adiar a cirurgia indicada?",
+    a: "Em casos com sintomas recorrentes, adiar a cirurgia aumenta o risco de complicações como colecistite aguda, pancreatite biliar, coledocolitíase ou obstrução das vias biliares — situações que exigem cirurgia de urgência, com maior risco cirúrgico e recuperação mais prolongada.",
+  },
+  {
+    q: "A cirurgia deixa marcas visíveis?",
+    a: "As incisões da videolaparoscopia têm entre 5 e 10mm e são estrategicamente posicionadas. Após cicatrização completa (6 a 12 meses), tendem a ficar discretas e na maioria dos casos dificilmente perceptíveis à distância.",
+  },
+  {
+    q: "Preciso tomar algum cuidado especial antes de marcar a cirurgia?",
+    a: "Sim. É importante trazer todos os exames prévios (especialmente ultrassom de abdome), lista de medicações em uso, histórico de cirurgias anteriores e, se possível, estar acompanhado de um familiar na consulta de avaliação — especialmente pacientes idosos.",
+  },
+];
+
+const recoveryTimeline = [
+  {
+    when: "Dia 1–2",
+    text: "Repouso em casa. Alimentação líquida e pastosa nas primeiras refeições, progredindo para dieta leve. Leve desconforto abdominal esperado, controlado com analgesia oral. Evitar esforço físico. Cuidados com curativos conforme orientação.",
+  },
+  {
+    when: "Dia 3–5",
+    text: "Retorno gradual às atividades cotidianas leves — caminhadas curtas, atividades domésticas simples. A maioria dos pacientes relata melhora significativa do desconforto.",
+  },
+  {
+    when: "Dia 7–10",
+    text: "Consulta de retorno para avaliação das incisões, resultado do exame anatomopatológico da peça cirúrgica e orientações de progressão alimentar e de atividade.",
+  },
+  {
+    when: "Dia 15–21",
+    text: "Liberação progressiva para atividades normais. Alimentação sem restrições significativas na maioria dos casos, com recomendação de moderação em alimentos muito gordurosos nas primeiras semanas.",
+  },
+  {
+    when: "Dia 30",
+    text: "Avaliação final. Orientações sobre atividade física, incluindo exercícios de maior intensidade. A maioria dos pacientes já está plenamente recuperada nesse ponto.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Elaine Martins",
+    text: "Gratidão imensa ao Dr. Eron. Ele foi extremamente atencioso, gentil e cuidadoso comigo antes, durante e após a cirurgia de retirada da vesícula. Tranquilizou meu esposo, prestando informações a todo momento. E a cicatrização dos pontos da cirurgia ficou perfeita.",
+  },
+  {
+    name: "Ivanice Cunha Nunes",
+    text: "Excelente médico! Com excelente equipe! Foi a pessoa certa na hora certa quando precisei tratar-me com pedras na vesícula. Olhar amplo, acolhedor e simpático! Recomendo, agradecida e feliz!",
+  },
+  {
+    name: "Laura Isabel Furtado",
+    text: "Ele fez a cirurgia da remoção da minha vesícula. É um dos melhores médicos que conheci. Gostaria que todos fossem como ele. Recomendo muito!",
+  },
+];
 
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <>
+      <ReadingProgress />
+      <WhatsAppFloat />
+
+      <main className="bg-background text-foreground">
+        {/* SEÇÃO 1 — HERO */}
+        <section className="border-b border-border">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.3fr_1fr] md:gap-16 md:py-28 lg:px-8">
+            <div className="flex flex-col justify-center">
+              <span className="gold-rule mb-8" aria-hidden="true" />
+              <h1 className="font-serif text-3xl font-semibold leading-[1.15] text-primary sm:text-4xl md:text-[2.75rem] lg:text-5xl">
+                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim
+              </h1>
+              <p className="measure mt-8 text-lg leading-relaxed text-muted-foreground md:text-xl">
+                Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico — e explica exatamente o que está acontecendo e quais são suas opções.
+              </p>
+              <p className="mt-10 text-sm leading-relaxed text-muted-foreground/80">
+                Dr. Eron Queiroz — CRM-DF 26024 &nbsp;|&nbsp; Cirurgião do Aparelho Digestivo &nbsp;|&nbsp; Clínica Lívere, Asa Sul, Brasília/DF
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-3 -top-3 h-full w-full rounded-sm border border-[var(--color-gold)]/40" aria-hidden="true" />
+              <img
+                src={drEronPortrait}
+                alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
+                width={896}
+                height={1152}
+                className="relative aspect-[4/5] w-full rounded-sm object-cover shadow-sm"
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 2 — RESUMO 30s */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+            <div className="gold-rule-left rounded-sm bg-background px-6 py-8 shadow-sm sm:px-10 sm:py-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+                Resumo em 30 segundos
+              </p>
+              <h2 className="mt-3 font-serif text-2xl font-semibold text-primary sm:text-[1.75rem]">
+                Informação essencial sobre cirurgia de vesícula
+              </h2>
+              <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
+                {[
+                  "A colelitíase (pedra na vesícula) afeta cerca de 10 a 15% da população adulta brasileira.",
+                  "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende de sintomas, tamanho dos cálculos e histórico clínico.",
+                  "A colecistectomia videolaparoscópica é o procedimento padrão-ouro, reconhecido pelo Colégio Brasileiro de Cirurgia Digestiva (CBCD).",
+                  "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos, com alta em geral em 24 horas.",
+                  "Pacientes idosos podem e frequentemente devem ser operados, desde que a avaliação pré-operatória seja criteriosa.",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-gold)]"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 3 — O que é a vesícula */}
+        <section>
+          <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
+            <span className="gold-rule mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              Entendendo a vesícula biliar: função, pedras e quando o problema aparece
+            </h2>
+            <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
+              <p>
+                A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile — líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
+              </p>
+              <p>
+                A colelitíase — nome técnico para pedras na vesícula — ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino, idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Segundo dados epidemiológicos brasileiros, cerca de 10 a 15% da população adulta apresenta colelitíase, e a maioria é assintomática.
+              </p>
+              <p>
+                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos — e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas sociedades médicas.
+              </p>
+            </div>
+            <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
+              Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024. Última atualização: abril de 2026.
+            </p>
+          </div>
+        </section>
+
+        {/* SEÇÃO 4 — Quando operar */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+            <div className="max-w-3xl">
+              <span className="gold-rule mb-8" aria-hidden="true" />
+              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+                Quando a cirurgia é necessária — e quando ainda dá para avaliar com calma
+              </h2>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
+              <article
+                className="rounded-sm border border-[var(--color-warm-foreground)]/15 p-7 sm:p-8"
+                style={{ backgroundColor: "#FFF4E6" }}
+              >
+                <div className="flex items-center gap-3 text-[var(--color-warm-foreground)]">
+                  <AlertTriangle size={22} aria-hidden="true" />
+                  <h3 className="font-serif text-xl font-semibold sm:text-[1.35rem]">
+                    Situações que pedem avaliação urgente
+                  </h3>
+                </div>
+                <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-foreground/85">
+                  {[
+                    "Febre acima de 38 °C acompanhada de dor abdominal intensa",
+                    "Pele ou olhos amarelados (icterícia) — pode indicar obstrução de via biliar",
+                    "Dor intensa e contínua no quadrante superior direito do abdome que não cede",
+                    "Náuseas e vômitos repetidos numa mesma crise",
+                    "Sinais de pancreatite biliar (dor irradiando para as costas)",
+                  ].map((s) => (
+                    <li key={s} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-warm-foreground)]" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article
+                className="rounded-sm border border-[var(--color-cool-foreground)]/15 p-7 sm:p-8"
+                style={{ backgroundColor: "#E6F1FB" }}
+              >
+                <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
+                  <Clock size={22} aria-hidden="true" />
+                  <h3 className="font-serif text-xl font-semibold sm:text-[1.35rem]">
+                    Situações que permitem avaliação eletiva
+                  </h3>
+                </div>
+                <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-foreground/85">
+                  {[
+                    "Pedra descoberta por acaso em exame de rotina sem sintomas",
+                    "Episódio isolado de cólica biliar já resolvida",
+                    "Dúvida sobre indicação cirúrgica recebida de outro profissional",
+                    "Desejo de entender melhor o caso antes de decidir",
+                    "Preparo para cirurgia eletiva com planejamento adequado",
+                  ].map((s) => (
+                    <li key={s} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-cool-foreground)]" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+            <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
+              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser feita por um cirurgião do aparelho digestivo que conheça o seu caso em profundidade. As diretrizes do Colégio Brasileiro de Cirurgia Digestiva (CBCD) e da Sociedade Brasileira de Cirurgia reforçam essa abordagem individualizada.
+            </p>
+          </div>
+        </section>
+
+        {/* SEÇÃO 5 — Como é a cirurgia */}
+        <section>
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+            <div className="max-w-3xl">
+              <span className="gold-rule mb-8" aria-hidden="true" />
+              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+                Colecistectomia videolaparoscópica: o que acontece em cada etapa
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                A cirurgia minimamente invasiva é o padrão-ouro reconhecido internacionalmente para remoção da vesícula desde os anos 1990.
+              </p>
+            </div>
+
+            <ol className="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
+              {[
+                {
+                  label: "Antes",
+                  text: "Avaliação clínica detalhada com análise de exames laboratoriais (hemograma, coagulograma, função hepática) e de imagem (ultrassom de abdome, eventualmente colangiorressonância). Orientação sobre jejum pré-operatório (8 horas), suspensão ou ajuste de medicações em uso (especialmente anticoagulantes) e avaliação anestésica quando indicado.",
+                },
+                {
+                  label: "Durante",
+                  text: "São realizadas 3 a 4 incisões de 5 a 10 mm no abdome. Uma microcâmera é introduzida permitindo visualização ampliada da cavidade abdominal. A vesícula é cuidadosamente dissecada e removida. Duração média: 40 a 60 minutos em casos eletivos não complicados. Anestesia geral conduzida por equipe de anestesiologistas especializados.",
+                },
+                {
+                  label: "Depois",
+                  text: "Alta hospitalar no mesmo dia ou em até 24 horas na maioria dos casos. Retorno às atividades leves em 5 a 7 dias. Consulta de retorno incluída no acompanhamento. Cicatrizes pequenas que tendem a ficar imperceptíveis após alguns meses.",
+                },
+              ].map((step, i) => (
+                <li key={step.label} className="relative">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-serif text-4xl font-semibold text-[var(--color-gold)]">
+                      0{i + 1}
+                    </span>
+                    <h3 className="font-serif text-xl font-semibold text-primary">
+                      {step.label}
+                    </h3>
+                  </div>
+                  <div className="mt-4 h-px w-full bg-border" aria-hidden="true" />
+                  <p className="mt-5 text-[15px] leading-[1.75] text-foreground/80">
+                    {step.text}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-14 border-t border-border pt-6 text-xs italic text-muted-foreground">
+              Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024.
+            </p>
+          </div>
+        </section>
+
+        {/* SEÇÃO 6 — Idosos */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8 md:py-28">
+            <span className="gold-rule mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              Cirurgia de vesícula em pacientes idosos: o que muda na avaliação e no cuidado
+            </h2>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa — e a família faz parte dessa decisão.
+            </p>
+            <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
+              <p>
+                Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados, pois o risco de complicações graves aumenta significativamente nessa faixa etária quando a cirurgia é adiada. Estudos mostram que a mortalidade de uma colecistite aguda em idosos pode superar 10%, enquanto a cirurgia eletiva bem planejada apresenta riscos substancialmente menores.
+              </p>
+              <p>
+                A abordagem exige avaliação de risco cirúrgico mais detalhada (escala ASA, avaliação cardiológica), revisão cuidadosa de medicações em uso (especialmente anticoagulantes e antiagregantes), preparo nutricional e planejamento anestésico que considere a recuperação funcional, não apenas a física. O Dr. Eron Queiroz tem experiência específica com cirurgia digestiva em pacientes idosos e conduz essa avaliação de forma individualizada, incluindo a família nas decisões clínicas quando apropriado.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+              {[
+                { Icon: ShieldCheck, label: "Avaliação de risco individualizada" },
+                { Icon: ClipboardList, label: "Preparo pré-operatório adaptado" },
+                { Icon: Users, label: "Acompanhamento pós-operatório completo com a família" },
+              ].map(({ Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex flex-col items-start gap-4 rounded-sm border border-border bg-background p-6"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/5 text-primary">
+                    <Icon size={20} aria-hidden="true" />
+                  </span>
+                  <p className="font-serif text-base font-medium leading-snug text-primary">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 7 — Recuperação */}
+        <section>
+          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+            <span className="gold-rule mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              O que esperar na recuperação: uma linha do tempo realista
+            </h2>
+
+            <ol className="mt-14 space-y-0 border-l border-[var(--color-gold)]/40 pl-8">
+              {recoveryTimeline.map((it) => (
+                <li key={it.when} className="relative pb-10 last:pb-0">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-[var(--color-gold)] bg-background"
+                  />
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+                    {it.when}
+                  </p>
+                  <p className="mt-3 text-base leading-[1.75] text-foreground/85 md:text-lg">
+                    {it.text}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-10 border-t border-border pt-6 text-sm italic text-muted-foreground">
+              Cada recuperação tem seu próprio ritmo. A equipe da Clínica Lívere está disponível para dúvidas entre as consultas.
+            </p>
+          </div>
+        </section>
+
+        {/* SEÇÃO 8 — Quem é o Dr. Eron */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+            <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
+              <div>
+                <div className="relative">
+                  <div className="absolute -left-3 -top-3 h-full w-full rounded-sm border border-[var(--color-gold)]/40" aria-hidden="true" />
+                  <img
+                    src={drEronPortrait}
+                    alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
+                    loading="lazy"
+                    width={896}
+                    height={1152}
+                    className="relative aspect-[4/5] w-full rounded-sm object-cover shadow-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <span className="gold-rule mb-8" aria-hidden="true" />
+                <h2 className="font-serif text-2xl font-semibold leading-tight text-primary sm:text-3xl md:text-[2.25rem]">
+                  Dr. Eron Queiroz
+                </h2>
+                <p className="mt-3 text-sm tracking-wide text-muted-foreground">
+                  CRM-DF 26024 &nbsp;|&nbsp; RQE 17127 &nbsp;|&nbsp; RQE 17279
+                </p>
+
+                <ul className="mt-8 space-y-3 text-[15px] leading-relaxed text-foreground/85">
+                  {[
+                    "Medicina pela Universidade Federal de Goiás (UFG)",
+                    "Residência em Cirurgia Geral — Hospital Lúcio Rebelo",
+                    "Residência em Cirurgia do Aparelho Digestivo — Hospital das Clínicas da UFG",
+                    "MBA em Gestão em Saúde — Fundação Getúlio Vargas (FGV)",
+                    "Membro do Colégio Brasileiro de Cirurgia Digestiva (CBCD)",
+                    "Membro da Associação Brasileira de Câncer Gástrico (ABCG)",
+                    "Membro da Associação Latino-Americana de Câncer Gástrico",
+                  ].map((c) => (
+                    <li key={c} className="flex gap-3">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-gold)]" />
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <blockquote className="mt-10 border-l-2 border-[var(--color-gold)] pl-6 font-serif text-lg italic leading-relaxed text-primary md:text-xl">
+                  Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente — e sua família — entenda o que está acontecendo, confie no plano e sinta que tem um profissional disponível em cada etapa do processo.
+                </blockquote>
+
+                <p className="mt-8 flex items-start gap-3 text-sm text-muted-foreground">
+                  <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-gold)]" aria-hidden="true" />
+                  <span>
+                    Atendimento na Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 9 — Depoimentos */}
+        <section>
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+            <div className="max-w-3xl">
+              <span className="gold-rule mb-8" aria-hidden="true" />
+              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+                O que dizem os pacientes
+              </h2>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Avaliações verificadas no Google — fonte: Google Meu Negócio Dr. Eron Queiroz.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+              {testimonials.map((t) => (
+                <article
+                  key={t.name}
+                  className="flex flex-col rounded-sm border border-border bg-background p-7"
+                >
+                  <div className="flex gap-0.5 text-[var(--color-gold)]" aria-label="5 de 5 estrelas">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={16} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                    ))}
+                  </div>
+                  <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
+                    “{t.text}”
+                  </p>
+                  <p className="mt-6 border-t border-border pt-4 font-serif text-sm font-semibold text-primary">
+                    {t.name}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div id="trustindex-embed" className="mt-12" aria-label="Widget Google Meu Negócio (a configurar)" />
+          </div>
+        </section>
+
+        {/* SEÇÃO 10 — FAQ */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+            <span className="gold-rule mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              Perguntas frequentes sobre cirurgia de vesícula
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Respondidas com clareza — porque dúvida não resolvida vira medo.
+            </p>
+            <div className="mt-12">
+              <FaqAccordion items={faqItems} />
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 11 — Autoridade */}
+        <section className="bg-muted border-t border-border">
+          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">
+              Referências e diretrizes clínicas
+            </p>
+            <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+              As condutas e recomendações apresentadas nesta página seguem diretrizes reconhecidas pelo Colégio Brasileiro de Cirurgia Digestiva (CBCD), pela Sociedade Brasileira de Cirurgia e pela literatura internacional em cirurgia do aparelho digestivo. Informações de caráter educativo — não substituem consulta médica individual.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
+              {["CBCD", "SBCBM", "ABCG"].map((logo) => (
+                <span
+                  key={logo}
+                  className="font-serif text-sm font-semibold tracking-[0.2em] text-muted-foreground"
+                >
+                  {logo}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 12 — Contato */}
+        <section className="bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28 text-center">
+            <span
+              aria-hidden="true"
+              className="mx-auto block h-[2px] w-12 bg-[var(--color-gold)]"
+            />
+            <h2 className="mt-8 font-serif text-3xl font-semibold leading-tight text-primary-foreground md:text-[2.5rem]">
+              Tem dúvidas sobre o seu caso? Podemos conversar.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
+              Se depois de ler você ainda tiver dúvidas sobre se o seu caso precisa de avaliação cirúrgica — ou simplesmente quiser uma segunda opinião — entre em contato. Não há compromisso cirúrgico numa primeira consulta.
+            </p>
+
+            <div className="mt-10">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gtag-whatsapp inline-flex items-center justify-center rounded-sm bg-background px-8 py-4 font-medium text-primary transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+              >
+                Falar pelo WhatsApp
+              </a>
+            </div>
+
+            <div className="mt-10 space-y-2 text-sm text-primary-foreground/75">
+              <p className="flex items-center justify-center gap-2">
+                <Phone size={14} aria-hidden="true" />
+                <a href="tel:+556135466409" className="hover:text-primary-foreground">
+                  (61) 3546-6409
+                </a>
+                <span aria-hidden="true">—</span>
+                <Mail size={14} aria-hidden="true" />
+                <a href="mailto:clinicalivere@gmail.com" className="hover:text-primary-foreground">
+                  clinicalivere@gmail.com
+                </a>
+              </p>
+              <p className="flex items-start justify-center gap-2 pt-2">
+                <MapPin size={14} className="mt-1 flex-shrink-0" aria-hidden="true" />
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground"
+                >
+                  Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF
+                </a>
+              </p>
+            </div>
+
+            <p className="mt-16 border-t border-primary-foreground/15 pt-8 text-xs text-primary-foreground/55">
+              © 2026 Dr. Eron Queiroz. Última atualização desta página: abril de 2026.
+            </p>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }
