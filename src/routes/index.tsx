@@ -283,16 +283,16 @@ function Index() {
                 <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
                   <Clock size={22} aria-hidden="true" />
                   <h3 className="text-xl font-extrabold sm:text-[1.35rem]">
-                    Situações que permitem avaliação eletiva
+                    Situações que merecem avaliação com cirurgião
                   </h3>
                 </div>
                 <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-foreground/85">
                   {[
-                    "Pedra descoberta por acaso em exame de rotina sem sintomas",
-                    "Episódio isolado de cólica biliar já resolvida",
-                    "Dúvida sobre indicação cirúrgica recebida de outro profissional",
-                    "Desejo de entender melhor o caso antes de decidir",
-                    "Preparo para cirurgia eletiva com planejamento adequado",
+                    "Diagnóstico de pedra na vesícula em exame de rotina",
+                    "Episódios de cólica biliar ou dor pós-refeição",
+                    "Dúvida sobre conduta diante de diagnóstico recebido de outro profissional",
+                    "Pólipos ou alterações em vesícula identificados em ultrassom",
+                    "Desejo de entender melhor o caso e discutir as opções disponíveis",
                   ].map((s) => (
                     <li key={s} className="flex gap-3">
                       <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-cool-foreground)]" />
