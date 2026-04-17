@@ -695,7 +695,7 @@ function Index() {
             </div>
 
             <p className="mt-16 border-t border-primary-foreground/15 pt-8 text-xs text-primary-foreground/55">
-              © 2026 Dr. Eron Queiroz. Última atualização desta página: abril de 2026.
+              © 2026 Dr. Eron Queiroz. Conteúdo médico revisado pelo Dr. Eron Queiroz, CRM-DF 26024. Última revisão: abril de 2026.
             </p>
           </div>
         </section>
