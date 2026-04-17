@@ -455,15 +455,17 @@ function Index() {
                   className="absolute -inset-3 -z-10 rounded-[2rem]"
                   style={{ background: "color-mix(in oklab, black 20%, transparent)" }}
                 />
-                <img
-                  src={drEronFormal}
-                  alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
-                  loading="lazy"
-                  width={896}
-                  height={1152}
-                  className="relative aspect-[3/4] w-full rounded-[1.75rem] object-cover shadow-xl"
-                  style={{ objectPosition: "50% 25%" }}
-                />
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
+                  <img
+                    src={drEronFormal}
+                    alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
+                    loading="lazy"
+                    width={896}
+                    height={1152}
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: "50% 30%" }}
+                  />
+                </div>
               </div>
               <div>
                 <p className="eyebrow eyebrow-on-dark mb-4">Cirurgião do Aparelho Digestivo</p>
