@@ -167,15 +167,17 @@ function Index() {
                     "linear-gradient(135deg, color-mix(in oklab, var(--color-primary) 85%, black), color-mix(in oklab, var(--color-primary-soft) 85%, transparent))",
                 }}
               />
-              <img
-                src={drEronPortrait}
-                alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
-                width={896}
-                height={1152}
-                className="relative aspect-[3/4] w-full rounded-[1.75rem] object-cover shadow-xl"
-                style={{ objectPosition: "50% 22%" }}
-                fetchPriority="high"
-              />
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
+                <img
+                  src={drEronPortrait}
+                  alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
+                  width={896}
+                  height={1152}
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: "50% 20%", transform: "scale(1.25)", transformOrigin: "50% 20%" }}
+                  fetchPriority="high"
+                />
+              </div>
             </div>
           </div>
         </section>
