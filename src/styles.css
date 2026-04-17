@@ -115,8 +115,13 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 800;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.018em;
     color: var(--color-primary);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   /* Tag pequena estilo "Cuidado especializado" / "Áreas de atuação" */

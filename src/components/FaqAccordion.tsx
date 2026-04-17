@@ -20,12 +20,12 @@ export function FaqAccordion({ items }: { items: Item[] }) {
               onClick={() => setOpen(isOpen ? null : i)}
               className="flex w-full items-start justify-between gap-6 py-5 text-left transition-colors hover:text-primary"
             >
-              <span className="font-serif text-lg font-medium text-primary md:text-xl">
+              <span className="pr-2 text-base font-bold leading-snug text-primary md:text-[1.0625rem]">
                 {it.q}
               </span>
               <span
                 aria-hidden="true"
-                className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center text-[var(--color-gold)]"
+                className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center text-[var(--color-sage-strong)]"
               >
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
               </span>

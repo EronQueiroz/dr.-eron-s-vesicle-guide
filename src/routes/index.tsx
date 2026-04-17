@@ -133,21 +133,21 @@ function Index() {
                 "radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 65%)",
             }}
           />
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-16 md:py-24 lg:px-8">
+          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:px-8">
             <div>
               <img
                 src={livereLogo}
                 alt="Logo Clínica Lívere"
                 width={120}
                 height={120}
-                className="mb-6 h-20 w-auto md:h-24"
+                className="mb-6 h-16 w-auto md:h-20"
                 fetchPriority="high"
               />
               <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
-              <h1 className="text-3xl font-extrabold leading-[1.15] text-primary sm:text-4xl md:text-[2.6rem] lg:text-[2.95rem]">
+              <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
                 Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
               </h1>
-              <p className="measure mt-7 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
                 Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico — e explica exatamente o que está acontecendo e quais são suas opções.
               </p>
               <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
@@ -158,7 +158,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
               <div
                 aria-hidden="true"
                 className="absolute -inset-4 -z-10 rounded-[2rem]"
@@ -216,7 +216,7 @@ function Index() {
           <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Saúde digestiva</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
-            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+            <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
               Entendendo a vesícula biliar: função, pedras e quando o problema aparece
             </h2>
             <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
@@ -242,7 +242,7 @@ function Index() {
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
-              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+              <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
                 Quando a cirurgia é necessária — e quando ainda dá para avaliar com calma
               </h2>
             </div>
@@ -311,7 +311,7 @@ function Index() {
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Procedimento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
-              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+              <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
                 Colecistectomia videolaparoscópica: o que acontece em cada etapa
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -412,7 +412,7 @@ function Index() {
           <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Pós-operatório</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
-            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+            <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
               O que esperar na recuperação: uma linha do tempo realista
             </h2>
 
@@ -510,7 +510,7 @@ function Index() {
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="text-center">
               <p className="eyebrow mb-4">Avaliações</p>
-              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+              <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
                 O que dizem os pacientes
               </h2>
               <div className="mt-6 inline-flex flex-col items-center gap-1">
@@ -565,7 +565,7 @@ function Index() {
           <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Perguntas frequentes</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
-            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
+            <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
               Perguntas frequentes sobre cirurgia de vesícula
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
