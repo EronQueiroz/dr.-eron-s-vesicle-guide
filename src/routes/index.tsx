@@ -11,21 +11,14 @@ import {
   Phone,
 } from "lucide-react";
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
+import drEronFormal from "@/assets/dr-eron-formal.jpg";
+import livereLogo from "@/assets/livere-logo.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      {
-        property: "og:image",
-        content:
-          "https://id-preview--92e657ba-f4c0-4499-8e0a-b2a7a588562a.lovable.app/og-image.jpg",
-      },
-    ],
-  }),
 });
 
 const WHATSAPP_URL =
@@ -131,28 +124,55 @@ function Index() {
 
       <main className="bg-background text-foreground">
         {/* SEÇÃO 1 — HERO */}
-        <section className="border-b border-border">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.3fr_1fr] md:gap-16 md:py-28 lg:px-8">
-            <div className="flex flex-col justify-center">
-              <span className="gold-rule mb-8" aria-hidden="true" />
-              <h1 className="font-serif text-3xl font-semibold leading-[1.15] text-primary sm:text-4xl md:text-[2.75rem] lg:text-5xl">
-                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim
+        <section className="relative overflow-hidden bg-background">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 md:block"
+            style={{
+              background:
+                "radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 65%)",
+            }}
+          />
+          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-16 md:py-24 lg:px-8">
+            <div>
+              <img
+                src={livereLogo}
+                alt="Logo Clínica Lívere"
+                width={120}
+                height={120}
+                className="mb-6 h-20 w-auto md:h-24"
+                fetchPriority="high"
+              />
+              <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
+              <h1 className="text-3xl font-extrabold leading-[1.15] text-primary sm:text-4xl md:text-[2.6rem] lg:text-[2.95rem]">
+                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
               </h1>
-              <p className="measure mt-8 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="measure mt-7 text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico — e explica exatamente o que está acontecendo e quais são suas opções.
               </p>
-              <p className="mt-10 text-sm leading-relaxed text-muted-foreground/80">
-                Dr. Eron Queiroz — CRM-DF 26024 &nbsp;|&nbsp; Cirurgião do Aparelho Digestivo &nbsp;|&nbsp; Clínica Lívere, Asa Sul, Brasília/DF
-              </p>
+              <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />
+                <span>
+                  Dr. Eron Queiroz — CRM-DF 26024 &nbsp;|&nbsp; Cirurgião do Aparelho Digestivo &nbsp;|&nbsp; Clínica Lívere, Asa Sul, Brasília/DF
+                </span>
+              </div>
             </div>
+
             <div className="relative">
-              <div className="absolute -left-3 -top-3 h-full w-full rounded-sm border border-[var(--color-gold)]/40" aria-hidden="true" />
+              <div
+                aria-hidden="true"
+                className="absolute -inset-4 -z-10 rounded-[2rem]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, color-mix(in oklab, var(--color-primary) 85%, black), color-mix(in oklab, var(--color-primary-soft) 85%, transparent))",
+                }}
+              />
               <img
                 src={drEronPortrait}
                 alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
                 width={896}
                 height={1152}
-                className="relative aspect-[4/5] w-full rounded-sm object-cover shadow-sm"
+                className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover shadow-xl"
                 fetchPriority="high"
               />
             </div>
@@ -162,11 +182,12 @@ function Index() {
         {/* SEÇÃO 2 — RESUMO 30s */}
         <section className="bg-muted">
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
-            <div className="gold-rule-left rounded-sm bg-background px-6 py-8 shadow-sm sm:px-10 sm:py-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
-                Resumo em 30 segundos
-              </p>
-              <h2 className="mt-3 font-serif text-2xl font-semibold text-primary sm:text-[1.75rem]">
+            <div
+              className="rounded-2xl border border-border bg-background px-6 py-9 shadow-sm sm:px-10 sm:py-11"
+              style={{ borderLeft: "4px solid var(--color-sage-strong)" }}
+            >
+              <p className="eyebrow">Resumo em 30 segundos</p>
+              <h2 className="mt-3 text-2xl font-extrabold text-primary sm:text-[1.75rem]">
                 Informação essencial sobre cirurgia de vesícula
               </h2>
               <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
@@ -180,7 +201,7 @@ function Index() {
                   <li key={item} className="flex gap-3">
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-gold)]"
+                      className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-sage-strong)]"
                     />
                     <span>{item}</span>
                   </li>
@@ -193,8 +214,9 @@ function Index() {
         {/* SEÇÃO 3 — O que é a vesícula */}
         <section>
           <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
-            <span className="gold-rule mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+            <p className="eyebrow mb-4">Saúde digestiva</p>
+            <span className="sage-rule mb-6" aria-hidden="true" />
+            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
               Entendendo a vesícula biliar: função, pedras e quando o problema aparece
             </h2>
             <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
@@ -218,19 +240,20 @@ function Index() {
         <section className="bg-muted">
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
-              <span className="gold-rule mb-8" aria-hidden="true" />
-              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              <p className="eyebrow mb-4">Fique atento</p>
+              <span className="sage-rule mb-6" aria-hidden="true" />
+              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
                 Quando a cirurgia é necessária — e quando ainda dá para avaliar com calma
               </h2>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
               <article
-                className="rounded-sm border border-[var(--color-warm-foreground)]/15 p-7 sm:p-8"
+                className="rounded-2xl border border-[var(--color-warm-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#FFF4E6" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-warm-foreground)]">
                   <AlertTriangle size={22} aria-hidden="true" />
-                  <h3 className="font-serif text-xl font-semibold sm:text-[1.35rem]">
+                  <h3 className="text-xl font-extrabold sm:text-[1.35rem]">
                     Situações que pedem avaliação urgente
                   </h3>
                 </div>
@@ -251,12 +274,12 @@ function Index() {
               </article>
 
               <article
-                className="rounded-sm border border-[var(--color-cool-foreground)]/15 p-7 sm:p-8"
+                className="rounded-2xl border border-[var(--color-cool-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#E6F1FB" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
                   <Clock size={22} aria-hidden="true" />
-                  <h3 className="font-serif text-xl font-semibold sm:text-[1.35rem]">
+                  <h3 className="text-xl font-extrabold sm:text-[1.35rem]">
                     Situações que permitem avaliação eletiva
                   </h3>
                 </div>
@@ -286,8 +309,9 @@ function Index() {
         <section>
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
-              <span className="gold-rule mb-8" aria-hidden="true" />
-              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+              <p className="eyebrow mb-4">Procedimento</p>
+              <span className="sage-rule mb-6" aria-hidden="true" />
+              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
                 Colecistectomia videolaparoscópica: o que acontece em cada etapa
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -295,7 +319,7 @@ function Index() {
               </p>
             </div>
 
-            <ol className="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
+            <ol className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
               {[
                 {
                   label: "Antes",
@@ -310,17 +334,20 @@ function Index() {
                   text: "Alta hospitalar no mesmo dia ou em até 24 horas na maioria dos casos. Retorno às atividades leves em 5 a 7 dias. Consulta de retorno incluída no acompanhamento. Cicatrizes pequenas que tendem a ficar imperceptíveis após alguns meses.",
                 },
               ].map((step, i) => (
-                <li key={step.label} className="relative">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-serif text-4xl font-semibold text-[var(--color-gold)]">
-                      0{i + 1}
-                    </span>
-                    <h3 className="font-serif text-xl font-semibold text-primary">
-                      {step.label}
-                    </h3>
-                  </div>
-                  <div className="mt-4 h-px w-full bg-border" aria-hidden="true" />
-                  <p className="mt-5 text-[15px] leading-[1.75] text-foreground/80">
+                <li
+                  key={step.label}
+                  className="rounded-2xl border border-border bg-background p-7 shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <span
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-primary-foreground"
+                    style={{ backgroundColor: "var(--color-sage-strong)" }}
+                  >
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-5 text-xl font-extrabold text-primary">
+                    {step.label}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-[1.75] text-foreground/80">
                     {step.text}
                   </p>
                 </li>
@@ -333,17 +360,20 @@ function Index() {
           </div>
         </section>
 
-        {/* SEÇÃO 6 — Idosos */}
-        <section className="bg-muted">
+        {/* SEÇÃO 6 — Idosos (bloco azul marinho — mesma identidade da página atual) */}
+        <section className="bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8 md:py-28">
-            <span className="gold-rule mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
-              Cirurgia de vesícula em pacientes idosos: o que muda na avaliação e no cuidado
-            </h2>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa — e a família faz parte dessa decisão.
-            </p>
-            <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
+            <div className="text-center">
+              <p className="eyebrow eyebrow-on-dark mb-5">Cuidado especializado</p>
+              <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-primary-foreground md:text-[2.5rem]">
+                Cirurgia de vesícula em pacientes idosos: o que muda na avaliação e no cuidado
+              </h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
+                Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa — e a família faz parte dessa decisão.
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-6 text-base leading-[1.8] text-primary-foreground/90 md:text-lg">
               <p>
                 Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados, pois o risco de complicações graves aumenta significativamente nessa faixa etária quando a cirurgia é adiada. Estudos mostram que a mortalidade de uma colecistite aguda em idosos pode superar 10%, enquanto a cirurgia eletiva bem planejada apresenta riscos substancialmente menores.
               </p>
@@ -352,20 +382,23 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            <div className="mt-12 grid gap-5 sm:grid-cols-3">
               {[
                 { Icon: ShieldCheck, label: "Avaliação de risco individualizada" },
                 { Icon: ClipboardList, label: "Preparo pré-operatório adaptado" },
-                { Icon: Users, label: "Acompanhamento pós-operatório completo com a família" },
+                { Icon: Users, label: "Acompanhamento pós-operatório com a família" },
               ].map(({ Icon, label }) => (
                 <div
                   key={label}
-                  className="flex flex-col items-start gap-4 rounded-sm border border-border bg-background p-6"
+                  className="flex flex-col items-start gap-4 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur-sm"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/5 text-primary">
-                    <Icon size={20} aria-hidden="true" />
+                  <span
+                    className="flex h-11 w-11 items-center justify-center rounded-full"
+                    style={{ backgroundColor: "color-mix(in oklab, var(--color-sage) 35%, transparent)" }}
+                  >
+                    <Icon size={20} aria-hidden="true" className="text-[var(--color-sage)]" />
                   </span>
-                  <p className="font-serif text-base font-medium leading-snug text-primary">
+                  <p className="text-base font-bold leading-snug text-primary-foreground">
                     {label}
                   </p>
                 </div>
@@ -377,19 +410,23 @@ function Index() {
         {/* SEÇÃO 7 — Recuperação */}
         <section>
           <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
-            <span className="gold-rule mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+            <p className="eyebrow mb-4">Pós-operatório</p>
+            <span className="sage-rule mb-6" aria-hidden="true" />
+            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
               O que esperar na recuperação: uma linha do tempo realista
             </h2>
 
-            <ol className="mt-14 space-y-0 border-l border-[var(--color-gold)]/40 pl-8">
+            <ol
+              className="mt-14 space-y-0 pl-8"
+              style={{ borderLeft: "2px solid color-mix(in oklab, var(--color-sage-strong) 50%, transparent)" }}
+            >
               {recoveryTimeline.map((it) => (
                 <li key={it.when} className="relative pb-10 last:pb-0">
                   <span
                     aria-hidden="true"
-                    className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-[var(--color-gold)] bg-background"
+                    className="absolute -left-[37px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-sage-strong)] bg-background"
                   />
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-sage-strong)]">
                     {it.when}
                   </p>
                   <p className="mt-3 text-base leading-[1.75] text-foreground/85 md:text-lg">
@@ -406,32 +443,34 @@ function Index() {
         </section>
 
         {/* SEÇÃO 8 — Quem é o Dr. Eron */}
-        <section className="bg-muted">
+        <section style={{ backgroundColor: "var(--color-primary-soft)" }} className="text-primary-foreground">
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
-              <div>
-                <div className="relative">
-                  <div className="absolute -left-3 -top-3 h-full w-full rounded-sm border border-[var(--color-gold)]/40" aria-hidden="true" />
-                  <img
-                    src={drEronPortrait}
-                    alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
-                    loading="lazy"
-                    width={896}
-                    height={1152}
-                    className="relative aspect-[4/5] w-full rounded-sm object-cover shadow-sm"
-                  />
-                </div>
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-3 -z-10 rounded-[2rem]"
+                  style={{ background: "color-mix(in oklab, black 20%, transparent)" }}
+                />
+                <img
+                  src={drEronFormal}
+                  alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
+                  loading="lazy"
+                  width={896}
+                  height={1152}
+                  className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover shadow-xl"
+                />
               </div>
               <div>
-                <span className="gold-rule mb-8" aria-hidden="true" />
-                <h2 className="font-serif text-2xl font-semibold leading-tight text-primary sm:text-3xl md:text-[2.25rem]">
+                <p className="eyebrow eyebrow-on-dark mb-4">Cirurgião do Aparelho Digestivo</p>
+                <h2 className="text-3xl font-extrabold leading-tight text-primary-foreground sm:text-4xl md:text-[2.5rem]">
                   Dr. Eron Queiroz
                 </h2>
-                <p className="mt-3 text-sm tracking-wide text-muted-foreground">
+                <p className="mt-3 text-sm tracking-wide text-[var(--color-sage)]">
                   CRM-DF 26024 &nbsp;|&nbsp; RQE 17127 &nbsp;|&nbsp; RQE 17279
                 </p>
 
-                <ul className="mt-8 space-y-3 text-[15px] leading-relaxed text-foreground/85">
+                <ul className="mt-8 space-y-3 text-[15px] leading-relaxed text-primary-foreground/90">
                   {[
                     "Medicina pela Universidade Federal de Goiás (UFG)",
                     "Residência em Cirurgia Geral — Hospital Lúcio Rebelo",
@@ -442,18 +481,21 @@ function Index() {
                     "Membro da Associação Latino-Americana de Câncer Gástrico",
                   ].map((c) => (
                     <li key={c} className="flex gap-3">
-                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-gold)]" />
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-sage)]" />
                       <span>{c}</span>
                     </li>
                   ))}
                 </ul>
 
-                <blockquote className="mt-10 border-l-2 border-[var(--color-gold)] pl-6 font-serif text-lg italic leading-relaxed text-primary md:text-xl">
+                <blockquote
+                  className="mt-10 pl-6 text-lg italic leading-relaxed text-primary-foreground md:text-xl"
+                  style={{ borderLeft: "3px solid var(--color-sage)" }}
+                >
                   Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente — e sua família — entenda o que está acontecendo, confie no plano e sinta que tem um profissional disponível em cada etapa do processo.
                 </blockquote>
 
-                <p className="mt-8 flex items-start gap-3 text-sm text-muted-foreground">
-                  <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-gold)]" aria-hidden="true" />
+                <p className="mt-8 flex items-start gap-3 text-sm text-primary-foreground/80">
+                  <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
                   <span>
                     Atendimento na Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF.
                   </span>
@@ -466,31 +508,48 @@ function Index() {
         {/* SEÇÃO 9 — Depoimentos */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
-            <div className="max-w-3xl">
-              <span className="gold-rule mb-8" aria-hidden="true" />
-              <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+            <div className="text-center">
+              <p className="eyebrow mb-4">Avaliações</p>
+              <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
                 O que dizem os pacientes
               </h2>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Avaliações verificadas no Google — fonte: Google Meu Negócio Dr. Eron Queiroz.
-              </p>
+              <div className="mt-6 inline-flex flex-col items-center gap-1">
+                <p className="text-sm font-extrabold tracking-wider text-foreground">EXCELENTE</p>
+                <div className="flex gap-0.5 text-[#FBBF24]" aria-label="5 de 5 estrelas">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Avaliações verificadas — fonte: Google Meu Negócio Dr. Eron Queiroz
+                </p>
+              </div>
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
               {testimonials.map((t) => (
                 <article
                   key={t.name}
-                  className="flex flex-col rounded-sm border border-border bg-background p-7"
+                  className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm"
                 >
-                  <div className="flex gap-0.5 text-[var(--color-gold)]" aria-label="5 de 5 estrelas">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                    ))}
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-0.5 text-[#FBBF24]" aria-label="5 de 5 estrelas">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} size={15} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                      ))}
+                    </div>
+                    <span
+                      className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold text-muted-foreground"
+                      style={{ backgroundColor: "var(--color-background)" }}
+                      aria-label="Avaliação Google"
+                    >
+                      G
+                    </span>
                   </div>
                   <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
                     “{t.text}”
                   </p>
-                  <p className="mt-6 border-t border-border pt-4 font-serif text-sm font-semibold text-primary">
+                  <p className="mt-6 border-t border-border pt-4 text-sm font-bold text-primary">
                     {t.name}
                   </p>
                 </article>
@@ -504,33 +563,32 @@ function Index() {
         {/* SEÇÃO 10 — FAQ */}
         <section className="bg-muted">
           <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
-            <span className="gold-rule mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-3xl font-semibold text-primary md:text-4xl">
+            <p className="eyebrow mb-4">Perguntas frequentes</p>
+            <span className="sage-rule mb-6" aria-hidden="true" />
+            <h2 className="text-3xl font-extrabold text-primary md:text-4xl">
               Perguntas frequentes sobre cirurgia de vesícula
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Respondidas com clareza — porque dúvida não resolvida vira medo.
             </p>
-            <div className="mt-12">
+            <div className="mt-12 rounded-2xl bg-background p-2 shadow-sm sm:p-4">
               <FaqAccordion items={faqItems} />
             </div>
           </div>
         </section>
 
-        {/* SEÇÃO 11 — Autoridade */}
-        <section className="bg-muted border-t border-border">
+        {/* SEÇÃO 11 — Autoridade (faixa sage clara, alinhada ao site existente) */}
+        <section style={{ backgroundColor: "color-mix(in oklab, var(--color-sage) 35%, white)" }}>
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">
-              Referências e diretrizes clínicas
-            </p>
-            <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="eyebrow">Referências e diretrizes clínicas</p>
+            <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-foreground/85 md:text-lg">
               As condutas e recomendações apresentadas nesta página seguem diretrizes reconhecidas pelo Colégio Brasileiro de Cirurgia Digestiva (CBCD), pela Sociedade Brasileira de Cirurgia e pela literatura internacional em cirurgia do aparelho digestivo. Informações de caráter educativo — não substituem consulta médica individual.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-70">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-80">
               {["CBCD", "SBCBM", "ABCG"].map((logo) => (
                 <span
                   key={logo}
-                  className="font-serif text-sm font-semibold tracking-[0.2em] text-muted-foreground"
+                  className="text-sm font-extrabold tracking-[0.22em] text-primary"
                 >
                   {logo}
                 </span>
@@ -542,14 +600,11 @@ function Index() {
         {/* SEÇÃO 12 — Contato */}
         <section className="bg-primary text-primary-foreground">
           <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28 text-center">
-            <span
-              aria-hidden="true"
-              className="mx-auto block h-[2px] w-12 bg-[var(--color-gold)]"
-            />
-            <h2 className="mt-8 font-serif text-3xl font-semibold leading-tight text-primary-foreground md:text-[2.5rem]">
+            <span aria-hidden="true" className="sage-rule sage-rule-on-dark mx-auto" />
+            <h2 className="mt-8 text-3xl font-extrabold leading-tight text-primary-foreground md:text-[2.5rem]">
               Tem dúvidas sobre o seu caso? Podemos conversar.
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
               Se depois de ler você ainda tiver dúvidas sobre se o seu caso precisa de avaliação cirúrgica — ou simplesmente quiser uma segunda opinião — entre em contato. Não há compromisso cirúrgico numa primeira consulta.
             </p>
 
@@ -558,25 +613,42 @@ function Index() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gtag-whatsapp inline-flex items-center justify-center rounded-sm bg-background px-8 py-4 font-medium text-primary transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                className="gtag-whatsapp inline-flex items-center justify-center gap-2 rounded-full px-9 py-4 text-base font-bold text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sage)] focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                style={{
+                  background:
+                    "linear-gradient(180deg, var(--color-sage), var(--color-sage-strong))",
+                }}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.484-1.32.13-.302.244-.917.244-1.234 0-.43-2.04-1.31-2.434-1.41zm-2.92 7.45a8.39 8.39 0 0 1-4.27-1.17l-3.06.97 1-3a8.45 8.45 0 1 1 6.33 3.2zm0-18.55a10.13 10.13 0 0 0-8.61 15.46L6 27.06l5.55-1.76A10.13 10.13 0 1 0 16.19 6.1z" />
+                </svg>
                 Falar pelo WhatsApp
               </a>
             </div>
 
-            <div className="mt-10 space-y-2 text-sm text-primary-foreground/75">
-              <p className="flex items-center justify-center gap-2">
-                <Phone size={14} aria-hidden="true" />
-                <a href="tel:+556135466409" className="hover:text-primary-foreground">
-                  (61) 3546-6409
-                </a>
-                <span aria-hidden="true">—</span>
-                <Mail size={14} aria-hidden="true" />
-                <a href="mailto:clinicalivere@gmail.com" className="hover:text-primary-foreground">
-                  clinicalivere@gmail.com
-                </a>
+            <div className="mt-10 space-y-3 text-sm text-primary-foreground/80">
+              <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+                <span className="inline-flex items-center gap-2">
+                  <Phone size={14} aria-hidden="true" />
+                  <a href="tel:+556135466409" className="hover:text-primary-foreground">
+                    (61) 3546-6409
+                  </a>
+                </span>
+                <span aria-hidden="true" className="text-primary-foreground/40">|</span>
+                <span className="inline-flex items-center gap-2">
+                  <Mail size={14} aria-hidden="true" />
+                  <a href="mailto:clinicalivere@gmail.com" className="hover:text-primary-foreground">
+                    clinicalivere@gmail.com
+                  </a>
+                </span>
               </p>
-              <p className="flex items-start justify-center gap-2 pt-2">
+              <p className="flex items-start justify-center gap-2 pt-1">
                 <MapPin size={14} className="mt-1 flex-shrink-0" aria-hidden="true" />
                 <a
                   href={MAPS_URL}
