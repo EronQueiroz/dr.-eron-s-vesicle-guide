@@ -546,9 +546,9 @@ function Index() {
                   className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex gap-0.5 text-[#FBBF24]" aria-label="5 de 5 estrelas">
+                  <div className="flex gap-0.5 text-[#C9A84C]" aria-label="5 de 5 estrelas">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={15} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                        <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
                       ))}
                     </div>
                     <span
