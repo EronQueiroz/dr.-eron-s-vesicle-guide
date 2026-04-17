@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" role="img" aria-label="Logo Clínica Lívere">
+  <!-- Pássaro estilizado (silhueta) -->
+  <g fill="currentColor">
+    <path d="M100 24
+             c-6 0 -11 4 -14 9
+             c-3 -2 -7 -3 -11 -2
+             c-7 2 -11 8 -10 15
+             c-4 1 -7 4 -8 8
+             c-1 5 2 10 7 12
+             c4 1 8 0 11 -3
+             c1 6 6 10 12 11
+             c-2 4 -2 9 1 13
+             c2 3 5 5 9 5
+             c3 0 5 -1 7 -3
+             c2 2 4 3 7 3
+             c4 0 7 -2 9 -5
+             c3 -4 3 -9 1 -13
+             c6 -1 11 -5 12 -11
+             c3 3 7 4 11 3
+             c5 -2 8 -7 7 -12
+             c-1 -4 -4 -7 -8 -8
+             c1 -7 -3 -13 -10 -15
+             c-4 -1 -8 0 -11 2
+             c-3 -5 -8 -9 -14 -9 z" />
+  </g>
+  <!-- Wordmark LÍVERE -->
+  <text x="100" y="148"
+        font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif"
+        font-weight="500"
+        font-size="42"
+        letter-spacing="6"
+        text-anchor="middle"
+        fill="currentColor">LÍVERE</text>
+  <!-- Régua sutil -->
+  <line x1="62" y1="166" x2="138" y2="166" stroke="currentColor" stroke-width="0.6" opacity="0.5" />
+  <!-- Tagline -->
+  <text x="100" y="184"
+        font-family="'Inter', system-ui, sans-serif"
+        font-weight="500"
+        font-size="6.5"
+        letter-spacing="2.4"
+        text-anchor="middle"
+        fill="currentColor"
+        opacity="0.75">LIBERDADE PARA VIVER COM SAÚDE</text>
+</svg>
