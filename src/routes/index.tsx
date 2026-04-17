@@ -500,6 +500,10 @@ function Index() {
                   ))}
                 </ul>
 
+                <p className="mt-6 text-[15px] font-semibold text-[var(--color-sage)]">
+                  Credenciado em hospitais de referência em Brasília/DF.
+                </p>
+
                 <blockquote
                   className="mt-10 pl-6 text-lg italic leading-relaxed text-primary-foreground md:text-xl"
                   style={{ borderLeft: "3px solid var(--color-sage)" }}
