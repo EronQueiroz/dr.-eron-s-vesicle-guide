@@ -29,8 +29,8 @@ const MAPS_URL =
 
 const faqItems = [
   {
-    q: "Toda pedra na vesícula precisa de cirurgia?",
-    a: "Não. Pedras assintomáticas descobertas por acaso podem ser monitoradas clinicamente em muitos casos. A indicação cirúrgica depende da presença de sintomas (cólica biliar, dispepsia pós-prandial), tamanho e número de cálculos, idade do paciente e presença de fatores de risco para complicações. Pacientes com sintomas recorrentes ou com pedras grandes geralmente se beneficiam da cirurgia eletiva.",
+    q: "Preciso operar mesmo se não estou sentindo nada?",
+    a: "A avaliação é sempre individualizada. Mesmo pacientes sem sintomas são orientados a consultar um cirurgião do aparelho digestivo para entender o caso em profundidade — tamanho e localização das pedras, histórico clínico, idade e fatores de risco influenciam na decisão. A consulta serve justamente para que você entenda suas opções com clareza e participe da decisão de forma informada.",
   },
   {
     q: "A cirurgia por vídeo é segura para idosos?",
