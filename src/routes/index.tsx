@@ -29,8 +29,8 @@ const MAPS_URL =
 
 const faqItems = [
   {
-    q: "Toda pedra na vesícula precisa de cirurgia?",
-    a: "Não. Pedras assintomáticas descobertas por acaso podem ser monitoradas clinicamente em muitos casos. A indicação cirúrgica depende da presença de sintomas (cólica biliar, dispepsia pós-prandial), tamanho e número de cálculos, idade do paciente e presença de fatores de risco para complicações. Pacientes com sintomas recorrentes ou com pedras grandes geralmente se beneficiam da cirurgia eletiva.",
+    q: "Preciso operar mesmo se não estou sentindo nada?",
+    a: "A avaliação é sempre individualizada. Mesmo pacientes sem sintomas são orientados a consultar um cirurgião do aparelho digestivo para entender o caso em profundidade — tamanho e localização das pedras, histórico clínico, idade e fatores de risco influenciam na decisão. A consulta serve justamente para que você entenda suas opções com clareza e participe da decisão de forma informada.",
   },
   {
     q: "A cirurgia por vídeo é segura para idosos?",
@@ -196,7 +196,7 @@ function Index() {
               <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
                 {[
                   "A colelitíase (pedra na vesícula) afeta entre 10 e 20% da população adulta, com prevalência maior em mulheres; no Brasil, estudos apontam prevalência geral próxima de 9% na população assistida no SUS.",
-                  "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende da presença de sintomas, tamanho e número de cálculos, idade e condição clínica do paciente.",
+                  "A indicação cirúrgica depende da avaliação individual de cada caso — sintomas, características das pedras, idade, condição clínica e preferência informada do paciente são considerados antes de qualquer decisão.",
                   "A colecistectomia videolaparoscópica é o padrão-ouro mundial para tratamento cirúrgico de patologias benignas da vesícula biliar desde os anos 1990.",
                   "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos em casos eletivos não complicados, com alta hospitalar em geral em até 24 horas.",
                   "Pacientes idosos podem e frequentemente devem ser operados, estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
@@ -230,7 +230,7 @@ function Index() {
                 A colelitíase, nome técnico para pedras na vesícula, ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
               <p>
-                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas principais diretrizes clínicas internacionais, incluindo as Tokyo Guidelines, que norteiam o manejo de doenças biliares no mundo todo.
+                O ponto crítico é que pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar. Quando essas complicações ocorrem, o tratamento geralmente exige cirurgia de urgência, com recuperação mais prolongada. Por isso, mesmo em casos assintomáticos, a avaliação com um cirurgião do aparelho digestivo é recomendada para discutir o melhor momento e a melhor abordagem — que são sempre individualizados.
               </p>
             </div>
             <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
@@ -246,7 +246,7 @@ function Index() {
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
-                Quando a avaliação é necessária de urgência e quando pode ser eletiva
+                Quando buscar avaliação cirúrgica
               </h2>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
@@ -283,16 +283,16 @@ function Index() {
                 <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
                   <Clock size={22} aria-hidden="true" />
                   <h3 className="text-xl font-extrabold sm:text-[1.35rem]">
-                    Situações que permitem avaliação eletiva
+                    Situações que merecem avaliação com cirurgião
                   </h3>
                 </div>
                 <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-foreground/85">
                   {[
-                    "Pedra descoberta por acaso em exame de rotina sem sintomas",
-                    "Episódio isolado de cólica biliar já resolvida",
-                    "Dúvida sobre indicação cirúrgica recebida de outro profissional",
-                    "Desejo de entender melhor o caso antes de decidir",
-                    "Preparo para cirurgia eletiva com planejamento adequado",
+                    "Diagnóstico de pedra na vesícula em exame de rotina",
+                    "Episódios de cólica biliar ou dor pós-refeição",
+                    "Dúvida sobre conduta diante de diagnóstico recebido de outro profissional",
+                    "Pólipos ou alterações em vesícula identificados em ultrassom",
+                    "Desejo de entender melhor o caso e discutir as opções disponíveis",
                   ].map((s) => (
                     <li key={s} className="flex gap-3">
                       <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-cool-foreground)]" />
@@ -303,7 +303,7 @@ function Index() {
               </article>
             </div>
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
-              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, presença e frequência de sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser conduzida por um cirurgião do aparelho digestivo que analise o seu caso em profundidade. As principais diretrizes clínicas internacionais para manejo de doenças biliares, como as Tokyo Guidelines 2018, reforçam a importância da abordagem individualizada.
+              A decisão sobre operar ou acompanhar clinicamente é individualizada — depende de uma avaliação completa que considera seus sintomas, seus exames, seu histórico clínico, sua idade e suas preferências. Essa conversa acontece na consulta, com tempo adequado e explicação clara das opções.
             </p>
           </div>
         </section>
@@ -588,7 +588,7 @@ function Index() {
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20 text-center">
             <p className="eyebrow">Referências e diretrizes clínicas</p>
             <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-foreground/85 md:text-lg">
-              As condutas e recomendações apresentadas nesta página seguem diretrizes clínicas reconhecidas internacionalmente — especialmente as Tokyo Guidelines 2018 para manejo de doenças biliares — e estão alinhadas com a literatura cirúrgica mais atual em cirurgia do aparelho digestivo. As informações têm caráter educativo e não substituem a consulta médica individual, que é o único contexto adequado para avaliação de cada caso.
+              As informações desta página têm caráter educativo e estão alinhadas com a literatura cirúrgica contemporânea e com as principais diretrizes clínicas para manejo de doenças biliares. Não substituem a consulta médica individual, que é o contexto adequado para avaliação de cada caso.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-80">
               {["CBCD", "SBCBM", "ABCG"].map((logo) => (
@@ -614,23 +614,19 @@ function Index() {
             <ol className="mt-6 space-y-3 text-[13px] leading-[1.7] text-foreground/75">
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">1.</span>
-                <span>Loozen CS, van Ramshorst B, van Santvoort HC, Boerma D. Early Cholecystectomy for Acute Cholecystitis in the Elderly Population: A Systematic Review and Meta-Analysis. Digestive Surgery. 2017;34(5):371-379.</span>
+                <span>Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis. Journal of Hepato-Biliary-Pancreatic Sciences. 2018;25(1):73-86.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">2.</span>
-                <span>Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis: safe steps in laparoscopic cholecystectomy for acute cholecystitis. Journal of Hepato-Biliary-Pancreatic Sciences. 2018;25(1):73-86.</span>
+                <span>Loozen CS, van Ramshorst B, van Santvoort HC, Boerma D. Early Cholecystectomy for Acute Cholecystitis in the Elderly Population: A Systematic Review and Meta-Analysis. Digestive Surgery. 2017;34(5):371-379.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">3.</span>
-                <span>Columbus AB, et al. Operative vs Nonoperative Treatment of Acute Cholecystitis in Older Adults With Multimorbidity. JAMA Surgery. 2025.</span>
+                <span>Society of American Gastrointestinal and Endoscopic Surgeons (SAGES). Guidelines for the Clinical Application of Laparoscopic Biliary Tract Surgery. Disponível em sages.org/publications/guidelines.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">4.</span>
-                <span>Perfil epidemiológico da colelitíase no Brasil — dados do Sistema de Informações Hospitalares do SUS (SIH/DATASUS).</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">5.</span>
-                <span>Revista do Colégio Brasileiro de Cirurgiões — Colecistectomia videolaparoscópica: técnicas e indicações. Literatura nacional de cirurgia do aparelho digestivo.</span>
+                <span>Dados epidemiológicos nacionais: Sistema de Informações Hospitalares do SUS (SIH/DATASUS) e literatura brasileira em cirurgia do aparelho digestivo.</span>
               </li>
             </ol>
           </div>
