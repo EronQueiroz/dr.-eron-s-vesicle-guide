@@ -81,11 +81,11 @@ const faqItems = [
 const recoveryTimeline = [
   {
     when: "Dia 1–2",
-    text: "Repouso em casa. Alimentação líquida e pastosa nas primeiras refeições, progredindo para dieta leve. Leve desconforto abdominal esperado, controlado com analgesia oral. Evitar esforço físico. Cuidados com curativos conforme orientação.",
+    text: "Repouso em casa. Alimentação branda nas primeiras refeições. Leve desconforto abdominal esperado, controlado com analgesia oral. Evitar esforço físico. Cuidados com curativos conforme orientação.",
   },
   {
     when: "Dia 3–5",
-    text: "Retorno gradual às atividades cotidianas leves — caminhadas curtas, atividades domésticas simples. A maioria dos pacientes relata melhora significativa do desconforto.",
+    text: "Retorno gradual às atividades cotidianas leves como caminhadas curtas, atividades domésticas simples. A maioria dos pacientes relata melhora significativa do desconforto.",
   },
   {
     when: "Dia 7–10",
@@ -227,10 +227,10 @@ function Index() {
                 A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile, líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
               </p>
               <p>
-                A colelitíase — nome técnico para pedras na vesícula — ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
+                A colelitíase, nome técnico para pedras na vesícula, ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
               <p>
-                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos — e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas principais diretrizes clínicas internacionais, incluindo as Tokyo Guidelines, que norteiam o manejo de doenças biliares no mundo todo.
+                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas principais diretrizes clínicas internacionais, incluindo as Tokyo Guidelines, que norteiam o manejo de doenças biliares no mundo todo.
               </p>
             </div>
             <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
@@ -246,7 +246,7 @@ function Index() {
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
-                Quando a cirurgia é necessária — e quando ainda dá para avaliar com calma
+                Quando a avaliação é necessária de urgência e quando pode ser eletiva
               </h2>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
@@ -318,7 +318,7 @@ function Index() {
                 Colecistectomia videolaparoscópica: o que acontece em cada etapa
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A colecistectomia videolaparoscópica foi introduzida no final da década de 1980 e se consolidou como padrão-ouro mundial para tratamento de patologias benignas da vesícula biliar a partir dos anos 1990. No Brasil, a primeira cirurgia foi realizada no Hospital Albert Einstein, em São Paulo.
+                A colecistectomia videolaparoscópica foi introduzida no final da década de 1980 e se consolidou como padrão-ouro mundial para tratamento de patologias benignas da vesícula biliar a partir dos anos 1990.
               </p>
             </div>
 
@@ -330,11 +330,11 @@ function Index() {
                 },
                 {
                   label: "Durante",
-                  text: "São realizadas 3 a 4 incisões de 5 a 10 mm no abdome. Uma microcâmera é introduzida permitindo visualização ampliada da cavidade abdominal. A vesícula é cuidadosamente dissecada e removida. Duração média: 40 a 60 minutos em casos eletivos não complicados. Anestesia geral conduzida por equipe de anestesiologistas especializados.",
+                  text: "São realizadas 3 a 4 incisões de 5 a 10 mm no abdome. Uma microcâmera é introduzida permitindo visualização ampliada da cavidade abdominal. A vesícula é cuidadosamente dissecada e removida. Duração média: 60 a 90 minutos em casos eletivos não complicados. Anestesia geral conduzida por equipe de anestesiologistas especializados.",
                 },
                 {
                   label: "Depois",
-                  text: "Alta hospitalar no mesmo dia ou em até 24 horas na maioria dos casos. Retorno às atividades leves em 5 a 7 dias. Consulta de retorno incluída no acompanhamento. Cicatrizes pequenas que tendem a ficar imperceptíveis após alguns meses.",
+                  text: "Alta hospitalar no mesmo dia ou em até 24 horas na maioria dos casos. Retorno às atividades leves em 5 a 7 dias. Consulta de retorno para acompanhamento. Cicatrizes pequenas que tendem a ficar imperceptíveis após alguns meses.",
                 },
               ].map((step, i) => (
                 <li
@@ -372,7 +372,7 @@ function Index() {
                 Cirurgia de vesícula em pacientes idosos: o que muda na avaliação e no cuidado
               </h2>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
-                Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa — e a família faz parte dessa decisão.
+                Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa  e a família faz parte dessa decisão.
               </p>
             </div>
 
@@ -497,7 +497,7 @@ function Index() {
                   className="mt-10 pl-6 text-lg italic leading-relaxed text-primary-foreground md:text-xl"
                   style={{ borderLeft: "3px solid var(--color-sage)" }}
                 >
-                  Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente — e sua família — entenda o que está acontecendo, confie no plano e sinta que tem um profissional ao seu lado em cada etapa do processo.
+                  Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente  e sua família entenda o que está acontecendo, confie no plano e sinta que tem um profissional ao seu lado em cada etapa do processo.
                 </blockquote>
 
                 <p className="mt-8 flex items-start gap-3 text-sm text-primary-foreground/80">
@@ -575,7 +575,7 @@ function Index() {
               Perguntas frequentes sobre cirurgia de vesícula
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Respondidas com clareza — porque dúvida não resolvida vira medo.
+              Respondidas com clareza porque dúvida não resolvida vira medo.
             </p>
             <div className="mt-12 rounded-2xl bg-background p-2 shadow-sm sm:p-4">
               <FaqAccordion items={faqItems} />
