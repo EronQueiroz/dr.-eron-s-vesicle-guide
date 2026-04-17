@@ -172,8 +172,8 @@ function Index() {
                 alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
                 width={896}
                 height={1152}
-                className="relative aspect-[3/4] w-full rounded-[1.75rem] object-cover shadow-xl"
-                style={{ objectPosition: "50% 22%" }}
+                className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover shadow-xl"
+                style={{ objectPosition: "50% 18%", transform: "scale(1.18)", transformOrigin: "50% 25%" }}
                 fetchPriority="high"
               />
             </div>
