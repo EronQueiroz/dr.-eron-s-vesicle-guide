@@ -34,7 +34,7 @@ const faqItems = [
   },
   {
     q: "A cirurgia por vídeo é segura para idosos?",
-    a: "Sim, desde que haja avaliação pré-operatória adequada. A colecistectomia videolaparoscópica é geralmente preferível à cirurgia aberta mesmo em idosos, por causar menos trauma cirúrgico e permitir recuperação mais rápida. Estudos mostram que a cirurgia eletiva em idosos com risco controlado apresenta taxas de complicação substancialmente menores do que cirurgias de urgência.",
+    a: "Sim, desde que haja avaliação pré-operatória adequada. A colecistectomia videolaparoscópica é preferível à cirurgia aberta mesmo em pacientes idosos por causar menos trauma cirúrgico e permitir recuperação mais rápida. Estudos científicos recentes, incluindo meta-análises publicadas em periódicos internacionais, demonstram que a cirurgia eletiva planejada em idosos com risco controlado apresenta taxas de complicação substancialmente menores do que a cirurgia de urgência realizada após uma complicação como colecistite aguda.",
   },
   {
     q: "Quanto tempo dura a internação para colecistectomia?",
@@ -192,11 +192,11 @@ function Index() {
               </h2>
               <ul className="mt-8 space-y-4 text-base leading-relaxed text-foreground/90">
                 {[
-                  "A colelitíase (pedra na vesícula) afeta cerca de 10 a 15% da população adulta brasileira.",
-                  "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende de sintomas, tamanho dos cálculos e histórico clínico.",
-                  "A colecistectomia videolaparoscópica é o procedimento padrão-ouro, reconhecido pelo Colégio Brasileiro de Cirurgia Digestiva (CBCD).",
-                  "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos, com alta em geral em 24 horas.",
-                  "Pacientes idosos podem e frequentemente devem ser operados, desde que a avaliação pré-operatória seja criteriosa.",
+                  "A colelitíase (pedra na vesícula) afeta entre 10 e 20% da população adulta, com prevalência maior em mulheres; no Brasil, estudos apontam prevalência geral próxima de 9% na população assistida no SUS.",
+                  "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende da presença de sintomas, tamanho e número de cálculos, idade e condição clínica do paciente.",
+                  "A colecistectomia videolaparoscópica é o padrão-ouro mundial para tratamento cirúrgico de patologias benignas da vesícula biliar desde os anos 1990.",
+                  "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos em casos eletivos não complicados, com alta hospitalar em geral em até 24 horas.",
+                  "Pacientes idosos podem e frequentemente devem ser operados quando sintomáticos — estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span
@@ -224,10 +224,10 @@ function Index() {
                 A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile — líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
               </p>
               <p>
-                A colelitíase — nome técnico para pedras na vesícula — ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino, idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Segundo dados epidemiológicos brasileiros, cerca de 10 a 15% da população adulta apresenta colelitíase, e a maioria é assintomática.
+                A colelitíase — nome técnico para pedras na vesícula — ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
               <p>
-                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos — e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas sociedades médicas.
+                O ponto crítico é que pedras na vesícula podem permanecer completamente assintomáticas por anos — e de repente causar uma crise aguda. Por isso, o momento certo de avaliar e tratar é uma decisão individualizada, nunca baseada em regras genéricas. A presença de sintomas muda completamente a conduta recomendada pelas principais diretrizes clínicas internacionais, incluindo as Tokyo Guidelines, que norteiam o manejo de doenças biliares no mundo todo.
               </p>
             </div>
             <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
@@ -300,7 +300,7 @@ function Index() {
               </article>
             </div>
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
-              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser feita por um cirurgião do aparelho digestivo que conheça o seu caso em profundidade. As diretrizes do Colégio Brasileiro de Cirurgia Digestiva (CBCD) e da Sociedade Brasileira de Cirurgia reforçam essa abordagem individualizada.
+              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, presença e frequência de sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser conduzida por um cirurgião do aparelho digestivo que analise o seu caso em profundidade. As principais diretrizes clínicas internacionais para manejo de doenças biliares, como as Tokyo Guidelines 2018, reforçam a importância da abordagem individualizada.
             </p>
           </div>
         </section>
@@ -315,7 +315,7 @@ function Index() {
                 Colecistectomia videolaparoscópica: o que acontece em cada etapa
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A cirurgia minimamente invasiva é o padrão-ouro reconhecido internacionalmente para remoção da vesícula desde os anos 1990.
+                A colecistectomia videolaparoscópica foi introduzida no final da década de 1980 e se consolidou como padrão-ouro mundial para tratamento de patologias benignas da vesícula biliar a partir dos anos 1990. No Brasil, a primeira cirurgia foi realizada no Hospital Albert Einstein, em São Paulo.
               </p>
             </div>
 
@@ -375,7 +375,7 @@ function Index() {
 
             <div className="mt-12 space-y-6 text-base leading-[1.8] text-primary-foreground/90 md:text-lg">
               <p>
-                Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados, pois o risco de complicações graves aumenta significativamente nessa faixa etária quando a cirurgia é adiada. Estudos mostram que a mortalidade de uma colecistite aguda em idosos pode superar 10%, enquanto a cirurgia eletiva bem planejada apresenta riscos substancialmente menores.
+                Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados, pois o risco de complicações graves aumenta quando a cirurgia é adiada. Uma meta-análise publicada em Digestive Surgery (Karger, 2017), que avaliou 592 pacientes com idade média de 81 anos operados por colecistite aguda, documentou morbidade perioperatória de 24% e mortalidade de 3,5% — taxas superiores às observadas em pacientes mais jovens operados na mesma condição (morbidade aproximada de 15% e mortalidade abaixo de 1%). Estudo mais recente publicado no JAMA Surgery em 2025, comparando tratamento cirúrgico e não-cirúrgico em idosos com múltiplas comorbidades, demonstrou redução absoluta de 3% na mortalidade aos 30 dias e 4% aos 90 dias no grupo operado, além de menos readmissões hospitalares. Isso reforça que, quando bem indicada, a cirurgia eletiva planejada com critério é mais segura do que esperar a cirurgia de urgência.
               </p>
               <p>
                 A abordagem exige avaliação de risco cirúrgico mais detalhada (escala ASA, avaliação cardiológica), revisão cuidadosa de medicações em uso (especialmente anticoagulantes e antiagregantes), preparo nutricional e planejamento anestésico que considere a recuperação funcional, não apenas a física. O Dr. Eron Queiroz tem experiência específica com cirurgia digestiva em pacientes idosos e conduz essa avaliação de forma individualizada, incluindo a família nas decisões clínicas quando apropriado.
@@ -582,7 +582,7 @@ function Index() {
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20 text-center">
             <p className="eyebrow">Referências e diretrizes clínicas</p>
             <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-foreground/85 md:text-lg">
-              As condutas e recomendações apresentadas nesta página seguem diretrizes reconhecidas pelo Colégio Brasileiro de Cirurgia Digestiva (CBCD), pela Sociedade Brasileira de Cirurgia e pela literatura internacional em cirurgia do aparelho digestivo. Informações de caráter educativo — não substituem consulta médica individual.
+              As condutas e recomendações apresentadas nesta página seguem diretrizes clínicas reconhecidas internacionalmente — especialmente as Tokyo Guidelines 2018 para manejo de doenças biliares — e estão alinhadas com a literatura cirúrgica mais atual em cirurgia do aparelho digestivo. As informações têm caráter educativo e não substituem a consulta médica individual, que é o único contexto adequado para avaliação de cada caso.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-80">
               {["CBCD", "SBCBM", "ABCG"].map((logo) => (
@@ -594,6 +594,39 @@ function Index() {
                 </span>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 11.5 — Referências bibliográficas */}
+        <section className="bg-muted">
+          <div className="mx-auto max-w-3xl px-6 py-14 lg:px-8 md:py-16">
+            <p className="eyebrow mb-4">Referências bibliográficas</p>
+            <span className="sage-rule mb-6" aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Os dados epidemiológicos, clínicos e estatísticos citados nesta página baseiam-se nas seguintes fontes:
+            </p>
+            <ol className="mt-6 space-y-3 text-[13px] leading-[1.7] text-foreground/75">
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">1.</span>
+                <span>Loozen CS, van Ramshorst B, van Santvoort HC, Boerma D. Early Cholecystectomy for Acute Cholecystitis in the Elderly Population: A Systematic Review and Meta-Analysis. Digestive Surgery. 2017;34(5):371-379.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">2.</span>
+                <span>Wakabayashi G, Iwashita Y, Hibi T, et al. Tokyo Guidelines 2018: surgical management of acute cholecystitis: safe steps in laparoscopic cholecystectomy for acute cholecystitis. Journal of Hepato-Biliary-Pancreatic Sciences. 2018;25(1):73-86.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">3.</span>
+                <span>Columbus AB, et al. Operative vs Nonoperative Treatment of Acute Cholecystitis in Older Adults With Multimorbidity. JAMA Surgery. 2025.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">4.</span>
+                <span>Perfil epidemiológico da colelitíase no Brasil — dados do Sistema de Informações Hospitalares do SUS (SIH/DATASUS).</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex-shrink-0 font-bold text-[var(--color-sage-strong)]">5.</span>
+                <span>Revista do Colégio Brasileiro de Cirurgiões — Colecistectomia videolaparoscópica: técnicas e indicações. Literatura nacional de cirurgia do aparelho digestivo.</span>
+              </li>
+            </ol>
           </div>
         </section>
 
@@ -662,7 +695,7 @@ function Index() {
             </div>
 
             <p className="mt-16 border-t border-primary-foreground/15 pt-8 text-xs text-primary-foreground/55">
-              © 2026 Dr. Eron Queiroz. Última atualização desta página: abril de 2026.
+              © 2026 Dr. Eron Queiroz. Conteúdo médico revisado pelo Dr. Eron Queiroz, CRM-DF 26024. Última revisão: abril de 2026.
             </p>
           </div>
         </section>
