@@ -588,7 +588,7 @@ function Index() {
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20 text-center">
             <p className="eyebrow">Referências e diretrizes clínicas</p>
             <p className="measure-wide mx-auto mt-6 text-base leading-relaxed text-foreground/85 md:text-lg">
-              As condutas e recomendações apresentadas nesta página seguem diretrizes clínicas reconhecidas internacionalmente — especialmente as Tokyo Guidelines 2018 para manejo de doenças biliares — e estão alinhadas com a literatura cirúrgica mais atual em cirurgia do aparelho digestivo. As informações têm caráter educativo e não substituem a consulta médica individual, que é o único contexto adequado para avaliação de cada caso.
+              As informações desta página têm caráter educativo e estão alinhadas com a literatura cirúrgica contemporânea e com as principais diretrizes clínicas para manejo de doenças biliares. Não substituem a consulta médica individual, que é o contexto adequado para avaliação de cada caso.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-80">
               {["CBCD", "SBCBM", "ABCG"].map((logo) => (
