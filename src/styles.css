@@ -4,11 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Identidade visual Dr. Eron Queiroz / Clínica Lívere
+ * - Azul marinho institucional #2E4C6D (cor principal)
+ * - Verde sage #A8C5B0 (acento/CTA secundário)
+ * - Off-white quente #F4F1EC (fundo alternado)
+ * - Sans serif arredondada (Mulish) — sem serifa, alinhada ao site existente
+ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -17,69 +26,70 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-sage: var(--sage);
+  --color-sage-strong: var(--sage-strong);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
   --color-warm: var(--warm);
   --color-warm-foreground: var(--warm-foreground);
   --color-cool: var(--cool);
   --color-cool-foreground: var(--cool-foreground);
   --color-whatsapp: var(--whatsapp);
 
-  --font-serif: "Lora", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Mulish", "Inter", system-ui, sans-serif;
+  --font-display: "Mulish", "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.375rem;
+  --radius: 0.875rem;
 
-  /* Paleta editorial médica */
-  --background: oklch(1 0 0);                    /* #FFFFFF */
-  --foreground: oklch(0.18 0.02 250);            /* texto principal */
-  --muted: oklch(0.975 0.003 250);               /* #F7F8FA */
-  --muted-foreground: oklch(0.45 0.015 250);
+  --background: oklch(1 0 0);                       /* #FFFFFF */
+  --foreground: oklch(0.22 0.025 250);              /* texto principal */
+  --muted: oklch(0.965 0.008 80);                   /* off-white quente */
+  --muted-foreground: oklch(0.48 0.02 250);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 250);
+  --card-foreground: oklch(0.22 0.025 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 250);
+  --popover-foreground: oklch(0.22 0.025 250);
 
-  /* Azul marinho #1F3A5F */
-  --primary: oklch(0.32 0.06 252);
+  /* Azul marinho institucional #2E4C6D */
+  --primary: oklch(0.40 0.055 248);
   --primary-foreground: oklch(1 0 0);
+  --primary-soft: oklch(0.55 0.05 248);              /* azul intermediário do site */
 
-  --secondary: oklch(0.975 0.003 250);
-  --secondary-foreground: oklch(0.32 0.06 252);
+  --secondary: oklch(0.965 0.008 80);
+  --secondary-foreground: oklch(0.40 0.055 248);
 
-  --accent: oklch(0.975 0.003 250);
-  --accent-foreground: oklch(0.32 0.06 252);
+  --accent: oklch(0.965 0.008 80);
+  --accent-foreground: oklch(0.40 0.055 248);
+
+  /* Verde sage #A8C5B0 — substitui o dourado como cor de acento */
+  --sage: oklch(0.83 0.045 152);
+  --sage-strong: oklch(0.62 0.07 152);
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.92 0.005 250);
-  --input: oklch(0.92 0.005 250);
-  --ring: oklch(0.32 0.06 252);
+  --border: oklch(0.91 0.008 250);
+  --input: oklch(0.91 0.008 250);
+  --ring: oklch(0.40 0.055 248);
 
-  /* Dourado discreto #C9A84C */
-  --gold: oklch(0.74 0.12 85);
-
-  /* Bloco quente #FFF4E6 */
   --warm: oklch(0.972 0.025 75);
   --warm-foreground: oklch(0.45 0.12 55);
 
-  /* Bloco frio #E6F1FB */
   --cool: oklch(0.955 0.018 245);
-  --cool-foreground: oklch(0.38 0.08 250);
+  --cool-foreground: oklch(0.40 0.07 250);
 
   --whatsapp: oklch(0.72 0.18 145);
 }
@@ -99,28 +109,43 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: "ss01";
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-serif);
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.015em;
     color: var(--color-primary);
   }
 
-  /* Acento dourado em separadores */
-  .gold-rule {
-    width: 48px;
-    height: 2px;
-    background: var(--color-gold);
+  /* Tag pequena estilo "Cuidado especializado" / "Áreas de atuação" */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--color-sage-strong);
+  }
+
+  .eyebrow-on-dark {
+    color: var(--color-sage);
+  }
+
+  /* Acento sage curto (substitui a régua dourada) */
+  .sage-rule {
+    width: 56px;
+    height: 3px;
+    background: var(--color-sage-strong);
+    border-radius: 999px;
     display: block;
   }
 
-  .gold-rule-left {
-    border-left: 3px solid var(--color-gold);
+  .sage-rule-on-dark {
+    background: var(--color-sage);
   }
 
-  /* Editorial measure */
   .measure {
     max-width: 68ch;
   }
