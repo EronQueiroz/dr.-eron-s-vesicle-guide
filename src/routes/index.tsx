@@ -303,7 +303,7 @@ function Index() {
               </article>
             </div>
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
-              A decisão cirúrgica depende do seu caso específico — tamanho e número de cálculos, presença e frequência de sintomas, histórico clínico, condição geral e idade. Essa avaliação não pode ser feita por protocolo genérico; precisa ser conduzida por um cirurgião do aparelho digestivo que analise o seu caso em profundidade. As principais diretrizes clínicas internacionais para manejo de doenças biliares, como as Tokyo Guidelines 2018, reforçam a importância da abordagem individualizada.
+              A decisão sobre operar ou acompanhar clinicamente é individualizada — depende de uma avaliação completa que considera seus sintomas, seus exames, seu histórico clínico, sua idade e suas preferências. Essa conversa acontece na consulta, com tempo adequado e explicação clara das opções.
             </p>
           </div>
         </section>
