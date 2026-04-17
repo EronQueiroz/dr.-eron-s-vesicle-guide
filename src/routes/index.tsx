@@ -246,7 +246,7 @@ function Index() {
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
-                Quando a avaliação é necessária de urgência e quando pode ser eletiva
+                Quando buscar avaliação cirúrgica
               </h2>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
