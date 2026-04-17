@@ -34,7 +34,7 @@ const faqItems = [
   },
   {
     q: "A cirurgia por vídeo é segura para idosos?",
-    a: "Sim, desde que haja avaliação pré-operatória adequada. A colecistectomia videolaparoscópica é geralmente preferível à cirurgia aberta mesmo em idosos, por causar menos trauma cirúrgico e permitir recuperação mais rápida. Estudos mostram que a cirurgia eletiva em idosos com risco controlado apresenta taxas de complicação substancialmente menores do que cirurgias de urgência.",
+    a: "Sim, desde que haja avaliação pré-operatória adequada. A colecistectomia videolaparoscópica é preferível à cirurgia aberta mesmo em pacientes idosos por causar menos trauma cirúrgico e permitir recuperação mais rápida. Estudos científicos recentes, incluindo meta-análises publicadas em periódicos internacionais, demonstram que a cirurgia eletiva planejada em idosos com risco controlado apresenta taxas de complicação substancialmente menores do que a cirurgia de urgência realizada após uma complicação como colecistite aguda.",
   },
   {
     q: "Quanto tempo dura a internação para colecistectomia?",
