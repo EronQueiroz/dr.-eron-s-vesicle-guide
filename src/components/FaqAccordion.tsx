@@ -20,7 +20,7 @@ export function FaqAccordion({ items }: { items: Item[] }) {
               onClick={() => setOpen(isOpen ? null : i)}
               className="flex w-full items-start justify-between gap-6 py-5 text-left transition-colors hover:text-primary"
             >
-              <span className="font-serif text-lg font-medium text-primary md:text-xl">
+              <span className="pr-2 text-base font-bold leading-snug text-primary md:text-[1.0625rem]">
                 {it.q}
               </span>
               <span
