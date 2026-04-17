@@ -133,21 +133,21 @@ function Index() {
                 "radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 65%)",
             }}
           />
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-16 md:py-24 lg:px-8">
+          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:px-8">
             <div>
               <img
                 src={livereLogo}
                 alt="Logo Clínica Lívere"
                 width={120}
                 height={120}
-                className="mb-6 h-20 w-auto md:h-24"
+                className="mb-6 h-16 w-auto md:h-20"
                 fetchPriority="high"
               />
               <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
-              <h1 className="text-3xl font-extrabold leading-[1.15] text-primary sm:text-4xl md:text-[2.6rem] lg:text-[2.95rem]">
+              <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
                 Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
               </h1>
-              <p className="measure mt-7 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
                 Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico — e explica exatamente o que está acontecendo e quais são suas opções.
               </p>
               <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
@@ -158,7 +158,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
               <div
                 aria-hidden="true"
                 className="absolute -inset-4 -z-10 rounded-[2rem]"
