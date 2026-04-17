@@ -315,7 +315,7 @@ function Index() {
                 Colecistectomia videolaparoscópica: o que acontece em cada etapa
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A cirurgia minimamente invasiva é o padrão-ouro reconhecido internacionalmente para remoção da vesícula desde os anos 1990.
+                A colecistectomia videolaparoscópica foi introduzida no final da década de 1980 e se consolidou como padrão-ouro mundial para tratamento de patologias benignas da vesícula biliar a partir dos anos 1990. No Brasil, a primeira cirurgia foi realizada no Hospital Albert Einstein, em São Paulo.
               </p>
             </div>
 
