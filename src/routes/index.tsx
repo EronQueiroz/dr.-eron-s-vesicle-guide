@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
 import drEronFormal from "@/assets/dr-eron-formal.jpg";
-import livereLogo from "@/assets/livere-logo.svg";
+import livereLogo from "@/assets/livere-logo.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -139,9 +139,8 @@ function Index() {
                 src={livereLogo}
                 alt="Logo Clínica Lívere"
                 width={120}
-                height={132}
-                className="mb-6 h-24 w-auto text-primary md:h-28"
-                style={{ color: "var(--color-primary)" }}
+                height={120}
+                className="mb-6 h-20 w-auto md:h-24"
                 fetchPriority="high"
               />
               <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
