@@ -81,7 +81,7 @@ const faqItems = [
 const recoveryTimeline = [
   {
     when: "Dia 1–2",
-    text: "Repouso em casa. Alimentação branda nas primeiras refeições. Leve desconforto abdominal esperado, controlado com analgesia oral. Evitar esforço físico. Cuidados com curativos conforme orientação.",
+    text: "Repouso em casa. Alimentação leve nas primeiras refeições. Leve desconforto abdominal esperado, controlado com analgesia oral. Evitar esforço físico. Cuidados com curativos conforme orientação.",
   },
   {
     when: "Dia 3–5",
@@ -135,15 +135,16 @@ function Index() {
           />
           <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:px-8">
             <div>
+              <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
               <img
                 src={livereLogo}
                 alt="Logo Clínica Lívere"
                 width={120}
                 height={120}
-                className="mb-6 h-16 w-auto md:h-20"
+                className="mb-6 h-auto w-auto"
+                style={{ maxWidth: "120px", opacity: 0.85 }}
                 fetchPriority="high"
               />
-              <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
               <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
                 Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
               </h1>
@@ -199,7 +200,7 @@ function Index() {
                   "A indicação cirúrgica depende da avaliação individual de cada caso — sintomas, características das pedras, idade, condição clínica e preferência informada do paciente são considerados antes de qualquer decisão.",
                   "A colecistectomia videolaparoscópica é o padrão-ouro mundial para tratamento cirúrgico de patologias benignas da vesícula biliar desde os anos 1990.",
                   "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos em casos eletivos não complicados, com alta hospitalar em geral em até 24 horas.",
-                  "Pacientes idosos podem e frequentemente devem ser operados, estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
+                  "Pacientes idosos podem e frequentemente devem ser operados — estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span
@@ -330,7 +331,7 @@ function Index() {
                 },
                 {
                   label: "Durante",
-                  text: "São realizadas 3 a 4 incisões de 5 a 10 mm no abdome. Uma microcâmera é introduzida permitindo visualização ampliada da cavidade abdominal. A vesícula é cuidadosamente dissecada e removida. Duração média: 60 a 90 minutos em casos eletivos não complicados. Anestesia geral conduzida por equipe de anestesiologistas especializados.",
+                  text: "São realizadas 3 a 4 incisões de 5 a 10 mm no abdome. Uma microcâmera é introduzida permitindo visualização ampliada da cavidade abdominal. A vesícula é cuidadosamente dissecada e removida. Duração média: 40 a 60 minutos em casos eletivos não complicados. Anestesia geral conduzida por equipe de anestesiologistas especializados.",
                 },
                 {
                   label: "Depois",
@@ -372,13 +373,16 @@ function Index() {
                 Cirurgia de vesícula em pacientes idosos: o que muda na avaliação e no cuidado
               </h2>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
-                Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa  e a família faz parte dessa decisão.
+                Com o envelhecimento, a abordagem cirúrgica precisa ser ainda mais criteriosa, e a família faz parte dessa decisão.
               </p>
             </div>
 
             <div className="mt-12 space-y-6 text-base leading-[1.8] text-primary-foreground/90 md:text-lg">
               <p>
-                Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados, pois o risco de complicações graves aumenta quando a cirurgia é adiada. Uma meta-análise publicada em Digestive Surgery (Karger, 2017), que avaliou 592 pacientes com idade média de 81 anos operados por colecistite aguda, documentou morbidade perioperatória de 24% e mortalidade de 3,5% — taxas superiores às observadas em pacientes mais jovens operados na mesma condição (morbidade aproximada de 15% e mortalidade abaixo de 1%). Estudo mais recente publicado no JAMA Surgery em 2025, comparando tratamento cirúrgico e não-cirúrgico em idosos com múltiplas comorbidades, demonstrou redução absoluta de 3% na mortalidade aos 30 dias e 4% aos 90 dias no grupo operado, além de menos readmissões hospitalares. Isso reforça que, quando bem indicada, a cirurgia eletiva planejada com critério é mais segura do que esperar a cirurgia de urgência.
+                Pacientes acima de 70 anos com colelitíase sintomática podem e frequentemente devem ser operados. O risco de complicações graves aumenta quando a cirurgia é adiada — e quando essas complicações ocorrem, o tratamento exige cirurgia de urgência, com maior risco cirúrgico e recuperação mais prolongada.
+              </p>
+              <p>
+                Uma meta-análise publicada em Digestive Surgery (Karger, 2017) avaliou 592 pacientes com idade média de 81 anos operados por colecistite aguda e documentou morbidade perioperatória de 24% e mortalidade de 3,5% — taxas superiores às observadas em pacientes mais jovens na mesma condição. Estudo publicado no JAMA Surgery em 2025 demonstrou que o tratamento cirúrgico em idosos com múltiplas comorbidades reduziu a mortalidade em 3% aos 30 dias e em 4% aos 90 dias, além de gerar menos readmissões hospitalares.
               </p>
               <p>
                 A abordagem exige avaliação de risco cirúrgico mais detalhada (escala ASA, avaliação cardiológica), revisão cuidadosa de medicações em uso (especialmente anticoagulantes e antiagregantes), preparo nutricional e planejamento anestésico que considere a recuperação funcional, não apenas a física. O Dr. Eron Queiroz tem experiência específica com cirurgia digestiva em pacientes idosos e conduz essa avaliação de forma individualizada, incluindo a família nas decisões clínicas quando apropriado.
@@ -575,7 +579,7 @@ function Index() {
               Perguntas frequentes sobre cirurgia de vesícula
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Respondidas com clareza porque dúvida não resolvida vira medo.
+              Respondidas com clareza, porque dúvida não resolvida vira medo.
             </p>
             <div className="mt-12 rounded-2xl bg-background p-2 shadow-sm sm:p-4">
               <FaqAccordion items={faqItems} />
