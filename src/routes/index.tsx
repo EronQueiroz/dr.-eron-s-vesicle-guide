@@ -148,7 +148,7 @@ function Index() {
                 Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim.
               </h1>
               <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
-                Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico — e explica exatamente o que está acontecendo e quais são suas opções.
+                Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
               </p>
               <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />
@@ -199,7 +199,7 @@ function Index() {
                   "Nem toda pedra na vesícula requer cirurgia imediata — a indicação depende da presença de sintomas, tamanho e número de cálculos, idade e condição clínica do paciente.",
                   "A colecistectomia videolaparoscópica é o padrão-ouro mundial para tratamento cirúrgico de patologias benignas da vesícula biliar desde os anos 1990.",
                   "A cirurgia minimamente invasiva tem duração média de 40 a 60 minutos em casos eletivos não complicados, com alta hospitalar em geral em até 24 horas.",
-                  "Pacientes idosos podem e frequentemente devem ser operados quando sintomáticos — estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
+                  "Pacientes idosos podem e frequentemente devem ser operados, estudos mostram que a cirurgia eletiva bem planejada apresenta riscos substancialmente menores que a cirurgia de urgência.",
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span
@@ -224,7 +224,7 @@ function Index() {
             </h2>
             <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
               <p>
-                A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile — líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
+                A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile, líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
               </p>
               <p>
                 A colelitíase — nome técnico para pedras na vesícula — ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
@@ -497,7 +497,7 @@ function Index() {
                   className="mt-10 pl-6 text-lg italic leading-relaxed text-primary-foreground md:text-xl"
                   style={{ borderLeft: "3px solid var(--color-sage)" }}
                 >
-                  Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente — e sua família — entenda o que está acontecendo, confie no plano e sinta que tem um profissional disponível em cada etapa do processo.
+                  Acredito que o trabalho do cirurgião começa muito antes do centro cirúrgico e termina bem depois da alta. Meu objetivo é garantir que cada paciente — e sua família — entenda o que está acontecendo, confie no plano e sinta que tem um profissional ao seu lado em cada etapa do processo.
                 </blockquote>
 
                 <p className="mt-8 flex items-start gap-3 text-sm text-primary-foreground/80">
