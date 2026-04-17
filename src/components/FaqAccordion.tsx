@@ -25,7 +25,7 @@ export function FaqAccordion({ items }: { items: Item[] }) {
               </span>
               <span
                 aria-hidden="true"
-                className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center text-[var(--color-gold)]"
+                className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center text-[var(--color-sage-strong)]"
               >
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
               </span>
