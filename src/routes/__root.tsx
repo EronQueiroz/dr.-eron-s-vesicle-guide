@@ -109,7 +109,7 @@ const JSON_LD_SCHEMA = {
   "@graph": [
     {
       "@type": "Physician",
-      "@id": "https://gall-wisdom-web.lovable.app/#physician",
+      "@id": "https://vesicula.dreronqueiroz.com.br/#physician",
       name: "Dr. Eron Queiroz",
       alternateName: "Eron Queiroz",
       description:
@@ -125,18 +125,18 @@ const JSON_LD_SCHEMA = {
         { "@type": "MedicalOrganization", name: "Colégio Brasileiro de Cirurgia Digestiva (CBCD)" },
         { "@type": "MedicalOrganization", name: "Associação Brasileira de Câncer Gástrico (ABCG)" },
       ],
-      worksFor: { "@id": "https://gall-wisdom-web.lovable.app/#clinic" },
-      url: "https://gall-wisdom-web.lovable.app/",
+      worksFor: { "@id": "https://vesicula.dreronqueiroz.com.br/#clinic" },
+      url: "https://vesicula.dreronqueiroz.com.br/",
       telephone: "+55-61-3546-6409",
       email: "clinicalivere@gmail.com",
     },
     {
       "@type": ["MedicalBusiness", "LocalBusiness"],
-      "@id": "https://gall-wisdom-web.lovable.app/#clinic",
+      "@id": "https://vesicula.dreronqueiroz.com.br/#clinic",
       name: "Clínica Lívere — Dr. Eron Queiroz",
       description:
         "Clínica especializada em cirurgia do aparelho digestivo em Brasília/DF. Referência em cirurgia de vesícula biliar (colecistectomia videolaparoscópica).",
-      url: "https://gall-wisdom-web.lovable.app/",
+      url: "https://vesicula.dreronqueiroz.com.br/",
       telephone: "+55-61-3546-6409",
       email: "clinicalivere@gmail.com",
       address: {
@@ -184,7 +184,7 @@ const JSON_LD_SCHEMA = {
     },
     {
       "@type": "MedicalProcedure",
-      "@id": "https://gall-wisdom-web.lovable.app/#procedure",
+      "@id": "https://vesicula.dreronqueiroz.com.br/#procedure",
       name: "Colecistectomia Videolaparoscópica",
       alternateName: "Cirurgia de Vesícula por Vídeo",
       description:
@@ -195,7 +195,7 @@ const JSON_LD_SCHEMA = {
       preparation: "Jejum de 8 horas, revisão de medicações em uso, avaliação pré-anestésica.",
       howPerformed:
         "Videolaparoscopia com anestesia geral. Duração média de 40 a 60 minutos em casos eletivos.",
-      performer: { "@id": "https://gall-wisdom-web.lovable.app/#physician" },
+      performer: { "@id": "https://vesicula.dreronqueiroz.com.br/#physician" },
     },
     {
       "@type": "FAQPage",
@@ -252,15 +252,15 @@ const JSON_LD_SCHEMA = {
     },
     {
       "@type": "WebPage",
-      "@id": "https://gall-wisdom-web.lovable.app/#webpage",
-      url: "https://gall-wisdom-web.lovable.app/",
+      "@id": "https://vesicula.dreronqueiroz.com.br/#webpage",
+      url: "https://vesicula.dreronqueiroz.com.br/",
       name: "Cirurgia de Vesícula em Brasília | Dr. Eron Queiroz — Clínica Lívere",
       description:
         "Dr. Eron Queiroz, cirurgião do aparelho digestivo em Brasília/DF, CRM-DF 26024. Avaliação individualizada para cirurgia de vesícula biliar (colecistectomia) por videolaparoscopia na Clínica Lívere, Asa Sul.",
       inLanguage: "pt-BR",
-      isPartOf: { "@id": "https://gall-wisdom-web.lovable.app/#clinic" },
-      about: { "@id": "https://gall-wisdom-web.lovable.app/#procedure" },
-      author: { "@id": "https://gall-wisdom-web.lovable.app/#physician" },
+      isPartOf: { "@id": "https://vesicula.dreronqueiroz.com.br/#clinic" },
+      about: { "@id": "https://vesicula.dreronqueiroz.com.br/#procedure" },
+      author: { "@id": "https://vesicula.dreronqueiroz.com.br/#physician" },
       dateModified: "2026-04-17",
       keywords:
         "cirurgia vesícula Brasília, colecistectomia Brasília, cirurgião vesícula DF, pedra na vesícula Brasília, Dr. Eron Queiroz",
