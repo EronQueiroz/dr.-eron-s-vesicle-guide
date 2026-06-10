@@ -17,9 +17,17 @@ import livereLogo from "@/assets/livere-logo.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  loader: () => getGoogleReviews(),
+  errorComponent: ({ error }) => (
+    <div className="p-8 text-center text-sm text-muted-foreground">{error.message}</div>
+  ),
+  notFoundComponent: () => (
+    <div className="p-8 text-center text-sm text-muted-foreground">Página não encontrada.</div>
+  ),
 });
 
 const WHATSAPP_URL =
@@ -582,50 +590,21 @@ function Index() {
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
                 O que dizem os pacientes
               </h2>
-              <div className="mt-6 inline-flex flex-col items-center gap-1">
-                <p className="text-sm font-extrabold tracking-wider text-foreground">EXCELENTE</p>
-                <div className="flex gap-0.5 text-[#FBBF24]" aria-label="5 de 5 estrelas">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                  ))}
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Avaliações verificadas — fonte: Google Meu Negócio Dr. Eron Queiroz
-                </p>
-              </div>
+              <ReviewsHeader />
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
-              {testimonials.map((t) => (
-                <article
-                  key={t.name}
-                  className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm"
-                >
-                  <div className="flex items-center justify-between">
-                  <div className="flex gap-0.5 text-[#C9A84C]" aria-label="5 de 5 estrelas">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                      ))}
-                    </div>
-                    <span
-                      className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold text-muted-foreground"
-                      style={{ backgroundColor: "var(--color-background)" }}
-                      aria-label="Avaliação Google"
-                    >
-                      G
-                    </span>
-                  </div>
-                  <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
-                    “{t.text}”
-                  </p>
-                  <p className="mt-6 border-t border-border pt-4 text-sm font-bold text-primary">
-                    {t.name}
-                  </p>
-                </article>
-              ))}
-            </div>
+            <ReviewsGrid />
 
-            <div id="trustindex-embed" className="mt-12" aria-label="Widget Google Meu Negócio (a configurar)" />
+            <div className="mt-10 text-center">
+              <a
+                href="https://search.google.com/local/reviews?placeid=ChIJcTY0vxKTcQ0RO4RJ7UWbh5I"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Ver todas as avaliações no Google
+              </a>
+            </div>
           </div>
         </section>
 
@@ -779,5 +758,112 @@ function Index() {
         </section>
       </main>
     </>
+  );
+}
+
+function StarRow({ count = 5, colorClass = "text-[#FBBF24]" }: { count?: number; colorClass?: string }) {
+  return (
+    <div className={`flex gap-0.5 ${colorClass}`} aria-label={`${count} de 5 estrelas`}>
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+      ))}
+    </div>
+  );
+}
+
+function ReviewsHeader() {
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
+  const hasLive = data && data.rating != null && data.userRatingCount != null;
+  const ratingText = hasLive
+    ? data.rating!.toFixed(1).replace(".", ",")
+    : null;
+  return (
+    <div className="mt-6 inline-flex flex-col items-center gap-2">
+      {hasLive ? (
+        <>
+          <div className="flex items-center gap-3">
+            <span className="text-3xl font-extrabold text-primary">{ratingText}</span>
+            <StarRow />
+          </div>
+          <p className="text-sm font-semibold text-foreground">
+            {data.userRatingCount} avaliações no Google
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="text-sm font-extrabold tracking-wider text-foreground">EXCELENTE</p>
+          <StarRow />
+        </>
+      )}
+      <p className="mt-1 text-xs text-muted-foreground">
+        Avaliações verificadas — fonte: Google
+      </p>
+    </div>
+  );
+}
+
+function ReviewsGrid() {
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
+  const liveReviews: GoogleReview[] = (data?.reviews ?? []).filter(
+    (r) => r.text && r.text.trim().length > 0,
+  );
+
+  if (liveReviews.length > 0) {
+    return (
+      <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+        {liveReviews.map((r, idx) => (
+          <ReviewCard
+            key={`${r.authorName}-${idx}`}
+            text={r.text}
+            name={r.authorName}
+            when={r.relativePublishTimeDescription}
+            rating={r.rating}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+      {testimonials.map((t) => (
+        <ReviewCard key={t.name} text={t.text} name={t.name} />
+      ))}
+    </div>
+  );
+}
+
+function ReviewCard({
+  text,
+  name,
+  when,
+  rating = 5,
+}: {
+  text: string;
+  name: string;
+  when?: string;
+  rating?: number;
+}) {
+  const stars = Math.max(1, Math.min(5, Math.round(rating)));
+  return (
+    <article className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
+      <div className="flex items-center justify-between">
+        <StarRow count={stars} colorClass="text-[#C9A84C]" />
+        <span
+          className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold text-muted-foreground"
+          style={{ backgroundColor: "var(--color-background)" }}
+          aria-label="Avaliação Google"
+        >
+          G
+        </span>
+      </div>
+      <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
+        “{text}”
+      </p>
+      <div className="mt-6 border-t border-border pt-4">
+        <p className="text-sm font-bold text-primary">{name}</p>
+        {when ? <p className="mt-0.5 text-xs text-muted-foreground">{when}</p> : null}
+      </div>
+    </article>
   );
 }

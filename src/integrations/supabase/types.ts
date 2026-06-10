@@ -14,7 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      google_places_cache: {
+        Row: {
+          fetched_at: string
+          payload: Json
+          place_id: string
+        }
+        Insert: {
+          fetched_at?: string
+          payload: Json
+          place_id: string
+        }
+        Update: {
+          fetched_at?: string
+          payload?: Json
+          place_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
