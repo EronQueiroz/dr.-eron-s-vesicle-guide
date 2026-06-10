@@ -17,9 +17,17 @@ import livereLogo from "@/assets/livere-logo.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { getGoogleReviews, type GoogleReview } from "@/lib/google-reviews.functions";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  loader: () => getGoogleReviews(),
+  errorComponent: ({ error }) => (
+    <div className="p-8 text-center text-sm text-muted-foreground">{error.message}</div>
+  ),
+  notFoundComponent: () => (
+    <div className="p-8 text-center text-sm text-muted-foreground">Página não encontrada.</div>
+  ),
 });
 
 const WHATSAPP_URL =
