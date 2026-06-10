@@ -590,50 +590,21 @@ function Index() {
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
                 O que dizem os pacientes
               </h2>
-              <div className="mt-6 inline-flex flex-col items-center gap-1">
-                <p className="text-sm font-extrabold tracking-wider text-foreground">EXCELENTE</p>
-                <div className="flex gap-0.5 text-[#FBBF24]" aria-label="5 de 5 estrelas">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                  ))}
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Avaliações verificadas — fonte: Google Meu Negócio Dr. Eron Queiroz
-                </p>
-              </div>
+              <ReviewsHeader />
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
-              {testimonials.map((t) => (
-                <article
-                  key={t.name}
-                  className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm"
-                >
-                  <div className="flex items-center justify-between">
-                  <div className="flex gap-0.5 text-[#C9A84C]" aria-label="5 de 5 estrelas">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                      ))}
-                    </div>
-                    <span
-                      className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold text-muted-foreground"
-                      style={{ backgroundColor: "var(--color-background)" }}
-                      aria-label="Avaliação Google"
-                    >
-                      G
-                    </span>
-                  </div>
-                  <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
-                    “{t.text}”
-                  </p>
-                  <p className="mt-6 border-t border-border pt-4 text-sm font-bold text-primary">
-                    {t.name}
-                  </p>
-                </article>
-              ))}
-            </div>
+            <ReviewsGrid />
 
-            <div id="trustindex-embed" className="mt-12" aria-label="Widget Google Meu Negócio (a configurar)" />
+            <div className="mt-10 text-center">
+              <a
+                href="https://search.google.com/local/reviews?placeid=ChIJcTY0vxKTcQ0RO4RJ7UWbh5I"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Ver todas as avaliações no Google
+              </a>
+            </div>
           </div>
         </section>
 
