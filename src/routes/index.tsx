@@ -185,6 +185,33 @@ function Index() {
 
         {/* SEÇÃO 2 — RESUMO 30s */}
         <section className="bg-muted">
+        </section>
+
+        {/* SEÇÃO VÍDEO */}
+        <section className="bg-background">
+          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+            <p className="eyebrow">Em vídeo</p>
+            <span className="sage-rule mt-3" />
+            <h2 className="mt-5 text-3xl font-extrabold text-primary sm:text-[2rem]">
+              Entenda a cirurgia de vesícula com o Dr. Eron
+            </h2>
+            <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
+              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/CBFp67JD8KY?enablejsapi=1&rel=0"
+                  title="Vídeo do Dr. Eron Queiroz sobre cirurgia de vesícula biliar"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO 2 — RESUMO 30s (continuação) */}
+        <section className="bg-muted">
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <div
               className="rounded-2xl border border-border bg-background px-6 py-9 shadow-sm sm:px-10 sm:py-11"
