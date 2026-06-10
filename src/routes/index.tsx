@@ -312,6 +312,31 @@ function Index() {
           </div>
         </section>
 
+        {/* Convite intermediário */}
+        <section className="bg-background">
+          <div className="mx-auto max-w-3xl px-6 py-12 lg:px-8 md:py-16">
+            <div className="rounded-2xl border border-border bg-muted p-7 text-center shadow-sm sm:p-9">
+              <p className="text-[15px] leading-relaxed text-foreground/85 md:text-base">
+                Se você se identificou com alguma dessas situações, vale conversar sobre o seu caso. A primeira consulta serve para entender — não há compromisso cirúrgico.
+              </p>
+              <a
+                href="https://wa.me/556135466409?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20cirurgia%20de%20ves%C3%ADcula%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: "whatsapp_click", origem: "convite_intermediario" });
+                  }
+                }}
+                className="mt-6 inline-flex items-center justify-center rounded-full border-2 border-primary bg-transparent px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Conversar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* SEÇÃO 5 — Como é a cirurgia */}
         <section>
           <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
