@@ -17,7 +17,7 @@ import livereLogo from "@/assets/livere-logo.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { getGoogleReviews, type GoogleReview } from "@/lib/google-reviews.functions";
+import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -772,7 +772,7 @@ function StarRow({ count = 5, colorClass = "text-[#FBBF24]" }: { count?: number;
 }
 
 function ReviewsHeader() {
-  const data = Route.useLoaderData();
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
   const hasLive = data && data.rating != null && data.userRatingCount != null;
   const ratingText = hasLive
     ? data.rating!.toFixed(1).replace(".", ",")
@@ -803,8 +803,10 @@ function ReviewsHeader() {
 }
 
 function ReviewsGrid() {
-  const data = Route.useLoaderData();
-  const liveReviews = (data?.reviews ?? []).filter((r) => r.text && r.text.trim().length > 0);
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
+  const liveReviews: GoogleReview[] = (data?.reviews ?? []).filter(
+    (r) => r.text && r.text.trim().length > 0,
+  );
 
   if (liveReviews.length > 0) {
     return (
