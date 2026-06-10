@@ -189,8 +189,11 @@ function Index() {
             <p className="eyebrow">Em vídeo</p>
             <span className="sage-rule mt-3" />
             <h2 className="mt-5 text-3xl font-extrabold text-primary sm:text-[2rem]">
-              Entenda a cirurgia de vesícula com o Dr. Eron
+              As dúvidas mais comuns sobre cirurgia de vesícula, respondidas pelo Dr. Eron
             </h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/85 sm:text-[1.0625rem]">
+              Em quatro minutos: por que a vesícula é retirada por inteiro, como o corpo se adapta sem ela, como é a técnica minimamente invasiva e por que operar no momento certo, de forma eletiva, torna o procedimento mais seguro.
+            </p>
             <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
               <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                 <iframe
