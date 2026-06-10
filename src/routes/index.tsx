@@ -760,3 +760,108 @@ function Index() {
     </>
   );
 }
+
+function StarRow({ count = 5, colorClass = "text-[#FBBF24]" }: { count?: number; colorClass?: string }) {
+  return (
+    <div className={`flex gap-0.5 ${colorClass}`} aria-label={`${count} de 5 estrelas`}>
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+      ))}
+    </div>
+  );
+}
+
+function ReviewsHeader() {
+  const data = Route.useLoaderData();
+  const hasLive = data && data.rating != null && data.userRatingCount != null;
+  const ratingText = hasLive
+    ? data.rating!.toFixed(1).replace(".", ",")
+    : null;
+  return (
+    <div className="mt-6 inline-flex flex-col items-center gap-2">
+      {hasLive ? (
+        <>
+          <div className="flex items-center gap-3">
+            <span className="text-3xl font-extrabold text-primary">{ratingText}</span>
+            <StarRow />
+          </div>
+          <p className="text-sm font-semibold text-foreground">
+            {data.userRatingCount} avaliações no Google
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="text-sm font-extrabold tracking-wider text-foreground">EXCELENTE</p>
+          <StarRow />
+        </>
+      )}
+      <p className="mt-1 text-xs text-muted-foreground">
+        Avaliações verificadas — fonte: Google
+      </p>
+    </div>
+  );
+}
+
+function ReviewsGrid() {
+  const data = Route.useLoaderData();
+  const liveReviews = (data?.reviews ?? []).filter((r) => r.text && r.text.trim().length > 0);
+
+  if (liveReviews.length > 0) {
+    return (
+      <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+        {liveReviews.map((r, idx) => (
+          <ReviewCard
+            key={`${r.authorName}-${idx}`}
+            text={r.text}
+            name={r.authorName}
+            when={r.relativePublishTimeDescription}
+            rating={r.rating}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+      {testimonials.map((t) => (
+        <ReviewCard key={t.name} text={t.text} name={t.name} />
+      ))}
+    </div>
+  );
+}
+
+function ReviewCard({
+  text,
+  name,
+  when,
+  rating = 5,
+}: {
+  text: string;
+  name: string;
+  when?: string;
+  rating?: number;
+}) {
+  const stars = Math.max(1, Math.min(5, Math.round(rating)));
+  return (
+    <article className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
+      <div className="flex items-center justify-between">
+        <StarRow count={stars} colorClass="text-[#C9A84C]" />
+        <span
+          className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold text-muted-foreground"
+          style={{ backgroundColor: "var(--color-background)" }}
+          aria-label="Avaliação Google"
+        >
+          G
+        </span>
+      </div>
+      <p className="mt-5 flex-1 text-[15px] leading-[1.7] text-foreground/85">
+        “{text}”
+      </p>
+      <div className="mt-6 border-t border-border pt-4">
+        <p className="text-sm font-bold text-primary">{name}</p>
+        {when ? <p className="mt-0.5 text-xs text-muted-foreground">{when}</p> : null}
+      </div>
+    </article>
+  );
+}
