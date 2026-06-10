@@ -9,6 +9,7 @@ import {
   MapPin,
   Mail,
   Phone,
+  Instagram,
 } from "lucide-react";
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
 import drEronFormal from "@/assets/dr-eron-formal.jpg";
@@ -742,6 +743,19 @@ function Index() {
                   <Mail size={14} aria-hidden="true" />
                   <a href="mailto:clinicalivere@gmail.com" className="hover:text-primary-foreground">
                     clinicalivere@gmail.com
+                  </a>
+                </span>
+                <span aria-hidden="true" className="text-primary-foreground/40">|</span>
+                <span className="inline-flex items-center gap-2">
+                  <Instagram size={14} aria-hidden="true" />
+                  <a
+                    href="https://www.instagram.com/dreronqueiroz/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram do Dr. Eron Queiroz"
+                    className="hover:text-primary-foreground"
+                  >
+                    @dreronqueiroz
                   </a>
                 </span>
               </p>
