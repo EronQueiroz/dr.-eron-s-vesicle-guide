@@ -183,10 +183,6 @@ function Index() {
           </div>
         </section>
 
-        {/* SEÇÃO 2 — RESUMO 30s */}
-        <section className="bg-muted">
-        </section>
-
         {/* SEÇÃO VÍDEO */}
         <section className="bg-background">
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
@@ -210,7 +206,7 @@ function Index() {
           </div>
         </section>
 
-        {/* SEÇÃO 2 — RESUMO 30s (continuação) */}
+        {/* SEÇÃO 2 — RESUMO 30s */}
         <section className="bg-muted">
           <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <div
