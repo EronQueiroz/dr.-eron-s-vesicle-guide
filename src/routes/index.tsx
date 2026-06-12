@@ -20,6 +20,7 @@ import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Reveal } from "@/components/Reveal";
+import { YouTubeFacade } from "@/components/YouTubeFacade";
 import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 const SITE_URL = "https://vesicula.dreronqueiroz.com.br";
