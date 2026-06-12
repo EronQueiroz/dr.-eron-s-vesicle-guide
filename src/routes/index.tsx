@@ -14,14 +14,37 @@ import {
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
 import drEronFormal from "@/assets/dr-eron-formal.jpg";
 import livereLogo from "@/assets/livere-logo.jpg";
+import ogCover from "@/assets/og-cover.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
+const SITE_URL = "https://vesicula.dreronqueiroz.com.br";
+const PAGE_TITLE = "Cirurgia de Vesícula em Brasília | Dr. Eron Queiroz";
+const PAGE_DESCRIPTION =
+  "Cirurgia de vesícula em Brasília. Avaliação criteriosa, técnica minimamente invasiva e acompanhamento completo, do diagnóstico à recuperação. Dr. Eron Queiroz.";
+
 export const Route = createFileRoute("/")({
   component: Index,
   loader: () => getGoogleReviews(),
+  head: () => ({
+    meta: [
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}${ogCover}` },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: `${SITE_URL}${ogCover}` },
+    ],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "preload", as: "image", href: drEronPortrait, fetchpriority: "high" } as any,
+    ],
+  }),
   errorComponent: ({ error }) => (
     <div className="p-8 text-center text-sm text-muted-foreground">{error.message}</div>
   ),
