@@ -813,7 +813,7 @@ function ReviewCard({
 }) {
   const stars = Math.max(1, Math.min(5, Math.round(rating)));
   return (
-    <article className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
+    <article className="hover-lift flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
       <div className="flex items-center justify-between">
         <StarRow count={stars} colorClass="text-[#C9A84C]" />
         <span
