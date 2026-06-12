@@ -35,6 +35,7 @@ export const Route = createRootRoute({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "Dr. Eron Queiroz — Clínica Lívere" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "x3jyOjs7gpUcJga1GLhN57-mz1P-PS2ZWTTSwZ0ps_0" },
     ],
     links: [
       {
