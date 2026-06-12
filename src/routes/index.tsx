@@ -867,33 +867,33 @@ function HeroSection() {
         </g>
       </svg>
 
-      <div className="relative mx-auto grid min-h-[90vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.35fr_1fr] md:gap-14 md:py-24 lg:gap-20 lg:px-8">
+      <div className="relative mx-auto grid min-h-[90vh] max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[1.2fr_1fr] md:gap-14 md:py-20 lg:gap-20 lg:px-8">
         <div>
-          <p className="eyebrow eyebrow-on-dark mb-5 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
+          <p className="eyebrow eyebrow-on-dark mb-6 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
           <img
             src={livereLogoLight}
             alt="Logo Clínica Lívere"
-            width={104}
-            height={104}
-            className="mb-7 h-auto w-auto hero-rise hero-rise-2"
-            style={{ maxWidth: "104px", opacity: 0.95 }}
+            width={176}
+            height={176}
+            className="mb-8 h-16 w-auto hero-rise hero-rise-2 md:h-20 lg:h-24"
+            style={{ opacity: 0.95 }}
             fetchPriority="high"
           />
-          <h1 className="font-serif-display hero-rise hero-rise-2 text-[2.25rem] leading-[1.08] text-primary-foreground sm:text-[2.75rem] md:text-[3.1rem] lg:text-[3.5rem]">
+          <h1 className="font-serif-display hero-rise hero-rise-2 text-[1.875rem] leading-[1.15] text-primary-foreground sm:text-[2.25rem] md:text-[2.5rem] lg:text-[2.875rem]">
             Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento{" "}
             <span className="text-gold italic">do início ao fim</span>
           </h1>
 
-          <p className="hero-rise hero-rise-3 mt-5 text-sm tracking-[0.04em] text-primary-foreground/75 md:text-[15px]">
+          <p className="hero-rise hero-rise-3 mt-4 text-[13px] tracking-[0.04em] text-primary-foreground/75 md:text-sm">
             CRM-DF 26024 · RQE 17279 · Cirurgião do Aparelho Digestivo
           </p>
 
-          <p className="measure hero-rise hero-rise-4 mt-7 text-[1.0625rem] leading-[1.75] text-primary-foreground/85 md:text-lg">
+          <p className="measure hero-rise hero-rise-4 mt-6 text-base leading-[1.7] text-primary-foreground/85 md:text-[1.0625rem]">
             Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
           </p>
 
           {/* Selo de prova social — Google reviews ao vivo */}
-          <div className="hero-rise hero-rise-5 mt-9 inline-flex items-center gap-3 rounded-full border border-primary-foreground/15 bg-primary-foreground/[0.06] px-4 py-2 backdrop-blur-sm">
+          <div className="hero-rise hero-rise-5 mt-8 inline-flex items-center gap-3 rounded-full border border-primary-foreground/15 bg-primary-foreground/[0.06] px-4 py-2 backdrop-blur-sm">
             <span className="text-base font-bold text-gold" aria-hidden="true">★</span>
             <span className="text-sm font-semibold tracking-wide text-primary-foreground">
               {hasLive ? (
@@ -907,7 +907,7 @@ function HeroSection() {
             </span>
           </div>
 
-          <div className="hero-rise hero-rise-5 mt-7 flex items-start gap-3 text-sm leading-relaxed text-primary-foreground/70">
+          <div className="hero-rise hero-rise-5 mt-6 flex items-start gap-3 text-[13px] leading-relaxed text-primary-foreground/70 md:text-sm">
             <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
             <span>Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF</span>
           </div>
