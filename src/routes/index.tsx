@@ -18,6 +18,7 @@ import ogCover from "@/assets/og-cover.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { Reveal } from "@/components/Reveal";
 import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 const SITE_URL = "https://vesicula.dreronqueiroz.com.br";
