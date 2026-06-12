@@ -14,7 +14,8 @@ import {
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
 import drEronFormal from "@/assets/dr-eron-formal.jpg";
 import livereLogo from "@/assets/livere-logo.jpg";
-import livereLogoLight from "@/assets/livere-logo-light.png";
+import livereLogoLight200 from "@/assets/livere-logo-light-200.webp.asset.json";
+import livereLogoLight400 from "@/assets/livere-logo-light-400.webp.asset.json";
 import ogCover from "@/assets/og-cover.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -868,7 +869,8 @@ function HeroSection() {
         <div>
           <p className="eyebrow eyebrow-on-dark mb-6 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
           <img
-            src={livereLogoLight}
+            src={livereLogoLight200.url}
+            srcSet={`${livereLogoLight200.url} 1x, ${livereLogoLight400.url} 2x`}
             alt="Logo Clínica Lívere"
             width={176}
             height={176}
