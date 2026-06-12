@@ -221,20 +221,35 @@ function Index() {
         </section>
 
         {/* SEÇÃO 3 — O que é a vesícula */}
-        <section>
-          <Reveal className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-background">
+          <OrganicBg
+            variant="sage"
+            opacity={0.05}
+            shape="blob"
+            className="-right-32 -top-24 h-[520px] w-[520px]"
+          />
+          <OrganicBg
+            variant="gold"
+            opacity={0.04}
+            shape="ring"
+            className="-left-40 bottom-0 h-[420px] w-[420px]"
+          />
+          <Reveal className="relative mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Saúde digestiva</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
               Entendendo a vesícula biliar: função, pedras e quando o problema aparece
             </h2>
-            <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
+            <div className="measure mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
               <p>
                 A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile, líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
               </p>
               <p>
                 A colelitíase, nome técnico para pedras na vesícula, ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
+              <blockquote className="pull-quote my-8">
+                Pedras na vesícula podem permanecer silenciosas por anos — e, subitamente, exigir cirurgia de urgência.
+              </blockquote>
               <p>
                 O ponto crítico é que pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar. Quando essas complicações ocorrem, o tratamento geralmente exige cirurgia de urgência, com recuperação mais prolongada. Por isso, mesmo em casos assintomáticos, a avaliação com um cirurgião do aparelho digestivo é recomendada para discutir o melhor momento e a melhor abordagem — que são sempre individualizados.
               </p>
