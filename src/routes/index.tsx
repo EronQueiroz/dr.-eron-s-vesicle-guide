@@ -156,65 +156,8 @@ function Index() {
       <WhatsAppFloat />
 
       <main className="bg-background text-foreground">
-        {/* SEÇÃO 1 — HERO */}
-        <section className="relative overflow-hidden bg-background">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 md:block"
-            style={{
-              background:
-                "radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 65%)",
-            }}
-          />
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:px-8">
-            <div>
-              <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
-              <img
-                src={livereLogo}
-                alt="Logo Clínica Lívere"
-                width={120}
-                height={120}
-                className="mb-6 h-auto w-auto"
-                style={{ maxWidth: "120px", opacity: 0.85 }}
-                fetchPriority="high"
-              />
-              <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
-                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim
-              </h1>
-              <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
-                Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
-              </p>
-              <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />
-                <span>
-                  Dr. Eron Queiroz — CRM-DF 26024 &nbsp;|&nbsp; Cirurgião do Aparelho Digestivo &nbsp;|&nbsp; Clínica Lívere, Asa Sul, Brasília/DF
-                </span>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-4 -z-10 rounded-[2rem]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, color-mix(in oklab, var(--color-primary) 85%, black), color-mix(in oklab, var(--color-primary-soft) 85%, transparent))",
-                }}
-              />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
-                <img
-                  src={drEronPortrait}
-                  alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
-                  width={896}
-                  height={1152}
-                  className="h-full w-full object-cover"
-                  style={{ objectPosition: "50% 20%", transform: "scale(1.25)", transformOrigin: "50% 20%" }}
-                  fetchPriority="high"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* SEÇÃO 1 — HERO editorial (navy profundo, tipografia serifada, dourado discreto) */}
+        <HeroSection />
 
         {/* SEÇÃO VÍDEO */}
         <section className="bg-background">
