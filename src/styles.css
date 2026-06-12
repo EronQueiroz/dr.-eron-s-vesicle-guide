@@ -246,3 +246,42 @@
   .hero-rise, .reveal { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
   .hover-lift:hover { transform: none; }
 }
+
+/* ============================================================
+ * Ritmo do miolo — formas orgânicas decorativas e pull-quote
+ * ============================================================ */
+
+.section-organic {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.section-organic > .organic-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Pull-quote editorial — serifa, detalhe dourado */
+.pull-quote {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.35rem, 1.05rem + 1.1vw, 1.75rem);
+  line-height: 1.4;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  padding: 1.25rem 0 1.25rem 1.5rem;
+  border-left: 3px solid var(--color-gold);
+  max-width: 62ch;
+}
+
+/* Numeração grande em serifa dourada para cards/timeline */
+.numeral-display {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 2rem + 1.5vw, 3.25rem);
+  line-height: 1;
+  color: var(--color-gold);
+  letter-spacing: -0.02em;
+}

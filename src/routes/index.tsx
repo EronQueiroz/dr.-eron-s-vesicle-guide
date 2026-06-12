@@ -22,6 +22,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Reveal } from "@/components/Reveal";
 import { YouTubeFacade } from "@/components/YouTubeFacade";
+import { OrganicBg } from "@/components/OrganicBg";
 import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 const SITE_URL = "https://vesicula.dreronqueiroz.com.br";
@@ -220,20 +221,35 @@ function Index() {
         </section>
 
         {/* SEÇÃO 3 — O que é a vesícula */}
-        <section>
-          <Reveal className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-background">
+          <OrganicBg
+            variant="sage"
+            opacity={0.05}
+            shape="blob"
+            className="-right-32 -top-24 h-[520px] w-[520px]"
+          />
+          <OrganicBg
+            variant="gold"
+            opacity={0.04}
+            shape="ring"
+            className="-left-40 bottom-0 h-[420px] w-[420px]"
+          />
+          <Reveal className="relative mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Saúde digestiva</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
               Entendendo a vesícula biliar: função, pedras e quando o problema aparece
             </h2>
-            <div className="mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
+            <div className="measure mt-10 space-y-6 text-base leading-[1.8] text-foreground/85 md:text-lg">
               <p>
                 A vesícula biliar é um pequeno órgão em formato de pera localizado abaixo do fígado, com capacidade de armazenar entre 30 e 60 ml de bile, líquido produzido pelo fígado que auxilia na digestão de gorduras. Durante as refeições, a vesícula se contrai e libera bile no intestino delgado. Na maioria do tempo, ela funciona silenciosamente.
               </p>
               <p>
                 A colelitíase, nome técnico para pedras na vesícula, ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
+              <blockquote className="pull-quote my-8">
+                Pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar.
+              </blockquote>
               <p>
                 O ponto crítico é que pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar. Quando essas complicações ocorrem, o tratamento geralmente exige cirurgia de urgência, com recuperação mais prolongada. Por isso, mesmo em casos assintomáticos, a avaliação com um cirurgião do aparelho digestivo é recomendada para discutir o melhor momento e a melhor abordagem — que são sempre individualizados.
               </p>
@@ -339,8 +355,14 @@ function Index() {
         </section>
 
         {/* SEÇÃO 5 — Como é a cirurgia */}
-        <section>
-          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-muted">
+          <OrganicBg
+            variant="blue"
+            opacity={0.045}
+            shape="wave"
+            className="-left-24 top-10 h-[560px] w-[820px]"
+          />
+          <Reveal className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Procedimento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -369,18 +391,19 @@ function Index() {
               ].map((step, i) => (
                 <li
                   key={step.label}
-                  className="hover-lift rounded-2xl border border-border bg-background p-7 shadow-sm"
+                  className="hover-lift rounded-2xl border border-border bg-background p-8 shadow-sm sm:p-9"
                 >
+                  <div className="flex items-baseline gap-4">
+                    <span className="numeral-display" aria-hidden="true">0{i + 1}</span>
+                    <h3 className="text-xl font-extrabold text-primary">
+                      {step.label}
+                    </h3>
+                  </div>
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-primary-foreground"
-                    style={{ backgroundColor: "var(--color-sage-strong)" }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <h3 className="mt-5 text-xl font-extrabold text-primary">
-                    {step.label}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-[1.75] text-foreground/80">
+                    aria-hidden="true"
+                    className="mt-5 block h-px w-10 bg-[var(--color-gold)]/60"
+                  />
+                  <p className="mt-5 text-[15px] leading-[1.75] text-foreground/80">
                     {step.text}
                   </p>
                 </li>
@@ -444,8 +467,20 @@ function Index() {
         </section>
 
         {/* SEÇÃO 7 — Recuperação */}
-        <section>
-          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-background">
+          <OrganicBg
+            variant="sage"
+            opacity={0.05}
+            shape="blob"
+            className="-left-32 top-20 h-[460px] w-[460px]"
+          />
+          <OrganicBg
+            variant="gold"
+            opacity={0.035}
+            shape="ring"
+            className="-right-40 bottom-10 h-[480px] w-[480px]"
+          />
+          <Reveal className="relative mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Pós-operatório</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -453,21 +488,32 @@ function Index() {
             </h2>
 
             <ol
-              className="mt-14 space-y-0 pl-8"
+              className="mt-14 space-y-0 pl-10"
               style={{ borderLeft: "2px solid color-mix(in oklab, var(--color-sage-strong) 50%, transparent)" }}
             >
-              {recoveryTimeline.map((it) => (
-                <li key={it.when} className="relative pb-10 last:pb-0">
+              {recoveryTimeline.map((it, i) => (
+                <li key={it.when} className="relative pb-12 last:pb-0">
                   <span
                     aria-hidden="true"
-                    className="absolute -left-[37px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-sage-strong)] bg-background"
+                    className="absolute -left-[46px] top-3 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-sage-strong)] bg-background"
                   />
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-sage-strong)]">
-                    {it.when}
-                  </p>
-                  <p className="mt-3 text-base leading-[1.75] text-foreground/85 md:text-lg">
+                  <div className="flex items-baseline gap-5">
+                    <span className="numeral-display" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-sage-strong)]">
+                      {it.when}
+                    </p>
+                  </div>
+                  <p className="mt-4 max-w-[68ch] text-base leading-[1.75] text-foreground/85 md:text-lg">
                     {it.text}
                   </p>
+                  {i < recoveryTimeline.length - 1 ? (
+                    <span
+                      aria-hidden="true"
+                      className="mt-8 block h-px w-12 bg-[var(--color-gold)]/40"
+                    />
+                  ) : null}
                 </li>
               ))}
             </ol>
