@@ -161,7 +161,7 @@ function Index() {
 
         {/* SEÇÃO VÍDEO */}
         <section className="bg-background">
-          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+          <Reveal className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <p className="eyebrow">Em vídeo</p>
             <span className="sage-rule mt-3" />
             <h2 className="mt-5 text-3xl font-extrabold text-primary sm:text-[2rem]">
@@ -182,12 +182,12 @@ function Index() {
                 />
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 2 — RESUMO 30s */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+          <Reveal className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <div
               className="rounded-2xl border border-border bg-background px-6 py-9 shadow-sm sm:px-10 sm:py-11"
               style={{ borderLeft: "4px solid var(--color-sage-strong)" }}
@@ -217,7 +217,7 @@ function Index() {
                 ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 3 — O que é a vesícula */}
