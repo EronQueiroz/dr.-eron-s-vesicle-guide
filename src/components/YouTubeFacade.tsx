@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import eronVideoAsset from "@/assets/eron-video.webp.asset.json";
+import eronVideoAsset from "@/assets/eron-video-v2.webp.asset.json";
 
 interface Props {
   videoId: string;
@@ -77,21 +77,13 @@ export function YouTubeFacade({ videoId, title, signature, ariaLabel }: Props) {
                 height={1200}
                 className="h-full w-full object-cover object-top"
               />
-              {/* gradiente que funde a foto ao fundo navy (lateral esquerda e base) */}
+              {/* fusão mínima na borda esquerda — o fundo da foto já é navy */}
               <div
                 aria-hidden="true"
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to right, color-mix(in oklab, var(--color-primary) 95%, black) 0%, color-mix(in oklab, var(--color-primary) 55%, black) 22%, transparent 60%)",
-                }}
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, color-mix(in oklab, var(--color-primary) 70%, black) 0%, transparent 40%)",
+                    "linear-gradient(to right, color-mix(in oklab, var(--color-primary) 80%, black) 0%, transparent 18%)",
                 }}
               />
             </div>
