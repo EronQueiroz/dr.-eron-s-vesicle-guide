@@ -222,7 +222,7 @@ function Index() {
 
         {/* SEÇÃO 3 — O que é a vesícula */}
         <section>
-          <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Saúde digestiva</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -242,12 +242,12 @@ function Index() {
             <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
               Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024. Última atualização: abril de 2026.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 4 — Quando operar */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -311,7 +311,7 @@ function Index() {
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
               A decisão sobre operar ou acompanhar clinicamente é individualizada — depende de uma avaliação completa que considera seus sintomas, seus exames, seu histórico clínico, sua idade e suas preferências. Essa conversa acontece na consulta, com tempo adequado e explicação clara das opções.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* Convite intermediário */}
