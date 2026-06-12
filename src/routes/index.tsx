@@ -248,7 +248,7 @@ function Index() {
                 A colelitíase, nome técnico para pedras na vesícula, ocorre quando substâncias presentes na bile, principalmente colesterol e sais de cálcio, se solidificam e formam cálculos. Fatores de risco incluem sexo feminino (prevalência 2 a 3 vezes maior que em homens), idade acima de 40 anos, obesidade, gravidez, jejum prolongado, perda rápida de peso, diabetes e histórico familiar. Estudos epidemiológicos apontam prevalência entre 10 e 20% da população adulta em países ocidentais, sendo a maioria dos casos assintomática. No Brasil, a colelitíase é a doença cirúrgica abdominal mais comum em idosos, com cerca de 60 mil internações anuais registradas no Sistema Único de Saúde.
               </p>
               <blockquote className="pull-quote my-8">
-                Pedras na vesícula podem permanecer silenciosas por anos — e, subitamente, exigir cirurgia de urgência.
+                Pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar.
               </blockquote>
               <p>
                 O ponto crítico é que pedras na vesícula podem permanecer assintomáticas por anos — e subitamente causar uma crise aguda, uma obstrução de via biliar ou uma pancreatite biliar. Quando essas complicações ocorrem, o tratamento geralmente exige cirurgia de urgência, com recuperação mais prolongada. Por isso, mesmo em casos assintomáticos, a avaliação com um cirurgião do aparelho digestivo é recomendada para discutir o melhor momento e a melhor abordagem — que são sempre individualizados.
