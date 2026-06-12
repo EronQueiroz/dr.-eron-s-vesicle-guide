@@ -171,17 +171,13 @@ function Index() {
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/85 sm:text-[1.0625rem]">
               Em quatro minutos: por que a vesícula é retirada por inteiro, como o corpo se adapta sem ela, como é a técnica minimamente invasiva e por que operar no momento certo, de forma eletiva, torna o procedimento mais seguro.
             </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
-              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/CBFp67JD8KY?enablejsapi=1&rel=0"
-                  title="Vídeo do Dr. Eron Queiroz sobre cirurgia de vesícula biliar"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 h-full w-full border-0"
-                />
-              </div>
+            <div className="mt-8">
+              <YouTubeFacade
+                videoId="CBFp67JD8KY"
+                title="Cirurgia de vesícula biliar"
+                signature="Dr. Eron Queiroz · Cirurgião do Aparelho Digestivo"
+                ariaLabel="Assistir ao vídeo sobre cirurgia de vesícula"
+              />
             </div>
           </Reveal>
         </section>
