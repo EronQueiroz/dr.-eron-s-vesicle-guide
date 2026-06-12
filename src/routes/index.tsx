@@ -341,7 +341,7 @@ function Index() {
 
         {/* SEÇÃO 5 — Como é a cirurgia */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Procedimento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -391,7 +391,7 @@ function Index() {
             <p className="mt-14 border-t border-border pt-6 text-xs italic text-muted-foreground">
               Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 6 — Idosos (bloco azul marinho — mesma identidade da página atual) */}
@@ -446,7 +446,7 @@ function Index() {
 
         {/* SEÇÃO 7 — Recuperação */}
         <section>
-          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Pós-operatório</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -476,7 +476,7 @@ function Index() {
             <p className="mt-10 border-t border-border pt-6 text-sm italic text-muted-foreground">
               Cada recuperação tem seu próprio ritmo. A equipe da Clínica Lívere está disponível para dúvidas entre as consultas.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 8 — Quem é o Dr. Eron */}
@@ -551,7 +551,7 @@ function Index() {
 
         {/* SEÇÃO 9 — Depoimentos */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="text-center">
               <p className="eyebrow mb-4">Avaliações</p>
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -572,12 +572,12 @@ function Index() {
                 Ver todas as avaliações no Google
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 10 — FAQ */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Perguntas frequentes</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -589,7 +589,7 @@ function Index() {
             <div className="mt-12 rounded-2xl bg-background p-2 shadow-sm sm:p-4">
               <FaqAccordion items={faqItems} />
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 11 — Autoridade (faixa sage clara, alinhada ao site existente) */}
