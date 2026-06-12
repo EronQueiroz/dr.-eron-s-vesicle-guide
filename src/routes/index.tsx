@@ -871,12 +871,12 @@ function HeroSection() {
         <div>
           <p className="eyebrow eyebrow-on-dark mb-5 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
           <img
-            src={livereLogo}
+            src={livereLogoLight}
             alt="Logo Clínica Lívere"
             width={104}
             height={104}
             className="mb-7 h-auto w-auto hero-rise hero-rise-2"
-            style={{ maxWidth: "104px", opacity: 0.9, filter: "brightness(1.4) contrast(0.95)" }}
+            style={{ maxWidth: "104px", opacity: 0.95 }}
             fetchPriority="high"
           />
           <h1 className="font-serif-display hero-rise hero-rise-2 text-[2.25rem] leading-[1.08] text-primary-foreground sm:text-[2.75rem] md:text-[3.1rem] lg:text-[3.5rem]">
