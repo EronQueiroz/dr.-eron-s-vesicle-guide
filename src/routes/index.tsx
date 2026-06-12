@@ -834,3 +834,114 @@ function ReviewCard({
     </article>
   );
 }
+
+function HeroSection() {
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
+  const hasLive = !!(data && data.rating != null && data.userRatingCount != null);
+  const ratingText = hasLive ? data!.rating!.toFixed(1).replace(".", ",") : null;
+
+  return (
+    <section className="hero-navy relative isolate overflow-hidden text-primary-foreground">
+      {/* Textura discreta — linhas orgânicas finas */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 900"
+        style={{ opacity: 0.08 }}
+      >
+        <defs>
+          <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="white" stopOpacity="0" />
+            <stop offset="50%" stopColor="white" stopOpacity="1" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#hero-line)" strokeWidth="1">
+          <path d="M-50 220 C 260 140, 540 320, 820 240 S 1280 120, 1500 220" />
+          <path d="M-50 360 C 280 280, 560 460, 860 380 S 1280 260, 1500 360" />
+          <path d="M-50 500 C 260 420, 560 600, 840 520 S 1280 400, 1500 500" />
+          <path d="M-50 640 C 280 560, 540 740, 820 660 S 1280 540, 1500 640" />
+          <path d="M-50 780 C 260 700, 560 880, 840 800 S 1280 680, 1500 780" />
+        </g>
+      </svg>
+
+      <div className="relative mx-auto grid min-h-[90vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.35fr_1fr] md:gap-14 md:py-24 lg:gap-20 lg:px-8">
+        <div>
+          <p className="eyebrow eyebrow-on-dark mb-5 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
+          <img
+            src={livereLogo}
+            alt="Logo Clínica Lívere"
+            width={104}
+            height={104}
+            className="mb-7 h-auto w-auto hero-rise hero-rise-2"
+            style={{ maxWidth: "104px", opacity: 0.9, filter: "brightness(1.4) contrast(0.95)" }}
+            fetchPriority="high"
+          />
+          <h1 className="font-serif-display hero-rise hero-rise-2 text-[2.25rem] leading-[1.08] text-primary-foreground sm:text-[2.75rem] md:text-[3.1rem] lg:text-[3.5rem]">
+            Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento{" "}
+            <span className="text-gold italic">do início ao fim</span>
+          </h1>
+
+          <p className="hero-rise hero-rise-3 mt-5 text-sm tracking-[0.04em] text-primary-foreground/75 md:text-[15px]">
+            CRM-DF 26024 · RQE 17279 · Cirurgião do Aparelho Digestivo
+          </p>
+
+          <p className="measure hero-rise hero-rise-4 mt-7 text-[1.0625rem] leading-[1.75] text-primary-foreground/85 md:text-lg">
+            Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
+          </p>
+
+          {/* Selo de prova social — Google reviews ao vivo */}
+          <div className="hero-rise hero-rise-5 mt-9 inline-flex items-center gap-3 rounded-full border border-primary-foreground/15 bg-primary-foreground/[0.06] px-4 py-2 backdrop-blur-sm">
+            <span className="text-base font-bold text-gold" aria-hidden="true">★</span>
+            <span className="text-sm font-semibold tracking-wide text-primary-foreground">
+              {hasLive ? (
+                <>
+                  {ratingText} <span className="text-primary-foreground/60">·</span>{" "}
+                  {data!.userRatingCount} avaliações no Google
+                </>
+              ) : (
+                <>5,0 · avaliações verificadas no Google</>
+              )}
+            </span>
+          </div>
+
+          <div className="hero-rise hero-rise-5 mt-7 flex items-start gap-3 text-sm leading-relaxed text-primary-foreground/70">
+            <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
+            <span>Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF</span>
+          </div>
+        </div>
+
+        <div className="hero-rise hero-rise-image relative mx-auto w-full max-w-sm md:max-w-none">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-5 -z-10 rounded-[2.25rem]"
+            style={{
+              background:
+                "linear-gradient(135deg, color-mix(in oklab, var(--color-gold) 28%, transparent), color-mix(in oklab, var(--color-primary-soft) 55%, transparent))",
+              filter: "blur(2px)",
+            }}
+          />
+          <div className="portrait-treatment relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem]">
+            <img
+              src={drEronPortrait}
+              alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
+              width={896}
+              height={1152}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: "50% 20%", transform: "scale(1.22)", transformOrigin: "50% 20%" }}
+              fetchPriority="high"
+            />
+            <span aria-hidden="true" className="portrait-tint" />
+          </div>
+          {/* Filete dourado decorativo */}
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-3 left-8 right-8 h-[2px] rounded-full"
+            style={{ background: "linear-gradient(90deg, transparent, var(--color-gold), transparent)" }}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
