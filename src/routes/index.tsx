@@ -14,6 +14,7 @@ import {
 import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
 import drEronFormal from "@/assets/dr-eron-formal.jpg";
 import livereLogo from "@/assets/livere-logo.jpg";
+import livereLogoLight from "@/assets/livere-logo-light.png";
 import ogCover from "@/assets/og-cover.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
