@@ -257,7 +257,7 @@ function Index() {
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
               <article
-                className="rounded-2xl border border-[var(--color-warm-foreground)]/15 p-7 shadow-sm sm:p-8"
+                className="hover-lift rounded-2xl border border-[var(--color-warm-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#FFF4E6" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-warm-foreground)]">
@@ -283,7 +283,7 @@ function Index() {
               </article>
 
               <article
-                className="rounded-2xl border border-[var(--color-cool-foreground)]/15 p-7 shadow-sm sm:p-8"
+                className="hover-lift rounded-2xl border border-[var(--color-cool-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#E6F1FB" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
