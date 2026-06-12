@@ -370,7 +370,7 @@ function Index() {
               ].map((step, i) => (
                 <li
                   key={step.label}
-                  className="rounded-2xl border border-border bg-background p-7 shadow-sm transition-shadow hover:shadow-md"
+                  className="hover-lift rounded-2xl border border-border bg-background p-7 shadow-sm"
                 >
                   <span
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-primary-foreground"
