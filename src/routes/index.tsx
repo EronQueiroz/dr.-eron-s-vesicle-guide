@@ -467,8 +467,20 @@ function Index() {
         </section>
 
         {/* SEÇÃO 7 — Recuperação */}
-        <section>
-          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-background">
+          <OrganicBg
+            variant="sage"
+            opacity={0.05}
+            shape="blob"
+            className="-left-32 top-20 h-[460px] w-[460px]"
+          />
+          <OrganicBg
+            variant="gold"
+            opacity={0.035}
+            shape="ring"
+            className="-right-40 bottom-10 h-[480px] w-[480px]"
+          />
+          <Reveal className="relative mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Pós-operatório</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -476,21 +488,32 @@ function Index() {
             </h2>
 
             <ol
-              className="mt-14 space-y-0 pl-8"
+              className="mt-14 space-y-0 pl-10"
               style={{ borderLeft: "2px solid color-mix(in oklab, var(--color-sage-strong) 50%, transparent)" }}
             >
-              {recoveryTimeline.map((it) => (
-                <li key={it.when} className="relative pb-10 last:pb-0">
+              {recoveryTimeline.map((it, i) => (
+                <li key={it.when} className="relative pb-12 last:pb-0">
                   <span
                     aria-hidden="true"
-                    className="absolute -left-[37px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-sage-strong)] bg-background"
+                    className="absolute -left-[46px] top-3 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-sage-strong)] bg-background"
                   />
-                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-sage-strong)]">
-                    {it.when}
-                  </p>
-                  <p className="mt-3 text-base leading-[1.75] text-foreground/85 md:text-lg">
+                  <div className="flex items-baseline gap-5">
+                    <span className="numeral-display" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-sage-strong)]">
+                      {it.when}
+                    </p>
+                  </div>
+                  <p className="mt-4 max-w-[68ch] text-base leading-[1.75] text-foreground/85 md:text-lg">
                     {it.text}
                   </p>
+                  {i < recoveryTimeline.length - 1 ? (
+                    <span
+                      aria-hidden="true"
+                      className="mt-8 block h-px w-12 bg-[var(--color-gold)]/40"
+                    />
+                  ) : null}
                 </li>
               ))}
             </ol>
