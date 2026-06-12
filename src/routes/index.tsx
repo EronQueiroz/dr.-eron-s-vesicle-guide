@@ -355,8 +355,14 @@ function Index() {
         </section>
 
         {/* SEÇÃO 5 — Como é a cirurgia */}
-        <section>
-          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+        <section className="section-organic bg-muted">
+          <OrganicBg
+            variant="blue"
+            opacity={0.045}
+            shape="wave"
+            className="-left-24 top-10 h-[560px] w-[820px]"
+          />
+          <Reveal className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Procedimento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -385,18 +391,19 @@ function Index() {
               ].map((step, i) => (
                 <li
                   key={step.label}
-                  className="hover-lift rounded-2xl border border-border bg-background p-7 shadow-sm"
+                  className="hover-lift rounded-2xl border border-border bg-background p-8 shadow-sm sm:p-9"
                 >
+                  <div className="flex items-baseline gap-4">
+                    <span className="numeral-display" aria-hidden="true">0{i + 1}</span>
+                    <h3 className="text-xl font-extrabold text-primary">
+                      {step.label}
+                    </h3>
+                  </div>
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-primary-foreground"
-                    style={{ backgroundColor: "var(--color-sage-strong)" }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <h3 className="mt-5 text-xl font-extrabold text-primary">
-                    {step.label}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-[1.75] text-foreground/80">
+                    aria-hidden="true"
+                    className="mt-5 block h-px w-10 bg-[var(--color-gold)]/60"
+                  />
+                  <p className="mt-5 text-[15px] leading-[1.75] text-foreground/80">
                     {step.text}
                   </p>
                 </li>
