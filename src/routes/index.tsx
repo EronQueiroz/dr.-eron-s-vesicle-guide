@@ -18,6 +18,7 @@ import ogCover from "@/assets/og-cover.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { Reveal } from "@/components/Reveal";
 import { getGoogleReviews, type GooglePlacesData, type GoogleReview } from "@/lib/google-reviews.functions";
 
 const SITE_URL = "https://vesicula.dreronqueiroz.com.br";
@@ -155,69 +156,12 @@ function Index() {
       <WhatsAppFloat />
 
       <main className="bg-background text-foreground">
-        {/* SEÇÃO 1 — HERO */}
-        <section className="relative overflow-hidden bg-background">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 md:block"
-            style={{
-              background:
-                "radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 65%)",
-            }}
-          />
-          <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-center md:gap-14 md:py-24 lg:gap-20 lg:px-8">
-            <div>
-              <p className="eyebrow mb-5">Dr. Eron Queiroz</p>
-              <img
-                src={livereLogo}
-                alt="Logo Clínica Lívere"
-                width={120}
-                height={120}
-                className="mb-6 h-auto w-auto"
-                style={{ maxWidth: "120px", opacity: 0.85 }}
-                fetchPriority="high"
-              />
-              <h1 className="text-[1.95rem] font-extrabold leading-[1.18] tracking-tight text-primary sm:text-[2.25rem] md:text-[2.4rem] lg:text-[2.65rem]">
-                Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento do início ao fim
-              </h1>
-              <p className="measure mt-7 text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-lg">
-                Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
-              </p>
-              <div className="mt-9 flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />
-                <span>
-                  Dr. Eron Queiroz — CRM-DF 26024 &nbsp;|&nbsp; Cirurgião do Aparelho Digestivo &nbsp;|&nbsp; Clínica Lívere, Asa Sul, Brasília/DF
-                </span>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-4 -z-10 rounded-[2rem]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, color-mix(in oklab, var(--color-primary) 85%, black), color-mix(in oklab, var(--color-primary-soft) 85%, transparent))",
-                }}
-              />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
-                <img
-                  src={drEronPortrait}
-                  alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
-                  width={896}
-                  height={1152}
-                  className="h-full w-full object-cover"
-                  style={{ objectPosition: "50% 20%", transform: "scale(1.25)", transformOrigin: "50% 20%" }}
-                  fetchPriority="high"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* SEÇÃO 1 — HERO editorial (navy profundo, tipografia serifada, dourado discreto) */}
+        <HeroSection />
 
         {/* SEÇÃO VÍDEO */}
         <section className="bg-background">
-          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+          <Reveal className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <p className="eyebrow">Em vídeo</p>
             <span className="sage-rule mt-3" />
             <h2 className="mt-5 text-3xl font-extrabold text-primary sm:text-[2rem]">
@@ -238,12 +182,12 @@ function Index() {
                 />
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 2 — RESUMO 30s */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
+          <Reveal className="mx-auto max-w-4xl px-6 py-16 lg:px-8 md:py-20">
             <div
               className="rounded-2xl border border-border bg-background px-6 py-9 shadow-sm sm:px-10 sm:py-11"
               style={{ borderLeft: "4px solid var(--color-sage-strong)" }}
@@ -273,12 +217,12 @@ function Index() {
                 ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 3 — O que é a vesícula */}
         <section>
-          <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-3xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Saúde digestiva</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -298,12 +242,12 @@ function Index() {
             <p className="mt-12 border-t border-border pt-6 text-xs italic text-muted-foreground">
               Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024. Última atualização: abril de 2026.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 4 — Quando operar */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Fique atento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -313,7 +257,7 @@ function Index() {
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
               <article
-                className="rounded-2xl border border-[var(--color-warm-foreground)]/15 p-7 shadow-sm sm:p-8"
+                className="hover-lift rounded-2xl border border-[var(--color-warm-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#FFF4E6" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-warm-foreground)]">
@@ -339,7 +283,7 @@ function Index() {
               </article>
 
               <article
-                className="rounded-2xl border border-[var(--color-cool-foreground)]/15 p-7 shadow-sm sm:p-8"
+                className="hover-lift rounded-2xl border border-[var(--color-cool-foreground)]/15 p-7 shadow-sm sm:p-8"
                 style={{ backgroundColor: "#E6F1FB" }}
               >
                 <div className="flex items-center gap-3 text-[var(--color-cool-foreground)]">
@@ -367,7 +311,7 @@ function Index() {
             <p className="measure-wide mt-12 text-base leading-relaxed text-muted-foreground md:text-lg">
               A decisão sobre operar ou acompanhar clinicamente é individualizada — depende de uma avaliação completa que considera seus sintomas, seus exames, seu histórico clínico, sua idade e suas preferências. Essa conversa acontece na consulta, com tempo adequado e explicação clara das opções.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* Convite intermediário */}
@@ -397,7 +341,7 @@ function Index() {
 
         {/* SEÇÃO 5 — Como é a cirurgia */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Procedimento</p>
               <span className="sage-rule mb-6" aria-hidden="true" />
@@ -426,7 +370,7 @@ function Index() {
               ].map((step, i) => (
                 <li
                   key={step.label}
-                  className="rounded-2xl border border-border bg-background p-7 shadow-sm transition-shadow hover:shadow-md"
+                  className="hover-lift rounded-2xl border border-border bg-background p-7 shadow-sm"
                 >
                   <span
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-primary-foreground"
@@ -447,7 +391,7 @@ function Index() {
             <p className="mt-14 border-t border-border pt-6 text-xs italic text-muted-foreground">
               Informação revisada pelo Dr. Eron Queiroz, CRM-DF 26024.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 6 — Idosos (bloco azul marinho — mesma identidade da página atual) */}
@@ -502,7 +446,7 @@ function Index() {
 
         {/* SEÇÃO 7 — Recuperação */}
         <section>
-          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Pós-operatório</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -532,7 +476,7 @@ function Index() {
             <p className="mt-10 border-t border-border pt-6 text-sm italic text-muted-foreground">
               Cada recuperação tem seu próprio ritmo. A equipe da Clínica Lívere está disponível para dúvidas entre as consultas.
             </p>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 8 — Quem é o Dr. Eron */}
@@ -607,7 +551,7 @@ function Index() {
 
         {/* SEÇÃO 9 — Depoimentos */}
         <section>
-          <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="text-center">
               <p className="eyebrow mb-4">Avaliações</p>
               <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -628,12 +572,12 @@ function Index() {
                 Ver todas as avaliações no Google
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 10 — FAQ */}
         <section className="bg-muted">
-          <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
+          <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Perguntas frequentes</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
             <h2 className="text-[1.65rem] font-extrabold text-primary sm:text-3xl md:text-[2.1rem]">
@@ -645,7 +589,7 @@ function Index() {
             <div className="mt-12 rounded-2xl bg-background p-2 shadow-sm sm:p-4">
               <FaqAccordion items={faqItems} />
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* SEÇÃO 11 — Autoridade (faixa sage clara, alinhada ao site existente) */}
@@ -869,7 +813,7 @@ function ReviewCard({
 }) {
   const stars = Math.max(1, Math.min(5, Math.round(rating)));
   return (
-    <article className="flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
+    <article className="hover-lift flex flex-col rounded-2xl border border-border bg-muted p-7 shadow-sm">
       <div className="flex items-center justify-between">
         <StarRow count={stars} colorClass="text-[#C9A84C]" />
         <span
@@ -888,5 +832,116 @@ function ReviewCard({
         {when ? <p className="mt-0.5 text-xs text-muted-foreground">{when}</p> : null}
       </div>
     </article>
+  );
+}
+
+function HeroSection() {
+  const data = Route.useLoaderData() as GooglePlacesData | undefined;
+  const hasLive = !!(data && data.rating != null && data.userRatingCount != null);
+  const ratingText = hasLive ? data!.rating!.toFixed(1).replace(".", ",") : null;
+
+  return (
+    <section className="hero-navy relative isolate overflow-hidden text-primary-foreground">
+      {/* Textura discreta — linhas orgânicas finas */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 900"
+        style={{ opacity: 0.08 }}
+      >
+        <defs>
+          <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="white" stopOpacity="0" />
+            <stop offset="50%" stopColor="white" stopOpacity="1" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#hero-line)" strokeWidth="1">
+          <path d="M-50 220 C 260 140, 540 320, 820 240 S 1280 120, 1500 220" />
+          <path d="M-50 360 C 280 280, 560 460, 860 380 S 1280 260, 1500 360" />
+          <path d="M-50 500 C 260 420, 560 600, 840 520 S 1280 400, 1500 500" />
+          <path d="M-50 640 C 280 560, 540 740, 820 660 S 1280 540, 1500 640" />
+          <path d="M-50 780 C 260 700, 560 880, 840 800 S 1280 680, 1500 780" />
+        </g>
+      </svg>
+
+      <div className="relative mx-auto grid min-h-[90vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.35fr_1fr] md:gap-14 md:py-24 lg:gap-20 lg:px-8">
+        <div>
+          <p className="eyebrow eyebrow-on-dark mb-5 hero-rise hero-rise-1">Dr. Eron Queiroz</p>
+          <img
+            src={livereLogo}
+            alt="Logo Clínica Lívere"
+            width={104}
+            height={104}
+            className="mb-7 h-auto w-auto hero-rise hero-rise-2"
+            style={{ maxWidth: "104px", opacity: 0.9, filter: "brightness(1.4) contrast(0.95)" }}
+            fetchPriority="high"
+          />
+          <h1 className="font-serif-display hero-rise hero-rise-2 text-[2.25rem] leading-[1.08] text-primary-foreground sm:text-[2.75rem] md:text-[3.1rem] lg:text-[3.5rem]">
+            Cirurgia de vesícula em Brasília: avaliação criteriosa, explicação clara e acompanhamento{" "}
+            <span className="text-gold italic">do início ao fim</span>
+          </h1>
+
+          <p className="hero-rise hero-rise-3 mt-5 text-sm tracking-[0.04em] text-primary-foreground/75 md:text-[15px]">
+            CRM-DF 26024 · RQE 17279 · Cirurgião do Aparelho Digestivo
+          </p>
+
+          <p className="measure hero-rise hero-rise-4 mt-7 text-[1.0625rem] leading-[1.75] text-primary-foreground/85 md:text-lg">
+            Cada caso de vesícula tem uma história diferente. Antes de qualquer decisão cirúrgica, o Dr. Eron Queiroz avalia seus exames, seus sintomas e seu histórico. Explica exatamente o que está acontecendo e quais são suas opções.
+          </p>
+
+          {/* Selo de prova social — Google reviews ao vivo */}
+          <div className="hero-rise hero-rise-5 mt-9 inline-flex items-center gap-3 rounded-full border border-primary-foreground/15 bg-primary-foreground/[0.06] px-4 py-2 backdrop-blur-sm">
+            <span className="text-base font-bold text-gold" aria-hidden="true">★</span>
+            <span className="text-sm font-semibold tracking-wide text-primary-foreground">
+              {hasLive ? (
+                <>
+                  {ratingText} <span className="text-primary-foreground/60">·</span>{" "}
+                  {data!.userRatingCount} avaliações no Google
+                </>
+              ) : (
+                <>5,0 · avaliações verificadas no Google</>
+              )}
+            </span>
+          </div>
+
+          <div className="hero-rise hero-rise-5 mt-7 flex items-start gap-3 text-sm leading-relaxed text-primary-foreground/70">
+            <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
+            <span>Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF</span>
+          </div>
+        </div>
+
+        <div className="hero-rise hero-rise-image relative mx-auto w-full max-w-sm md:max-w-none">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-5 -z-10 rounded-[2.25rem]"
+            style={{
+              background:
+                "linear-gradient(135deg, color-mix(in oklab, var(--color-gold) 28%, transparent), color-mix(in oklab, var(--color-primary-soft) 55%, transparent))",
+              filter: "blur(2px)",
+            }}
+          />
+          <div className="portrait-treatment relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem]">
+            <img
+              src={drEronPortrait}
+              alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
+              width={896}
+              height={1152}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: "50% 20%", transform: "scale(1.22)", transformOrigin: "50% 20%" }}
+              fetchPriority="high"
+            />
+            <span aria-hidden="true" className="portrait-tint" />
+          </div>
+          {/* Filete dourado decorativo */}
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-3 left-8 right-8 h-[2px] rounded-full"
+            style={{ background: "linear-gradient(90deg, transparent, var(--color-gold), transparent)" }}
+          />
+        </div>
+      </div>
+    </section>
   );
 }

@@ -45,9 +45,12 @@
   --color-cool: var(--cool);
   --color-cool-foreground: var(--cool-foreground);
   --color-whatsapp: var(--whatsapp);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
 
   --font-sans: "Mulish", "Inter", system-ui, sans-serif;
   --font-display: "Mulish", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
 }
 
 :root {
@@ -92,6 +95,10 @@
   --cool-foreground: oklch(0.40 0.07 250);
 
   --whatsapp: oklch(0.72 0.18 145);
+
+  /* Dourado discreto para acentos editoriais (hero) */
+  --gold: oklch(0.80 0.115 84);
+  --gold-soft: oklch(0.88 0.085 84);
 }
 
 @layer base {
@@ -158,4 +165,84 @@
   .measure-wide {
     max-width: 76ch;
   }
+}
+
+/* ============================================================
+ * Hero editorial — navy profundo com tipografia serifada
+ * ============================================================ */
+
+.hero-navy {
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 10%, color-mix(in oklab, var(--color-primary-soft) 55%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 10% 95%, color-mix(in oklab, black 35%, transparent), transparent 65%),
+    linear-gradient(160deg, color-mix(in oklab, var(--color-primary) 92%, black) 0%, color-mix(in oklab, var(--color-primary) 78%, black) 55%, color-mix(in oklab, var(--color-primary-soft) 65%, black) 100%);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+/* Foto do hero — tratamento elegante leve duotone frio + sombra suave */
+.portrait-treatment {
+  filter: contrast(1.04) saturate(0.92);
+  box-shadow:
+    0 30px 60px -25px color-mix(in oklab, black 70%, transparent),
+    0 10px 25px -10px color-mix(in oklab, var(--color-primary) 60%, transparent);
+}
+.portrait-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--color-primary) 22%, transparent) 0%,
+    transparent 35%,
+    color-mix(in oklab, var(--color-primary) 35%, transparent) 100%);
+  mix-blend-mode: multiply;
+}
+
+/* Entrada em cascata (CSS only, primeiro carregamento) */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-rise {
+  animation: hero-rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero-rise-1 { animation-delay: 0ms; }
+.hero-rise-2 { animation-delay: 90ms; }
+.hero-rise-3 { animation-delay: 180ms; }
+.hero-rise-4 { animation-delay: 270ms; }
+.hero-rise-5 { animation-delay: 360ms; }
+.hero-rise-image { animation-delay: 60ms; animation-duration: 0.75s; }
+
+/* Scroll reveal — IntersectionObserver attaches .is-visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Cards com elevação suave no hover */
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px -22px color-mix(in oklab, var(--color-primary) 50%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise, .reveal { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  .hover-lift:hover { transform: none; }
 }
