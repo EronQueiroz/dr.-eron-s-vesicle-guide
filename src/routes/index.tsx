@@ -981,10 +981,13 @@ function HeroSection() {
           />
           <div className="portrait-treatment relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem]">
             <img
-              src={drEronPortrait}
+              src={portrait720.url}
+              srcSet={`${portrait480.url} 480w, ${portrait720.url} 720w, ${portrait1200.url} 1200w`}
+              sizes="(min-width: 768px) 500px, 100vw"
               alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
               width={896}
               height={1152}
+              decoding="async"
               className="h-full w-full object-cover"
               style={{ objectPosition: "50% 20%", transform: "scale(1.22)", transformOrigin: "50% 20%" }}
               fetchPriority="high"
