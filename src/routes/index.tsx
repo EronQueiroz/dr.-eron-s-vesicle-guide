@@ -545,9 +545,11 @@ function Index() {
                 />
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
                   <img
-                    src={drEronFormal}
+                    src={formal800.url}
+                    srcSet={`${formal800.url} 1x, ${formal1200.url} 2x`}
                     alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
                     loading="lazy"
+                    decoding="async"
                     width={896}
                     height={1152}
                     className="h-full w-full object-cover"
