@@ -476,7 +476,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 7 — Recuperação */}
-        <section className="section-organic bg-background">
+        <section className="section-organic cv-auto bg-background">
           <OrganicBg
             variant="sage"
             opacity={0.05}
@@ -606,7 +606,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 9 — Depoimentos */}
-        <section>
+        <section className="cv-auto">
           <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="text-center">
               <p className="eyebrow mb-4">Avaliações</p>
@@ -632,7 +632,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 10 — FAQ */}
-        <section className="bg-muted">
+        <section className="cv-auto bg-muted">
           <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Perguntas frequentes</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
@@ -669,7 +669,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 11.5 — Referências bibliográficas */}
-        <section className="bg-muted">
+        <section className="cv-auto bg-muted">
           <div className="mx-auto max-w-3xl px-6 py-14 lg:px-8 md:py-16">
             <p className="eyebrow mb-4">Referências bibliográficas</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
