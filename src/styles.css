@@ -285,3 +285,9 @@
   color: var(--color-gold);
   letter-spacing: -0.02em;
 }
+
+/* Renderização progressiva: seções fora da viewport não pagam paint/layout. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
