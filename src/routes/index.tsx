@@ -11,9 +11,11 @@ import {
   Phone,
   Instagram,
 } from "lucide-react";
-import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
-import drEronFormal from "@/assets/dr-eron-formal.jpg";
-import livereLogo from "@/assets/livere-logo.jpg";
+import portrait480 from "@/assets/dr-eron-portrait-480.webp.asset.json";
+import portrait720 from "@/assets/dr-eron-portrait-720.webp.asset.json";
+import portrait1200 from "@/assets/dr-eron-portrait-1200.webp.asset.json";
+import formal800 from "@/assets/dr-eron-formal-800.webp.asset.json";
+import formal1200 from "@/assets/dr-eron-formal-1200.webp.asset.json";
 import livereLogoLight200 from "@/assets/livere-logo-light-200.webp.asset.json";
 import livereLogoLight400 from "@/assets/livere-logo-light-400.webp.asset.json";
 import ogCover from "@/assets/og-cover.jpg";
@@ -47,7 +49,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", as: "image", href: drEronPortrait, fetchpriority: "high" } as any,
+      {
+        rel: "preload",
+        as: "image",
+        href: portrait720.url,
+        imagesrcset: `${portrait480.url} 480w, ${portrait720.url} 720w, ${portrait1200.url} 1200w`,
+        imagesizes: "(min-width: 768px) 500px, 100vw",
+        fetchPriority: "high",
+      } as any,
     ],
   }),
   errorComponent: ({ error }) => (
