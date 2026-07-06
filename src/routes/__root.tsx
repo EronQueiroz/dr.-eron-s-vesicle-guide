@@ -46,11 +46,11 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap",
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap",
       },
     ],
   }),
@@ -258,11 +258,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M39BXWZ6');`,
+            __html: `window.dataLayer=window.dataLayer||[];
+(function(){function loadGTM(){if(window.__gtmLoaded)return;window.__gtmLoaded=true;
+window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=document.getElementsByTagName('script')[0],j=document.createElement('script');
+j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M39BXWZ6&l=dataLayer';
+f.parentNode.insertBefore(j,f);}
+var start=function(){if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:2500});}else{setTimeout(loadGTM,1500);}};
+if(document.readyState==='complete'){start();}else{window.addEventListener('load',start,{once:true});}})();`,
           }}
         />
         <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />

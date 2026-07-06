@@ -11,9 +11,11 @@ import {
   Phone,
   Instagram,
 } from "lucide-react";
-import drEronPortrait from "@/assets/dr-eron-portrait.jpg";
-import drEronFormal from "@/assets/dr-eron-formal.jpg";
-import livereLogo from "@/assets/livere-logo.jpg";
+import portrait480 from "@/assets/dr-eron-portrait-480.webp.asset.json";
+import portrait720 from "@/assets/dr-eron-portrait-720.webp.asset.json";
+import portrait1200 from "@/assets/dr-eron-portrait-1200.webp.asset.json";
+import formal800 from "@/assets/dr-eron-formal-800.webp.asset.json";
+import formal1200 from "@/assets/dr-eron-formal-1200.webp.asset.json";
 import livereLogoLight200 from "@/assets/livere-logo-light-200.webp.asset.json";
 import livereLogoLight400 from "@/assets/livere-logo-light-400.webp.asset.json";
 import ogCover from "@/assets/og-cover.jpg";
@@ -47,7 +49,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", as: "image", href: drEronPortrait, fetchpriority: "high" } as any,
+      {
+        rel: "preload",
+        as: "image",
+        href: portrait720.url,
+        imagesrcset: `${portrait480.url} 480w, ${portrait720.url} 720w, ${portrait1200.url} 1200w`,
+        imagesizes: "(min-width: 768px) 500px, 100vw",
+        fetchPriority: "high",
+      } as any,
     ],
   }),
   errorComponent: ({ error }) => (
@@ -467,7 +476,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 7 — Recuperação */}
-        <section className="section-organic bg-background">
+        <section className="section-organic cv-auto bg-background">
           <OrganicBg
             variant="sage"
             opacity={0.05}
@@ -536,9 +545,11 @@ function Index() {
                 />
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.75rem] shadow-xl">
                   <img
-                    src={drEronFormal}
+                    src={formal800.url}
+                    srcSet={`${formal800.url} 1x, ${formal1200.url} 2x`}
                     alt="Retrato do Dr. Eron Queiroz, CRM-DF 26024, cirurgião do aparelho digestivo"
                     loading="lazy"
+                    decoding="async"
                     width={896}
                     height={1152}
                     className="h-full w-full object-cover"
@@ -595,7 +606,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 9 — Depoimentos */}
-        <section>
+        <section className="cv-auto">
           <Reveal className="mx-auto max-w-6xl px-6 py-20 lg:px-8 md:py-28">
             <div className="text-center">
               <p className="eyebrow mb-4">Avaliações</p>
@@ -621,7 +632,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 10 — FAQ */}
-        <section className="bg-muted">
+        <section className="cv-auto bg-muted">
           <Reveal className="mx-auto max-w-4xl px-6 py-20 lg:px-8 md:py-28">
             <p className="eyebrow mb-4">Perguntas frequentes</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
@@ -658,7 +669,7 @@ function Index() {
         </section>
 
         {/* SEÇÃO 11.5 — Referências bibliográficas */}
-        <section className="bg-muted">
+        <section className="cv-auto bg-muted">
           <div className="mx-auto max-w-3xl px-6 py-14 lg:px-8 md:py-16">
             <p className="eyebrow mb-4">Referências bibliográficas</p>
             <span className="sage-rule mb-6" aria-hidden="true" />
@@ -970,10 +981,13 @@ function HeroSection() {
           />
           <div className="portrait-treatment relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem]">
             <img
-              src={drEronPortrait}
+              src={portrait720.url}
+              srcSet={`${portrait480.url} 480w, ${portrait720.url} 720w, ${portrait1200.url} 1200w`}
+              sizes="(min-width: 768px) 500px, 100vw"
               alt="Retrato profissional do Dr. Eron Queiroz, cirurgião do aparelho digestivo, em ambiente clínico"
               width={896}
               height={1152}
+              decoding="async"
               className="h-full w-full object-cover"
               style={{ objectPosition: "50% 20%", transform: "scale(1.22)", transformOrigin: "50% 20%" }}
               fetchPriority="high"
