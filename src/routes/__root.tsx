@@ -2,6 +2,20 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 
 import appCss from "../styles.css?url";
 
+const GTAG_INLINE_SCRIPT = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-36EEMZ49QS');`;
+
+const GTM_LOADER_SCRIPT = `window.dataLayer=window.dataLayer||[];
+(function(){function loadGTM(){if(window.__gtmLoaded)return;window.__gtmLoaded=true;
+window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=document.getElementsByTagName('script')[0],j=document.createElement('script');
+j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M39BXWZ6&l=dataLayer';
+f.parentNode.insertBefore(j,f);}
+var start=function(){if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:2500});}else{setTimeout(loadGTM,1500);}};
+if(document.readyState==='complete'){start();}else{window.addEventListener('load',start,{once:true});}})();`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -52,6 +66,11 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap",
       },
+    ],
+    scripts: [
+      { async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-36EEMZ49QS" },
+      { children: GTAG_INLINE_SCRIPT },
+      { children: GTM_LOADER_SCRIPT },
     ],
   }),
   shellComponent: RootShell,
@@ -256,20 +275,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];
-(function(){function loadGTM(){if(window.__gtmLoaded)return;window.__gtmLoaded=true;
-window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-var f=document.getElementsByTagName('script')[0],j=document.createElement('script');
-j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M39BXWZ6&l=dataLayer';
-f.parentNode.insertBefore(j,f);}
-var start=function(){if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:2500});}else{setTimeout(loadGTM,1500);}};
-if(document.readyState==='complete'){start();}else{window.addEventListener('load',start,{once:true});}})();`,
-          }}
-        />
-        <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
