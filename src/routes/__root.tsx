@@ -275,20 +275,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];
-(function(){function loadGTM(){if(window.__gtmLoaded)return;window.__gtmLoaded=true;
-window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-var f=document.getElementsByTagName('script')[0],j=document.createElement('script');
-j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M39BXWZ6&l=dataLayer';
-f.parentNode.insertBefore(j,f);}
-var start=function(){if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:2500});}else{setTimeout(loadGTM,1500);}};
-if(document.readyState==='complete'){start();}else{window.addEventListener('load',start,{once:true});}})();`,
-          }}
-        />
-        <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
