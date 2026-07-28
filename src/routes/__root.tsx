@@ -67,6 +67,11 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap",
       },
     ],
+    scripts: [
+      { async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-36EEMZ49QS" },
+      { children: GTAG_INLINE_SCRIPT },
+      { children: GTM_LOADER_SCRIPT },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
