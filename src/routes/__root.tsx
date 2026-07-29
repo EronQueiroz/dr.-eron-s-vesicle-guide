@@ -74,6 +74,7 @@ export const Route = createRootRoute({
     scripts: [
       { async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-36EEMZ49QS" },
       { children: GTAG_INLINE_SCRIPT },
+      { children: META_PIXEL_SCRIPT },
       { children: GTM_LOADER_SCRIPT },
     ],
   }),
