@@ -71,7 +71,7 @@ const WHATSAPP_URL =
   "https://wa.me/556135466409?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20cirurgia%20de%20ves%C3%ADcula%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o";
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20L%C3%ADvere%20SGAS%20614%20Ed.%20Vitrium%20Sala%2031%20Asa%20Sul%20Bras%C3%ADlia";
+  "https://www.google.com/maps/search/?api=1&query=Santos%20Dumont%20Medical%20Center%20Bloco%20B%20Sala%2010-7%20Lago%20Sul%20Bras%C3%ADlia";
 
 const faqItems = [
   {
@@ -597,7 +597,7 @@ function Index() {
                 <p className="mt-8 flex items-start gap-3 text-sm text-primary-foreground/80">
                   <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
                   <span>
-                    Atendimento na Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF.
+                    Atendimento na Clínica Lívere — Santos Dumont Medical Center, Bloco B, Sala 010-7, Lago Sul, Brasília/DF.
                   </span>
                 </p>
               </div>
@@ -769,7 +769,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground"
                 >
-                  Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF
+                  Clínica Lívere — Santos Dumont Medical Center, Bloco B, Sala 010-7, Lago Sul, Brasília/DF
                 </a>
               </p>
             </div>
@@ -965,7 +965,7 @@ function HeroSection() {
 
           <div className="hero-rise hero-rise-5 mt-6 flex items-start gap-3 text-[13px] leading-relaxed text-primary-foreground/70 md:text-sm">
             <MapPin size={16} className="mt-0.5 flex-shrink-0 text-[var(--color-sage)]" aria-hidden="true" />
-            <span>Clínica Lívere — SGAS 614, Ed. Vitrium, Sala 31, Asa Sul, Brasília/DF</span>
+            <span>Clínica Lívere — Santos Dumont Medical Center, Bloco B, Sala 010-7, Lago Sul, Brasília/DF</span>
           </div>
         </div>
 
