@@ -264,7 +264,7 @@ const JSON_LD_SCHEMA = {
       url: "https://vesicula.dreronqueiroz.com.br/",
       name: "Cirurgia de Vesícula em Brasília | Dr. Eron Queiroz — Clínica Lívere",
       description:
-        "Dr. Eron Queiroz, cirurgião do aparelho digestivo em Brasília/DF, CRM-DF 26024. Avaliação individualizada para cirurgia de vesícula biliar (colecistectomia) por videolaparoscopia na Clínica Lívere, Asa Sul.",
+        "Dr. Eron Queiroz, cirurgião do aparelho digestivo em Brasília/DF, CRM-DF 26024. Avaliação individualizada para cirurgia de vesícula biliar (colecistectomia) por videolaparoscopia na Clínica Lívere, Lago Sul.",
       inLanguage: "pt-BR",
       isPartOf: { "@id": "https://vesicula.dreronqueiroz.com.br/#clinic" },
       about: { "@id": "https://vesicula.dreronqueiroz.com.br/#procedure" },
