@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { MapPin, Phone, Instagram, Check, AlertCircle, ChevronDown } from "lucide-react";
+import { MapPin, Phone, Instagram, Check, AlertCircle, ChevronDown, Flame, Wind } from "lucide-react";
 import portrait480 from "@/assets/dr-eron-portrait-480.webp.asset.json";
 import portrait720 from "@/assets/dr-eron-portrait-720.webp.asset.json";
 import portrait1200 from "@/assets/dr-eron-portrait-1200.webp.asset.json";
@@ -316,14 +316,13 @@ function RefluxoPage() {
 
         {/* 3. Sintomas */}
         <Section id="sintomas" tone="cream">
-          <OrganicBg variant="sage" opacity={0.05} className="-right-40 -top-32 h-[520px] w-[520px]" />
           <H2>Quais são os sintomas do refluxo?</H2>
           <P>
             Os sintomas mais conhecidos são azia e regurgitação, mas o refluxo também pode aparecer de formas que pouca gente associa ao estômago, como tosse, rouquidão e pigarro.
           </P>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl bg-card p-6 shadow-sm md:p-8">
-              <h3 className="text-xl">Sintomas típicos</h3>
+              <h3 className="flex items-center gap-3 text-xl"><Flame size={24} className="shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />Sintomas típicos</h3>
               <CheckList
                 items={[
                   "Azia ou queimação que sobe do estômago em direção ao peito",
@@ -334,7 +333,7 @@ function RefluxoPage() {
               />
             </div>
             <div className="rounded-2xl bg-card p-6 shadow-sm md:p-8">
-              <h3 className="text-xl">Sintomas que nem parecem refluxo</h3>
+              <h3 className="flex items-center gap-3 text-xl"><Wind size={24} className="shrink-0 text-[var(--color-sage-strong)]" aria-hidden="true" />Sintomas que nem parecem refluxo</h3>
               <CheckList
                 items={[
                   "Tosse seca persistente, principalmente à noite",
