@@ -8,6 +8,7 @@ import formal800 from "@/assets/dr-eron-formal-800.webp.asset.json";
 import formal1200 from "@/assets/dr-eron-formal-1200.webp.asset.json";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import ilustracao from "@/assets/refluxo-ilustracao.jpg";
+import comparativoEnviado from "@/assets/refluxo-comparativo-enviado.png.asset.json";
 import { WA_AVALIACAO, WA_VALORES, trackWhatsApp, waLink } from "@/lib/refluxo-config";
 
 const TITLE = "Refluxo em Brasília: Tratamento e Cirurgia | Dr. Eron Queiroz";
@@ -433,6 +434,8 @@ function RefluxoPage() {
 
         {/* 6. Hérnia de hiato */}
         <Section tone="cool">
+          <div className="grid items-center gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] xl:gap-10">
+          <div className="min-w-0">
           <H2>Qual a relação entre refluxo e hérnia de hiato?</H2>
           <P>
             A hérnia de hiato é uma das causas mais frequentes do refluxo. Ela acontece quando parte do estômago passa por uma abertura do diafragma, chamada hiato, e se desloca para dentro do tórax.
@@ -443,6 +446,17 @@ function RefluxoPage() {
           <P>
             Hérnias pequenas costumam ser acompanhadas com tratamento clínico. Hérnias maiores, ou que causam sintomas persistentes, podem ter indicação cirúrgica. Na cirurgia, o cirurgião reposiciona o estômago, fecha a abertura do diafragma (hiatoplastia) e reconstrói a válvula antirrefluxo no mesmo procedimento.
           </P>
+          </div>
+          <img
+            src={comparativoEnviado.url}
+            alt="Ilustração educativa comparando um estômago saudável, com esfíncter fechado, e um estômago com refluxo, com esfíncter aberto, identificando o esôfago e o estômago."
+            width={635}
+            height={679}
+            loading="lazy"
+            decoding="async"
+            className="mx-auto h-auto w-full max-w-[635px] object-contain mix-blend-multiply"
+          />
+          </div>
         </Section>
 
         {/* 7. Diagnóstico e tratamento */}
