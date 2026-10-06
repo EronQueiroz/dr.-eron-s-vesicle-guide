@@ -388,17 +388,17 @@ function RefluxoPage() {
         <section className="hero-navy relative overflow-hidden text-primary-foreground">
           <div className="mx-auto max-w-4xl px-6 py-16 md:py-24 lg:px-8">
             <span aria-hidden="true" className="sage-rule sage-rule-on-dark" />
-            <h2 className="mt-6 text-[1.75rem] leading-tight text-primary-foreground md:text-[2.25rem]">
+            <h2 className="mt-6 text-center text-[1.75rem] leading-tight text-primary-foreground md:text-[2.25rem]">
               Conviver com refluxo é normal?
             </h2>
-            <p className="measure mt-5 font-serif-display text-2xl leading-snug text-gold md:text-[1.75rem]">
+            <p className="mt-5 w-full text-center font-serif-display text-2xl leading-snug text-gold md:text-[1.75rem]">
               Não. Refluxo frequente é comum, mas não é normal, e a adaptação costuma esconder o tamanho do problema.
             </p>
-            <p className="measure mt-5 text-lg leading-[1.75] text-primary-foreground/85">
+            <p className="mt-5 w-full text-lg leading-[1.75] text-primary-foreground/85">
               Muita gente reorganiza a vida em volta do sintoma sem perceber: deixa de jantar tarde, dorme com dois travesseiros, evita café, vinho e comida de família, carrega antiácido na bolsa, toma o remédio todos os dias há anos. Quando a rotina se ajusta ao refluxo, a sensação é de controle. Mas o que mudou foi o hábito, não a causa.
             </p>
             <div className="mt-10 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/[0.06] p-6 md:p-8">
-              <h3 className="text-xl text-primary-foreground">Você se reconhece?</h3>
+              <h3 className="text-center text-xl text-primary-foreground">Você se reconhece?</h3>
               <ul className="mt-5 space-y-4">
                 {[
                   "Toma remédio para o estômago quase todos os dias",
@@ -414,7 +414,7 @@ function RefluxoPage() {
                 ))}
               </ul>
             </div>
-            <p className="measure mt-8 text-lg leading-[1.75] text-primary-foreground/85">
+            <p className="mt-8 w-full text-lg leading-[1.75] text-primary-foreground/85">
               Se dois ou mais itens fazem parte da sua rotina, uma avaliação ajuda a entender a causa e a conhecer as opções de tratamento.
             </p>
             <div className="mt-8">
