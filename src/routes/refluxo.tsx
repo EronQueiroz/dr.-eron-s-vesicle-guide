@@ -8,7 +8,7 @@ import formal800 from "@/assets/dr-eron-formal-800.webp.asset.json";
 import formal1200 from "@/assets/dr-eron-formal-1200.webp.asset.json";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import ilustracao from "@/assets/refluxo-ilustracao.jpg";
-import { WA_AVALIACAO, WA_VALORES, trackWhatsApp } from "@/lib/refluxo-config";
+import { WA_AVALIACAO, WA_VALORES, trackWhatsApp, waLink } from "@/lib/refluxo-config";
 
 const TITLE = "Refluxo em Brasília: Tratamento e Cirurgia | Dr. Eron Queiroz";
 const DESCRIPTION =
@@ -370,6 +370,14 @@ function RefluxoPage() {
           <P className="mt-8">
             Nenhum desses sintomas, sozinho, fecha um diagnóstico. Eles indicam que vale investigar com um especialista.
           </P>
+          <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+            <WaButton
+              href={waLink("Olá, vim pela página de refluxo e gostaria de agendar uma avaliação dos meus sintomas.")}
+              origem="secao_sintomas"
+            >
+              Agendar avaliação
+            </WaButton>
+          </div>
         </Section>
 
         {/* 4. Conviver é normal? */}
@@ -514,6 +522,14 @@ function RefluxoPage() {
             <P className="mt-8">
               A escolha da técnica é <strong>individual e definida na consulta</strong>, a partir dos exames, da idade, da saúde geral e da rotina de cada paciente.
             </P>
+            <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+              <WaButton
+                href={waLink("Olá, gostaria de agendar uma avaliação para entender as opções de tratamento para refluxo no meu caso.")}
+                origem="secao_tratamentos"
+              >
+                Conversar sobre meu tratamento
+              </WaButton>
+            </div>
         </Section>
 
         {/* 8. Recuperação */}
@@ -553,6 +569,14 @@ function RefluxoPage() {
           <P className="mt-8 text-base italic text-muted-foreground">
             Os prazos acima são referências gerais. Cada recuperação depende da técnica, da idade, da saúde e da rotina de cada paciente.
           </P>
+          <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+            <WaButton
+              href={waLink("Olá, gostaria de agendar uma avaliação com o Dr. Eron para conversar sobre a cirurgia de refluxo e a recuperação.")}
+              origem="secao_recuperacao"
+            >
+              Agendar avaliação com o Dr. Eron
+            </WaButton>
+          </div>
         </Section>
 
         {/* 9. Sobre o Dr. Eron */}
