@@ -7,7 +7,7 @@ import portrait1200 from "@/assets/dr-eron-portrait-1200.webp.asset.json";
 import formal800 from "@/assets/dr-eron-formal-800.webp.asset.json";
 import formal1200 from "@/assets/dr-eron-formal-1200.webp.asset.json";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { OrganicBg } from "@/components/OrganicBg";
+import ilustracao from "@/assets/refluxo-ilustracao.jpg";
 import { WA_AVALIACAO, WA_VALORES, trackWhatsApp } from "@/lib/refluxo-config";
 
 const TITLE = "Refluxo em Brasília: Tratamento e Cirurgia | Dr. Eron Queiroz";
@@ -195,7 +195,7 @@ function Section({
   const bg = tone === "cream" ? "bg-muted" : tone === "cool" ? "bg-cool" : "bg-background";
   return (
     <section id={id} className={`section-organic scroll-mt-6 ${bg} ${className}`}>
-      <div className="mx-auto max-w-4xl px-6 py-16 md:py-24 lg:px-8">{children}</div>
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-8">{children}</div>
     </section>
   );
 }
@@ -281,6 +281,20 @@ function RefluxoPage() {
           <P>
             Na maioria dos casos, o problema está na válvula natural entre o esôfago e o estômago, chamada esfíncter esofágico inferior. Quando ela perde a capacidade de fechar bem, o ácido sobe. A hérnia de hiato, situação em que parte do estômago passa para o tórax, é uma das causas mais comuns dessa falha.
           </P>
+          <figure className="mt-10 overflow-hidden rounded-2xl border border-border bg-background">
+            <img
+              src={ilustracao}
+              alt="Ilustração do esôfago e do estômago mostrando o conteúdo do estômago voltando para o esôfago pelo esfíncter esofágico inferior, abaixo do diafragma"
+              width={1600}
+              height={1008}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full"
+            />
+            <figcaption className="border-t border-border px-5 py-3 text-base text-muted-foreground">
+              Quando o esfíncter esofágico inferior não fecha bem, o conteúdo do estômago volta para o esôfago.
+            </figcaption>
+          </figure>
           <aside className="mt-10 rounded-2xl border-l-4 border-[var(--color-gold)] bg-muted p-6 md:p-8">
             <h3 className="text-xl">Em resumo</h3>
             <dl className="mt-5 space-y-4 text-lg leading-relaxed">
@@ -453,20 +467,24 @@ function RefluxoPage() {
             ]}
           />
 
-          <div className="mt-20">
+        </Section>
+
+        <Section tone="cool">
             <H2>Refluxo tem cura? Quais são os tratamentos?</H2>
             <P>
-              O refluxo pode ser controlado na maioria dos casos. O tratamento vai de ajustes na rotina e medicamentos até a cirurgia, que corrige o mecanismo da válvula quando há indicação.
+              O refluxo <strong>pode ser controlado na maioria dos casos</strong>. O tratamento vai de ajustes na rotina e medicamentos até a cirurgia, que corrige o mecanismo da válvula quando há indicação.
             </P>
-            <div className="mt-10 space-y-6">
-              <div className="rounded-2xl bg-muted p-6 md:p-8">
-                <h3 className="text-xl">Tratamento clínico</h3>
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              <div className="rounded-2xl border-t-4 border-[var(--color-sage-strong)] bg-card p-6 shadow-sm md:p-8">
+                <span className="numeral-display text-[2rem]">01</span>
+                <h3 className="mt-2 text-xl">Tratamento clínico</h3>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/85">
-                  Ajustes de alimentação e horários, elevação da cabeceira da cama, controle de peso e medicamentos que reduzem a acidez. Para muitas pessoas, é suficiente. O Dr. Eron também faz esse acompanhamento clínico.
+                  Ajustes de alimentação e horários, elevação da cabeceira da cama, controle de peso e medicamentos que reduzem a acidez. <strong>Para muitas pessoas, é suficiente.</strong> O Dr. Eron também faz esse acompanhamento clínico.
                 </p>
               </div>
-              <div className="rounded-2xl bg-muted p-6 md:p-8">
-                <h3 className="text-xl">Quando a cirurgia pode ser indicada</h3>
+              <div className="rounded-2xl border-t-4 border-primary bg-card p-6 shadow-sm md:p-8">
+                <span className="numeral-display text-[2rem]">02</span>
+                <h3 className="mt-2 text-xl">Quando a cirurgia pode ser indicada</h3>
                 <CheckList
                   items={[
                     "Sintomas que continuam mesmo com o remédio correto",
@@ -477,14 +495,15 @@ function RefluxoPage() {
                   ]}
                 />
               </div>
-              <div className="rounded-2xl bg-muted p-6 md:p-8">
-                <h3 className="text-xl">Como é a cirurgia</h3>
+              <div className="rounded-2xl border-t-4 border-[var(--color-gold)] bg-card p-6 shadow-sm md:p-8">
+                <span className="numeral-display text-[2rem]">03</span>
+                <h3 className="mt-2 text-xl">Como é a cirurgia</h3>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/85">
-                  A cirurgia mais realizada é a fundoplicatura. O cirurgião usa a parte de cima do estômago para envolver o final do esôfago e reconstruir a barreira contra o refluxo. Quando há hérnia de hiato, ela é corrigida no mesmo tempo.
+                  A cirurgia mais realizada é a <strong>fundoplicatura</strong>. O cirurgião usa a parte de cima do estômago para envolver o final do esôfago e reconstruir a barreira contra o refluxo. Quando há hérnia de hiato, ela é corrigida no mesmo tempo.
                 </p>
               </div>
             </div>
-            <h3 className="mt-12 text-xl">Comparativo de técnicas</h3>
+            <h3 className="mt-14 text-xl md:text-2xl">Comparativo de técnicas</h3>
             <ResponsiveTable
               headers={["Técnica", "Como é feita", "Para quem"]}
               rows={[
@@ -494,14 +513,12 @@ function RefluxoPage() {
               ]}
             />
             <P className="mt-8">
-              A escolha da técnica é individual e definida na consulta, a partir dos exames, da idade, da saúde geral e da rotina de cada paciente.
+              A escolha da técnica é <strong>individual e definida na consulta</strong>, a partir dos exames, da idade, da saúde geral e da rotina de cada paciente.
             </P>
-          </div>
         </Section>
 
         {/* 8. Recuperação */}
         <Section tone="cream">
-          <OrganicBg variant="gold" opacity={0.05} shape="ring" className="-left-48 bottom-0 h-[520px] w-[520px]" />
           <H2>Como é a recuperação da cirurgia de refluxo?</H2>
           <P>
             Nas técnicas minimamente invasivas, a internação costuma ser curta e a volta às atividades leves acontece de forma gradual, com orientações definidas para cada paciente.
