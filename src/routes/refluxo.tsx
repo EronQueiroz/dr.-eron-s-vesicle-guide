@@ -473,15 +473,15 @@ function RefluxoPage() {
             <P>
               O refluxo <strong>pode ser controlado na maioria dos casos</strong>. O tratamento vai de ajustes na rotina e medicamentos até a cirurgia, que corrige o mecanismo da válvula quando há indicação.
             </P>
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              <div className="rounded-2xl border-t-4 border-[var(--color-sage-strong)] bg-card p-6 shadow-sm md:p-8">
+            <div className="mt-10 grid items-start gap-4 md:gap-6 lg:grid-cols-3">
+              <div className="rounded-2xl border-t-4 border-[var(--color-sage-strong)] bg-card p-6 shadow-sm">
                 <span className="numeral-display text-[2rem]">01</span>
                 <h3 className="mt-2 text-xl">Tratamento clínico</h3>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/85">
                   Ajustes de alimentação e horários, elevação da cabeceira da cama, controle de peso e medicamentos que reduzem a acidez. <strong>Para muitas pessoas, é suficiente.</strong> O Dr. Eron também faz esse acompanhamento clínico.
                 </p>
               </div>
-              <div className="rounded-2xl border-t-4 border-primary bg-card p-6 shadow-sm md:p-8">
+              <div className="rounded-2xl border-t-4 border-primary bg-card p-6 shadow-sm [&>ul]:mt-3">
                 <span className="numeral-display text-[2rem]">02</span>
                 <h3 className="mt-2 text-xl">Quando a cirurgia pode ser indicada</h3>
                 <CheckList
@@ -494,7 +494,7 @@ function RefluxoPage() {
                   ]}
                 />
               </div>
-              <div className="rounded-2xl border-t-4 border-[var(--color-gold)] bg-card p-6 shadow-sm md:p-8">
+              <div className="rounded-2xl border-t-4 border-[var(--color-gold)] bg-card p-6 shadow-sm">
                 <span className="numeral-display text-[2rem]">03</span>
                 <h3 className="mt-2 text-xl">Como é a cirurgia</h3>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/85">
@@ -557,8 +557,9 @@ function RefluxoPage() {
 
         {/* 9. Sobre o Dr. Eron */}
         <section className="bg-background">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[0.8fr_1.2fr] md:py-24 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:py-24 lg:px-8 [@media(min-width:768px)_and_(min-height:600px)]:grid-cols-[0.8fr_1.2fr]">
             <div className="mx-auto w-full max-w-sm">
+              <div className="[@media(min-width:768px)_and_(min-height:600px)]:sticky [@media(min-width:768px)_and_(min-height:600px)]:top-8">
               <img
                 src={formal800.url}
                 srcSet={`${formal800.url} 800w, ${formal1200.url} 1200w`}
@@ -570,6 +571,7 @@ function RefluxoPage() {
                 decoding="async"
                 className="portrait-treatment aspect-[4/5] w-full rounded-[1.5rem] object-cover"
               />
+              </div>
             </div>
             <div>
               <H2>Quem é o Dr. Eron Queiroz?</H2>
