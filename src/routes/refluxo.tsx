@@ -272,7 +272,9 @@ function RefluxoPage() {
         {/* 2. O que é */}
         <Section tone="white">
           <H2>O que é a doença do refluxo gastroesofágico (DRGE)?</H2>
-          <P className="text-xl font-semibold text-primary">
+          <div className="mt-8 grid items-center gap-8 xl:grid-cols-2 xl:gap-10">
+          <div className="min-w-0">
+          <P className="mt-0 text-xl font-semibold text-primary">
             A doença do refluxo gastroesofágico (DRGE) acontece quando o conteúdo do estômago volta para o esôfago com frequência, causando sintomas como azia e regurgitação ou lesões na parede do esôfago.
           </P>
           <P>
@@ -281,7 +283,8 @@ function RefluxoPage() {
           <P>
             Na maioria dos casos, o problema está na válvula natural entre o esôfago e o estômago, chamada esfíncter esofágico inferior. Quando ela perde a capacidade de fechar bem, o ácido sobe. A hérnia de hiato, situação em que parte do estômago passa para o tórax, é uma das causas mais comuns dessa falha.
           </P>
-          <figure className="mt-10 overflow-hidden rounded-2xl border border-border bg-background">
+          </div>
+          <figure className="min-w-0 overflow-hidden rounded-2xl border border-border bg-background">
             <img
               src={ilustracao}
               alt="Ilustração do esôfago e do estômago mostrando o conteúdo do estômago voltando para o esôfago pelo esfíncter esofágico inferior, abaixo do diafragma"
@@ -289,12 +292,30 @@ function RefluxoPage() {
               height={1008}
               loading="lazy"
               decoding="async"
-              className="h-auto w-full"
+              className="h-auto w-full object-contain"
             />
             <figcaption className="border-t border-border px-5 py-3 text-base text-muted-foreground">
               Quando o esfíncter esofágico inferior não fecha bem, o conteúdo do estômago volta para o esôfago.
             </figcaption>
           </figure>
+          </div>
+          <aside className="mt-8 rounded-2xl border-l-4 border-[var(--color-gold)] bg-muted p-6 md:p-8">
+            <h3 className="text-xl">Em resumo</h3>
+            <dl className="mt-5 space-y-4 text-lg leading-relaxed">
+              {[
+                ["O que é", "retorno frequente do conteúdo do estômago para o esôfago"],
+                ["Sintomas mais comuns", "azia, queimação no peito e regurgitação"],
+                ["Quem trata", "gastroenterologista no acompanhamento clínico; cirurgião do aparelho digestivo quando há indicação de cirurgia ou hérnia de hiato associada"],
+                ["Tratamento", "mudanças de hábito, medicamentos e, em casos selecionados, cirurgia (fundoplicatura)"],
+                ["Quando procurar avaliação", "sintomas frequentes, uso contínuo de remédio sem controle ou qualquer sinal de alerta"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="inline font-bold text-primary">{k}: </dt>
+                  <dd className="inline text-foreground/85">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </Section>
 
         {/* 3. Sintomas */}
