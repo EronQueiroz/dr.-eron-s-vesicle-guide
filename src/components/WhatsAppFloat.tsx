@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const WHATSAPP_URL =
+const DEFAULT_WHATSAPP_URL =
   "https://wa.me/556135466409?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20cirurgia%20de%20ves%C3%ADcula%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o";
 
 declare global {
@@ -9,7 +9,13 @@ declare global {
   }
 }
 
-export function WhatsAppFloat() {
+export function WhatsAppFloat({
+  href = DEFAULT_WHATSAPP_URL,
+  pagina,
+}: {
+  href?: string;
+  pagina?: string;
+} = {}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -21,14 +27,18 @@ export function WhatsAppFloat() {
 
   return (
     <a
-      href={WHATSAPP_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar pelo WhatsApp com a equipe do Dr. Eron Queiroz"
       onClick={() => {
         if (typeof window !== "undefined") {
           window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: "whatsapp_click", origem: "botao_flutuante" });
+          window.dataLayer.push(
+            pagina
+              ? { event: "whatsapp_click", origem: "botao_flutuante", pagina }
+              : { event: "whatsapp_click", origem: "botao_flutuante" },
+          );
         }
       }}
       className={`gtag-whatsapp fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-whatsapp)] focus-visible:ring-offset-2 ${
