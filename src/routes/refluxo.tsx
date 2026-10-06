@@ -506,16 +506,18 @@ function RefluxoPage() {
                 ["Cirurgia aberta (convencional)", "Incisão maior no abdômen", "Situações específicas, hoje menos frequentes"],
               ]}
             />
-            <P className="mt-8">
+            <div className="mt-8 flex flex-col items-center gap-6 [&>p]:mt-0">
+            <P className="text-center">
               A escolha da técnica é <strong>individual e definida na consulta</strong>, a partir dos exames, da idade, da saúde geral e da rotina de cada paciente.
             </P>
-            <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+            <div className="w-full text-center [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:w-auto sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
               <WaButton
                 href={waLink("Olá, gostaria de agendar uma avaliação para entender as opções de tratamento para refluxo no meu caso.")}
                 origem="secao_tratamentos"
               >
                 Conversar sobre meu tratamento
               </WaButton>
+            </div>
             </div>
         </Section>
 
