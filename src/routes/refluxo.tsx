@@ -299,23 +299,6 @@ function RefluxoPage() {
             </figcaption>
           </figure>
           </div>
-          <aside className="mt-8 rounded-2xl border-l-4 border-[var(--color-gold)] bg-muted p-6 md:p-8">
-            <h3 className="text-xl">Em resumo</h3>
-            <dl className="mt-5 space-y-4 text-lg leading-relaxed">
-              {[
-                ["O que é", "retorno frequente do conteúdo do estômago para o esôfago"],
-                ["Sintomas mais comuns", "azia, queimação no peito e regurgitação"],
-                ["Quem trata", "gastroenterologista no acompanhamento clínico; cirurgião do aparelho digestivo quando há indicação de cirurgia ou hérnia de hiato associada"],
-                ["Tratamento", "mudanças de hábito, medicamentos e, em casos selecionados, cirurgia (fundoplicatura)"],
-                ["Quando procurar avaliação", "sintomas frequentes, uso contínuo de remédio sem controle ou qualquer sinal de alerta"],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt className="inline font-bold text-primary">{k}: </dt>
-                  <dd className="inline text-foreground/85">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </aside>
         </Section>
 
         {/* 3. Sintomas */}
@@ -523,16 +506,18 @@ function RefluxoPage() {
                 ["Cirurgia aberta (convencional)", "Incisão maior no abdômen", "Situações específicas, hoje menos frequentes"],
               ]}
             />
-            <P className="mt-8">
+            <div className="mt-8 flex flex-col items-center gap-6 [&>p]:mt-0">
+            <P className="text-center">
               A escolha da técnica é <strong>individual e definida na consulta</strong>, a partir dos exames, da idade, da saúde geral e da rotina de cada paciente.
             </P>
-            <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+            <div className="w-full text-center [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:w-auto sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
               <WaButton
                 href={waLink("Olá, gostaria de agendar uma avaliação para entender as opções de tratamento para refluxo no meu caso.")}
                 origem="secao_tratamentos"
               >
                 Conversar sobre meu tratamento
               </WaButton>
+            </div>
             </div>
         </Section>
 
