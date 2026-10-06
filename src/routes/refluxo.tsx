@@ -443,7 +443,7 @@ function RefluxoPage() {
               </div>
             ))}
           </div>
-          <P className="mt-8">
+          <P className="mx-auto mt-8 text-center">
             O objetivo do acompanhamento é justamente esse: tratar no tempo certo, com informação, para que a decisão seja planejada e não tomada às pressas.
           </P>
         </Section>
