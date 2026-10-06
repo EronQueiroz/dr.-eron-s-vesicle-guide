@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 
@@ -277,15 +277,19 @@ const JSON_LD_SCHEMA = {
 };
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  // O schema da página de vesícula só vale para "/"; outras páginas declaram o próprio.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <html lang="pt-BR">
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_SCRIPT }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
-        />
+        {pathname === "/" && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
+          />
+        )}
       </head>
       <body>
         <noscript>
