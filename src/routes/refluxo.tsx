@@ -371,10 +371,10 @@ function RefluxoPage() {
               ))}
             </ul>
           </div>
-          <P className="mt-8">
+          <P className="mx-auto mt-8 max-w-[700px] text-center">
             Nenhum desses sintomas, sozinho, fecha um diagnóstico. Eles indicam que vale investigar com um especialista.
           </P>
-          <div className="mt-8 [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
+          <div className="mt-6 text-center [&>a]:w-full [&>a]:whitespace-nowrap [&>a]:px-4 [&>a]:text-base [&_svg]:shrink-0 sm:[&>a]:w-auto sm:[&>a]:px-8 sm:[&>a]:text-lg">
             <WaButton
               href={waLink("Olá, vim pela página de refluxo e gostaria de agendar uma avaliação dos meus sintomas.")}
               origem="secao_sintomas"
