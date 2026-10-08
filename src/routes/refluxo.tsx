@@ -37,7 +37,7 @@ const faq = [
   { q: "Pessoas acima de 70 anos podem operar refluxo?", a: "A idade, sozinha, não impede a cirurgia. O que define a indicação é a avaliação da saúde geral, dos riscos e dos benefícios esperados para cada paciente, com planejamento específico para a recuperação." },
   { q: "Hérnia de hiato sempre precisa de cirurgia?", a: "Não. Hérnias pequenas e com poucos sintomas costumam ser acompanhadas com tratamento clínico. A cirurgia é considerada em hérnias maiores, sintomáticas ou com complicações." },
   { q: "Quanto custa a cirurgia de refluxo em Brasília?", a: "O valor depende da técnica, do hospital e da necessidade de corrigir hérnia de hiato. Depois da consulta e dos exames, o paciente recebe um orçamento detalhado antes de decidir." },
-  { q: "O Dr. Eron atende seguros internacionais?", a: "Sim. Pacientes com seguros internacionais, como Cigna e Allianz, e de embaixadas são atendidos no Hospital Sírio-Libanês, em Brasília." },
+  { q: "O Dr. Eron atende seguros internacionais?", a: "Sim. Pacientes com seguros internacionais e de embaixadas são atendidos em Brasília: Cigna no Hospital DF Star e no Sírio-Libanês, e Allianz no Sírio-Libanês e no Hospital Brasília." },
   { q: "Onde o Dr. Eron atende?", a: "No Edifício Santos Dumont Medical Center, SHIS QI 1, Bloco B, Sala 010-7, Lago Sul, Brasília-DF. As cirurgias são realizadas nos hospitais Sírio-Libanês e DF Star. Também há atendimento online." },
 ];
 
@@ -60,6 +60,7 @@ const physician = {
   hospitalAffiliation: [
     { "@type": "Hospital", name: "Hospital Sírio-Libanês Brasília" },
     { "@type": "Hospital", name: "Hospital DF Star" },
+    { "@type": "Hospital", name: "Hospital Brasília" },
   ],
 };
 
@@ -615,7 +616,7 @@ function RefluxoPage() {
               <div className="mt-8 rounded-2xl bg-cool p-6">
                 <h3 className="text-xl">Atendimento a pacientes internacionais</h3>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/85">
-                  Pacientes de embaixadas, organismos internacionais e com seguros como Cigna e Allianz são atendidos no Hospital Sírio-Libanês, em Brasília.
+                  Pacientes de embaixadas, organismos internacionais e com seguros internacionais são atendidos em Brasília: Cigna no Hospital DF Star e no Sírio-Libanês, Allianz no Sírio-Libanês e no Hospital Brasília.
                 </p>
               </div>
             </div>
@@ -660,13 +661,16 @@ function RefluxoPage() {
                   "Material específico, quando a técnica for robótica",
                 ]}
               />
+              <P>
+                Para quem tem plano de saúde, anestesia e custos hospitalares são cobertos pelo plano, conforme a cobertura de cada um. Apenas os honorários da equipe cirúrgica são cobrados à parte.
+              </P>
             </div>
             <div className="rounded-2xl bg-card p-6 md:p-8">
               <h3 className="text-xl">Formas de atendimento</h3>
               <CheckList
                 items={[
                   "Particular",
-                  "Seguros internacionais (como Cigna e Allianz), no Hospital Sírio-Libanês",
+                  "Seguros internacionais: Cigna, no Hospital DF Star e no Sírio-Libanês; Allianz, no Sírio-Libanês e no Hospital Brasília",
                   "Reembolso pelo plano de saúde",
                 ]}
               />
